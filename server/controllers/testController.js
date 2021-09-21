@@ -8,7 +8,7 @@ class TestController {
         if(!name) {
             return res.json(await Test.findAll());
         } else {
-            return res.json(await Test.findAll({where:{name}}));
+            return res.json(await Test.findOne({where:{name}}));
         }
     }
 

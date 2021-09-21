@@ -18,9 +18,8 @@ class UserController {
         }
     }
 
-    async authorization(req, res) { //login
+    async authorization(req, res) {
         res.json('Authorization: ');
-
     }
 
     async checkAuth(req, res, next) {
@@ -29,7 +28,7 @@ class UserController {
         if(!login) {
             return next(ApiError.badRequest('Не указан Логин!'));
         } else {
-            return res.json(await User.findAll({where:{login}}));
+            return res.json(await User.findOne({where:{login}}));
         }
     }
 }

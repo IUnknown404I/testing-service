@@ -49,12 +49,12 @@ const QuestionToTest = sequelize.define('question_to_test', {
 User.hasMany(Result);
 Result.belongsTo(User);
 
-Test.hasMany(Question);
+Test.hasMany(Question, {as: 'ques'});
 Test.hasOne(True_answer);
 Question.belongsToMany(Test, {through: QuestionToTest});
 True_answer.belongsTo(Test);
 
-Question.hasMany(Answer);
+Question.hasMany(Answer, {as: 'ans'});
 Answer.belongsTo(Question);
 
 

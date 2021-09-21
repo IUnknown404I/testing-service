@@ -13,9 +13,9 @@ class AnswersController {
             cur_answer = await Answer.findAll({where:{questionId}});
         }
         else if(answer && !questionId) {
-            cur_answer = await Answer.findAll({where:{answer}});
+            cur_answer = await Answer.findOne({where:{answer}});
         } else {
-            cur_answer = await Answer.findAll({where:{answer, questionId}});
+            cur_answer = await Answer.findOne({where:{answer, questionId}});
         }
 
         return res.json(cur_answer);

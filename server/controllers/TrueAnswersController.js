@@ -8,7 +8,7 @@ class TrueAnswersController {
         if(!testId) {
             return res.json(await True_answer.findAll());
         } else {
-            return res.json(await True_answer.findAll({where:{testId}}));
+            return res.json(await True_answer.findOne({where:{testId}}));
         }
     }
 
