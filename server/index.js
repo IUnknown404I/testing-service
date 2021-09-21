@@ -8,6 +8,10 @@ const models = require('./models/models');
 const cors = require('cors');
 // импортирую внутренние роуты
 const router = require('./routes/index');
+// регистрирую созданный мидлвейер
+// т.к. он регистрирует ошибки, то идёт в самом конце
+const errorHandler = require('./middleware/ErrorHandlingMiddleware');
+
 
 // считываю порт
 const PORT = process.env.PORT || 5050;
@@ -19,12 +23,8 @@ app.use(cors());
 app.use(express.json());
 app.use('/api', router);
 
-
-// // обработчик /
-// app.get('/', (req, res) => {
-//     res.status(200).json({message: 'WORKING!!!'});
-// });
-
+//привязываем мидлвейер с ошибками
+app.use(errorHandler);
 
 // запускаю сиквалайз для связки с постгрес и вешаю прослушку порта
 const start = async () => {

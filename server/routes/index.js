@@ -4,11 +4,11 @@ const router = new Router;
 
 const userRouter = require('./userRouter');
 const testRouter = require('./testRouter');
-// const questionsRouter = require('./questionsRouter');
+const questionsRouter = require('./questionsRouter');
 
 router.use('/user', userRouter);
 router.use('/test', testRouter);
-// router.use('/questions', );
+router.use('/question', questionsRouter);
 
 
 module.exports = router;
