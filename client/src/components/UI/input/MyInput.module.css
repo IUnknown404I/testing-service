@@ -1,0 +1,14 @@
+.myInput {
+    /*display: ;*/
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    font-size: 16px;
+    padding: 5px 15px;
+    margin: 5px 0;
+    border: 1px solid teal;
+}
+
+.myInput:hover {
+    background: azure;
+}

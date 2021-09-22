@@ -1,0 +1,28 @@
+.reg_container {
+    position: fixed;
+    margin-top: -100px;
+    background: whitesmoke;
+    border: 4px outset teal;
+    border-radius: 30%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.reg_container button {
+    margin: 5px 15px;
+    min-width: 79px;
+    min-height: 33px;
+    font-size: 17px;
+}
+
+.reg_container input {
+    margin: 6px auto;
+}
+
+.reg_container h1 {
+    margin-bottom: 30px;
+}
+
+.reg_container p {
+    margin-top: 10px;
+}

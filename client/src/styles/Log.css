@@ -1,0 +1,30 @@
+.log_container {
+    position: fixed;
+    margin-top: -100px;
+    background: whitesmoke;
+    border: 4px outset teal;
+    border-radius: 30%;
+    padding: 20px 20px;
+    width: 99%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.log_container button {
+    margin: 5px 15px;
+    min-width: 79px;
+    min-height: 33px;
+    font-size: 17px;
+}
+
+.log_container input {
+    margin: 6px auto;
+}
+
+.log_container h1 {
+    margin-bottom: 30px;
+}
+
+.log_container p {
+    margin-top: 10px;
+}
