@@ -2,7 +2,7 @@
 
 # back: dotenv, express, sequelize, cors, pg, pg-hstore
 
-# front: ...
+# front: react, axios, redux, react-redux
 
 
 ![testing-service-db](https://user-images.githubusercontent.com/87114269/134054313-99983bd3-0765-41a9-aec2-ace54c2dde7d.png)
