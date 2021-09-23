@@ -1,24 +1,30 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles/App.css';
 import './styles/Reg.css';
 import './styles/Log.css';
-import {useDispatch, useSelector} from "react-redux";
-
-import Registration from "./pages/Registration";
-import Login from "./pages/Login";
+import {BrowserRouter} from "react-router-dom";
+import NavBar from "./components/UI/navbar/NavBar";
+import {AuthContext} from "./context";
+import AppRouter from "./components/AppRouter";
 
 
 function App() {
-    //dispatch(ACTION)
-    //action: ({type: '', payload: ...})
-    const dispatch = useDispatch();
-    const answers = useSelector(state => state.answers)
+    const [isAuth, setIsAuth] = useState(false);
 
   return (
-      <div className="App">
-          {/*<Login/>*/}
-          <Registration/>
-      </div>
+      <AuthContext.Provider value={{
+          isAuth,
+          setIsAuth,
+      }}>
+          <BrowserRouter>
+              <div className="App">
+
+                  <NavBar/>
+                  <AppRouter/>
+
+              </div>
+          </BrowserRouter>
+      </AuthContext.Provider>
   );
 }
 

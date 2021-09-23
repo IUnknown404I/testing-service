@@ -1,0 +1,42 @@
+h3 {
+    margin: 0;
+    padding-bottom: .3em;
+    padding-right: 20px;
+    font-size: 1.1em;
+}
+
+p {
+    margin: 0;
+    padding: 0 0 .5em;
+}
+
+.pane {
+    z-index: 999;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    max-width: 365px;
+    background: lightyellow;
+    padding: 10px 20px 10px;
+    border-top: solid 4px orangered;
+}
+
+.removeButton {
+    position: absolute;
+    font-size: 110%;
+    top: 0;
+    color: orangered;
+    right: 5px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.removeButton:hover {
+    color: darkred;
+    transform: scale(1.1);
+}

@@ -1,6 +1,6 @@
 .reg_container {
     position: fixed;
-    margin-top: -100px;
+    margin-top: -50px;
     background: whitesmoke;
     border: 4px outset teal;
     border-radius: 30%;
@@ -25,4 +25,9 @@
 
 .reg_container p {
     margin-top: 10px;
+}
+
+.link {
+    display: inline-block;
+    margin-bottom: 5px;
 }

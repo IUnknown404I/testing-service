@@ -19,9 +19,31 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 50px;
+    top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     background: rgba(0,0,0,0.6);
+}
+
+.alertPane-enter {
+    transform: translateY(-50px) scale(0.5) ;
+    opacity: 0.1;
+}
+
+.alertPane-enter-active {
+    transition: all 600ms ease-in;
+    opacity: 0.9;
+    transform: translateY(0) scale(1);
+}
+
+.alertPane-exit {
+    transform:  translateX(0) scale(1);
+    opacity: 0.9;
+}
+
+.alertPane-exit-active {
+    transition: all 600ms ease-out;
+    opacity: 0.1;
+    transform: translateX(250px) scale(0.5);
 }
