@@ -1,3 +1,4 @@
+const jwtDecode = require('jwt-decode');
 const ApiError = require("../error/ApiError");
 const {User} = require('../models/models');
 const bcrypt = require('bcrypt');
@@ -15,12 +16,18 @@ class UserController {
     async registration(req, res, next) {
         const {login, password, email, role} = req.body;
         if(!login || !password) {
-            return next(ApiError.badRequest('Некорректный emal или password!'));
+            return next(ApiError.internalError('Некорректный логин или пароль!'));
         }
 
         const candidate = await User.findOne({where:{login}});
         if(candidate) {
             return next(ApiError.badRequest('Пользователь с таким логином уже существует!'));
+        }
+        if(email) {
+            const emailCheck = await User.findOne({where:{email}});
+            if(emailCheck) {
+                return next(ApiError.badRequest('Эта почта уже используется!'));
+            }
         }
 
         const hashPassword = await bcrypt.hash(password, 5);
@@ -39,7 +46,7 @@ class UserController {
 
         let comparePassword = bcrypt.compareSync(password, candidate.password);
         if(!comparePassword) {
-            return next(ApiError.internalError('Указан неправильный пароль!'));
+            return next(ApiError.badRequest('Указан неправильный пароль!'));
         }
 
         const jwtToken = generateJwt(candidate.id, candidate.login, candidate.email, candidate.role);
@@ -47,7 +54,10 @@ class UserController {
     }
 
     async checkAuth(req, res) {
-        return res.json(generateJwt(req.user.id, req.user.login, req.user.password, req.user.email, req.user.role));
+        const decodedJWT = jwtDecode(req.headers.authorization.split(' ')[1]);
+
+        const jwtToken = generateJwt(decodedJWT.id, decodedJWT.login, decodedJWT.email, decodedJWT.role);
+        return res.json({jwtToken});
     }
 }
 

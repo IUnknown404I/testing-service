@@ -13,6 +13,7 @@ const User = sequelize.define('user', {
 const Result = sequelize.define('result', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // user_id: {type: DataTypes.INTEGER, unique: true},
+    test_name: {type: DataTypes.STRING, allowNull: false},
     date: {type: DataTypes.STRING, allowNull: false},
     elapsed_time: {type: DataTypes.INTEGER, allowNull: false},
     mark: {type: DataTypes.INTEGER, allowNull: false},

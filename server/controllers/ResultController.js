@@ -14,13 +14,13 @@ class ResultController {
     }
 
     async add(req, res, next) {
-        const {date, elapsed_time, mark, userId} = req.body;
+        const {test_name, date, elapsed_time, mark, userId} = req.body;
 
-        if(!date || !elapsed_time || !mark || !userId) {
+        if(!date || !elapsed_time || !mark || !userId || !test_name) {
             return next(ApiError.badRequest('Не указаны все атрибуты!'));
         }
 
-        const result = await Result.create({date, elapsed_time, mark, userId});
+        const result = await Result.create({test_name, date, elapsed_time, mark, userId});
 
         return res.json(result);
     }
