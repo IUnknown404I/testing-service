@@ -1,0 +1,44 @@
+.card {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 600px;
+    padding: 7px 7px;
+    border: 1px solid teal;
+    border-radius: 3px;
+    margin: 5px auto;
+    background: azure;
+}
+
+.buttons {
+    flex-basis: auto;
+    width: 100px;
+    height: 45px;
+    border: 2px outset teal;
+    border-radius: 5px;
+    background: lightcyan;
+    box-shadow: 1px 1px 0 0 teal;
+}
+
+.buttons:hover {
+    background: bisque;
+    cursor: pointer;
+    box-shadow: none;
+    transform: translateY(1px) translateX(1px);
+}
+
+.cardDiv {
+    display: inline-block;
+    font-size: 17px;
+}
+
+.cardSpan {
+    padding: 0 10px;
+}
+
+.cardSpan:before {
+    content: '';
+    display: inline-block;
+    height: 60%;
+    vertical-align: center;
+}

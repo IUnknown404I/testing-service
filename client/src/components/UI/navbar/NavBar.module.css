@@ -3,7 +3,8 @@
     width: 100%;
     padding: 5px 20px;
     margin-bottom: 40px;
-    background: skyblue;
+    /*background: skyblue;*/
+    background: teal;
     border-bottom: 3px double teal;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -23,13 +24,14 @@
     margin-left: 20px;
     margin-top: 8px;
     text-decoration: none;
-    font-size: 18px;
-    color: black;
+    font-size: 20px;
+    color: whitesmoke;
+    /*color: black;*/
     transition: all 0.5s;
 }
 
 .navLink:hover {
-    color: darkslateblue;
+    color: navajowhite;
     text-decoration: underline;
     transform: scale(1.15);
 }
@@ -38,9 +40,12 @@
     color: black;
     padding: 0 7px;
     margin-left: 10px;
-    transition: all 0.7s;
+    transition: all 0.35s;
+    box-shadow: 2px 2px 0 0 #a22800;
 }
 
 .myNav button:hover {
-    transform: translateY(3px);
+    box-shadow: none;
+    background: bisque;
+    transform: translateY(1px) translateX(1px);
 }

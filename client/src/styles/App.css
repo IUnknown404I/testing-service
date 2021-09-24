@@ -12,6 +12,8 @@
 
 .App {
     width: 100%;
+    background: #F5FEFF;
+    /*background: azure;*/
 }
 
 .opacity {
@@ -46,4 +48,18 @@
     transition: all 600ms ease-out;
     opacity: 0.1;
     transform: translateX(250px) scale(0.5);
+}
+
+.tests-list {
+    width: 90%;
+    border: 1px solid darkslategrey;
+    margin: 40px auto;
+    padding: 15px 15px;
+    background: lightcyan; /*beige*/
+}
+
+.tests-list legend {
+    font-size: 18px;
+    color: black;
+    background: transparent;
 }

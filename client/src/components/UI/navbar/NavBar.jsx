@@ -15,6 +15,7 @@ const NavBar = () => {
         dispatch(Actions.clearAnswers());
         dispatch(Actions.insertEmail(''));
         dispatch(Actions.insertLogin(''));
+        localStorage.removeItem('token');
     }
 
     return (

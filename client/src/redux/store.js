@@ -4,7 +4,6 @@ const reduxState = {
     answers: [0,0,0,0,0,0,0,0,0,0],
     login: '',
     email: '',
-    token: ''
 }
 
 const reducer = (state = reduxState, action) => {

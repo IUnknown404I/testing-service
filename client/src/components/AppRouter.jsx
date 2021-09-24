@@ -31,38 +31,3 @@ const AppRouter = () => {
 };
 
 export default AppRouter;
-
-
-
-// isAuth
-//     ? <Switch>
-//         {publicRoutes.map((route) =>
-//             <Route
-//                 key = {Date.now() + 6}
-//                 component = {route.component}
-//                 path = {route.path}
-//                 exact = {route.exact}
-//             />
-//         )}
-//         {privateRoutes.map((route) =>
-//             <Route
-//                 key = {Date.now() + 6}
-//                 component = {route.component}
-//                 path = {route.path}
-//                 exact = {route.exact}
-//             />
-//         )}
-//         <Redirect to='/profile'/>
-//     </Switch>
-//
-//     : <Switch>
-//         {publicRoutes.map((route) =>
-//             <Route
-//                 key = {Date.now() + 6}
-//                 component = {route.component}
-//                 path = {route.path}
-//                 exact = {route.exact}
-//             />
-//         )}
-//         <Redirect to='/login'/>
-//     </Switch>

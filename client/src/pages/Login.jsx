@@ -21,6 +21,7 @@ const Login = () => {
     const formSubmit = async (event) => {
         try {
             event.preventDefault();
+
             const response = await authorization(login, password);
             console.log(response);
 

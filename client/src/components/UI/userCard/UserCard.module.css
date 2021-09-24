@@ -1,0 +1,30 @@
+.userCard {
+    display: block;
+    width: 500px;
+    max-width: 99%;
+    height: 170px;
+    margin: 100px auto;
+    position: relative;
+    border-top: 2px outset teal;
+    border-left: 2px dotted teal;
+    border-top-left-radius: 10px;
+}
+
+.h {
+    margin: 20px 0;
+}
+
+.div {
+    margin: 35px auto;
+    margin-left: 30px;
+    height: 480px;
+    width: 60%;
+    max-width: 300px;
+    text-align: left;
+}
+
+.span {
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}

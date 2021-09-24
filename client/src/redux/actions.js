@@ -25,11 +25,4 @@ export class Actions {
             type: 'CLEAR ANSWERS'
         }
     }
-
-    static insertToken(payload) {
-        return {
-            type: 'INSERT TOKEN',
-            payload: payload
-        }
-    }
 }
