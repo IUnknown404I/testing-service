@@ -29,6 +29,7 @@ const Question = sequelize.define('question', {
     // test_id: {type: DataTypes.INTEGER, unique: true},
     type: {type: DataTypes.STRING, allowNull: false},
     question: {type: DataTypes.STRING, unique: true, allowNull: false},
+    testId: {type: DataTypes.INTEGER, allowNull: false},
 });
 
 const Answer = sequelize.define('answer', {
@@ -43,6 +44,12 @@ const True_answer = sequelize.define('true_answer', {
     valid_answers: {type: DataTypes.STRING, allowNull: false},
 });
 
+const Valid_Answer = sequelize.define('valid_answer', {
+    id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
+    // question_id: {type: DataTypes.INTEGER},
+    true_answer: {type: DataTypes.STRING, allowNull: false},
+});
+
 // связующая промежуточная таблица
 const QuestionToTest = sequelize.define('question_to_test', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
@@ -55,6 +62,9 @@ Test.hasMany(Question, {as: 'ques'});
 Test.hasOne(True_answer);
 Question.belongsToMany(Test, {through: QuestionToTest});
 True_answer.belongsTo(Test);
+
+Question.hasOne(Valid_Answer);
+Valid_Answer.belongsTo(Question);
 
 Question.hasMany(Answer, {as: 'ans'});
 Answer.belongsTo(Question);

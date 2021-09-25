@@ -3,27 +3,31 @@ const {ApiError} = require('../error/ApiError');
 
 class QuestionsController {
     async addQuestion(req, res, next) {
-        const {type, question, testId} = req.body;
-        let {ans} = req.body;
+        try {
+            const {type, question, testId} = req.body;
+            let {ans} = req.body;
 
-        if(!type || !question || !testId) {
-            return next(ApiError.badRequest('Не указаны все атрибуты!'));
-        }
+            if(!type || !question || !testId) {
+                return next(ApiError.badRequest('Не указаны все атрибуты!'));
+            }
 
-        const newQuestion = await Question.create({type, question, testId});
+            const newQuestion = await Question.create({type, question, testId});
 
-        if(ans) {
-            ans = JSON.parse(ans);
+            if(ans) {
+                ans = JSON.parse(ans);
 
-            ans.forEach((a) => {
-                Answer.create({
-                    answer: a.answer,
-                    questionId: newQuestion.id
+                ans.forEach((a) => {
+                    Answer.create({
+                        answer: a.answer,
+                        questionId: newQuestion.id
+                    });
                 });
-            });
-        }
+            }
 
-        return res.json(newQuestion);
+            return res.json(newQuestion);
+        } catch (e) {
+            return res.status(404).json({message: 'Такой вопрос уже существует!'});
+        }
     }
 
     async getQuestions(req, res) {
