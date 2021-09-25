@@ -1,0 +1,49 @@
+.test-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pagination-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-but {
+    min-width: 35px;
+    margin: 0 10px;
+    padding: 10px;
+    border: 1px solid teal;
+    cursor: pointer;
+    text-align: center;
+    background: lightcyan;
+}
+
+.pagination-but:hover {
+    border-color: darkorange;
+}
+
+.current-but {
+    border: 3px inset darkviolet;
+    font-weight: bold;
+}
+
+.end-testing-but {
+    width: 150px;
+    height: 50px;
+    color: black;
+    background: lightcyan;
+    padding: 0 7px;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: all 0.2s;
+    box-shadow: 1px 1px 0 0 #a22800;
+    font-size: 16px;
+}
+
+.end-testing-but:hover {
+    box-shadow: none;
+    background: bisque;
+    transform: translateY(1px) translateX(1px);
+}

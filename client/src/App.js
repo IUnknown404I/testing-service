@@ -3,6 +3,7 @@ import './styles/App.css';
 import './styles/Reg.css';
 import './styles/Log.css';
 import './styles/ResultTable.css';
+import './styles/Test.css';
 import {BrowserRouter} from "react-router-dom";
 import NavBar from "./components/UI/navbar/NavBar";
 import {AuthContext} from "./context";
@@ -15,6 +16,8 @@ import {Actions} from "./redux/actions";
 
 const App = () => {
     const [isAuth, setIsAuth] = useState(false);
+    const [testName, setTestName] = useState('');
+    const [testId, setTestId] = useState('');
     const [isLoading, setIsLoading] = useState(true);
     const dispatch = useDispatch();
 
@@ -39,6 +42,10 @@ const App = () => {
       <AuthContext.Provider value={{
           isAuth,
           setIsAuth,
+          testName,
+          setTestName,
+          testId,
+          setTestId,
       }}>
           <BrowserRouter>
               <div className="App">

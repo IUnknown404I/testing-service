@@ -1,0 +1,43 @@
+.timer {
+    position: fixed;
+    width: 200px;
+    height: 85px;
+    top: 80px;
+    right: -170px;
+    background: azure;
+    border: 1px solid teal;
+    border-left: 30px solid teal;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.7s ease-in-out;
+}
+
+.timer:hover {
+    right: -1px;
+}
+
+.timer:before {
+    content: 'таймер';
+    position: absolute;
+    text-transform: capitalize;
+    transform: rotate(-90deg);
+    color: navajowhite;
+    font-size: 22px;
+    cursor: pointer;
+    left: -50px;
+    top: 29px;
+}
+
+.out {
+    width: 90%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px auto;
+}
+
+.time {
+    margin-top: 4px;
+    font-size: 20px;
+}

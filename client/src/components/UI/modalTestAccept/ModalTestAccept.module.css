@@ -1,0 +1,56 @@
+.modalOpacity {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(0,0,0,0.25);
+}
+
+.modal {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 500px;
+    max-width: 80%;
+    background: whitesmoke;
+    border: 5px outset teal;
+    border-radius: 30%;
+    padding: 20px 20px;
+    margin-top: -50px;
+}
+
+.modal h2 {
+    padding: 10px 10px;
+    margin: 5px 0;
+}
+
+.modal span {
+    margin-bottom: 10px;
+}
+
+.modalButCont {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: 10px auto;
+}
+
+.modalButCont button {
+    width: 100px;
+    height: 30px;
+    background: azure;
+    box-shadow: 0 1px 0 0 teal;
+    transition: all 0.2s;
+}
+
+.modalButCont button:hover {
+    background: bisque;
+    box-shadow: none;
+    transform:  translateY(1px);
+}
