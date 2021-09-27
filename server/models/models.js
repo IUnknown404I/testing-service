@@ -35,7 +35,7 @@ const Question = sequelize.define('question', {
 const Answer = sequelize.define('answer', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // question_id: {type: DataTypes.INTEGER, unique: true},
-    answer: {type: DataTypes.STRING, unique: true, allowNull: false},
+    answer: {type: DataTypes.STRING, allowNull: false},
 });
 
 const True_answer = sequelize.define('true_answer', {
@@ -54,6 +54,7 @@ const Valid_Answer = sequelize.define('valid_answer', {
 const QuestionToTest = sequelize.define('question_to_test', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 });
+
 
 User.hasMany(Result);
 Result.belongsTo(User);
