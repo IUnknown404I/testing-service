@@ -1,0 +1,66 @@
+.dnd-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.dnd-form h2 {
+    color: teal;
+    margin-bottom: 25px;
+}
+
+.dnd-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+    width: 95%;
+    max-width: 1300px;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 45%;
+    min-height: 400px;
+    padding: 20px 10px;
+    border: 2px outset teal;
+    border-radius: 5px;
+}
+
+.card-container legend {
+    font-size: 18px;
+    font-style: italic;
+    color: teal;
+}
+
+.default {
+    background: linen;
+}
+
+.valid {
+    background: lightyellow;
+}
+
+.card {
+    cursor: grab;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding: 10px 7px;
+    margin: 7px auto;
+    border: 2px solid teal;
+    border-radius: 20px;
+    background: azure;
+    width: 80%;
+    max-width: 350px;
+    font-size: 18px;
+    transition: all 0.2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.10);
+    background: lightcyan;
+}

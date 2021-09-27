@@ -6,7 +6,7 @@ export const useFetching = (callback) => {
     const fetching = async () => {
         try {
             setIsLoading(true);
-            callback();
+            await callback();
         }
         catch (e) {
             void(0)

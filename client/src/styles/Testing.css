@@ -1,0 +1,66 @@
+.testing-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    max-width: 1000px;
+    padding: 25px;
+    margin: 40px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.testing-form {
+    padding: 20px;
+    border: 1px solid teal;
+}
+
+.testing-form h2 {
+    color: teal;
+    margin-bottom: 25px;
+}
+
+.testing-form label {
+    display: block;
+    padding: 10px 10px;
+    text-align: left;
+    font-size: 18px;
+    margin: 10px 0;
+    border: 1px inset teal;
+    border-radius: 10px;
+}
+
+.testing-form label:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.testing-form input {
+    margin-right: 13px;
+    width: 17px;
+    height: 17px;
+}
+
+.testing-form input:hover {
+    cursor: pointer;
+}
+
+.testing-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.testing-nav button {
+    width: 125px;
+    height: 40px;
+    background: lightyellow;
+    font-size: 16px;
+}
+
+.testing-nav button:hover {
+    cursor: pointer;
+    background: bisque;
+}

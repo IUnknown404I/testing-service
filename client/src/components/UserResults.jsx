@@ -18,7 +18,7 @@ const UserResults = ({results}) => {
                     ? results.map((res) =>
                         <tr key={res.id} style={{background: res.mark===5 ?'lightgreen':res.mark===4 ?'lightyellow':res.mark===3 ?'lightgray':'lightpink'}}>
                             <td> {res.test_name} </td>
-                            <td> {res.date} </td>
+                            <td> {res.date.replace(/ /g, '.')} </td>
                             <td> {res.elapsed_time} </td>
                             <td> {res.mark} </td>
                         </tr>)

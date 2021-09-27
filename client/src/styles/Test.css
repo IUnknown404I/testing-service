@@ -5,9 +5,10 @@
 }
 
 .pagination-container {
-    margin-top: 50px;
     display: flex;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
 }
 
 .pagination-but {
@@ -35,9 +36,10 @@
     color: black;
     background: lightcyan;
     padding: 0 7px;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 10px auto;
+    /*margin-top: 20px;*/
     transition: all 0.2s;
+    border: 1px solid blueviolet;
     box-shadow: 1px 1px 0 0 #a22800;
     font-size: 16px;
 }

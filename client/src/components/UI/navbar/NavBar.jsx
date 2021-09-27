@@ -7,10 +7,16 @@ import {useDispatch} from "react-redux";
 import {Actions} from "../../../redux/actions";
 
 const NavBar = () => {
-    const {setIsAuth} = useContext(AuthContext);
+    const {testName, testId, setIsAuth} = useContext(AuthContext);
     const dispatch = useDispatch();
 
     const logout = () => {
+        if(testName || testId) {
+            if(!window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
+                return;
+            }
+        }
+
         setIsAuth(false);
         dispatch(Actions.clearAnswers());
         dispatch(Actions.insertEmail(''));

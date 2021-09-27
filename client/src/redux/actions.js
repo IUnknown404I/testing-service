@@ -6,6 +6,12 @@ export class Actions {
         }
     }
 
+    static clearAnswers() {
+        return {
+            type: 'CLEAR ANSWERS'
+        }
+    }
+
     static insertLogin(payload) {
         return {
             type: 'INSERT LOGIN',
@@ -17,12 +23,6 @@ export class Actions {
         return {
             type: 'INSERT EMAIL',
             payload: payload
-        }
-    }
-
-    static clearAnswers() {
-        return {
-            type: 'CLEAR ANSWERS'
         }
     }
 }

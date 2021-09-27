@@ -1,7 +1,7 @@
 import {createStore} from "redux";
 
 const reduxState = {
-    answers: [0,0,0,0,0,0,0,0,0,0],
+    answers: {},
     login: '',
     email: '',
 }
@@ -9,21 +9,26 @@ const reduxState = {
 const reducer = (state = reduxState, action) => {
     switch (action.type) {
         case 'INSERT ANSWER':
-            const newAnswers = state.answers;
-            newAnswers[+action.payload.split(':')[0]] = +action.payload.split(':')[1]
-            return {...state, answers: newAnswers}
+            let newAnswers = {};
+            Object.assign(newAnswers, state.answers);
+            newAnswers[+action.payload.split(':')[0]] = action.payload.split(':')[1];
+            return {...state, answers: newAnswers};
         case 'CLEAR ANSWERS':
-            return {...state, answers: [0,0,0,0,0,0,0,0,0,0]}
+            return {...state, answers: {}};
+
         case 'INSERT LOGIN':
-            return {...state, login: action.payload}
+            return {...state, login: action.payload};
+
         case 'INSERT EMAIL':
-            return {...state, email: action.payload}
+            return {...state, email: action.payload};
+
         case 'INSERT TOKEN':
-            return {...state, token: action.payload}
+            return {...state, token: action.payload};
         case 'DELETE TOKEN':
-            return {...state, token: ''}
+            return {...state, token: ''};
+
         default:
-            return state
+            return state;
     }
 }
 

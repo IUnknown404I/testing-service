@@ -2,7 +2,6 @@
     display: block;
     width: 500px;
     max-width: 99%;
-    height: 170px;
     margin: 100px auto;
     position: relative;
     border-top: 2px outset teal;
@@ -17,7 +16,6 @@
 .div {
     margin: 35px auto;
     margin-left: 30px;
-    height: 480px;
     width: 60%;
     max-width: 300px;
     text-align: left;
