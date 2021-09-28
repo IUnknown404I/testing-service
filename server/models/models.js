@@ -47,7 +47,7 @@ const True_answer = sequelize.define('true_answer', {
 const Valid_Answer = sequelize.define('valid_answer', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // question_id: {type: DataTypes.INTEGER},
-    true_answer: {type: DataTypes.STRING, allowNull: false},
+    true_answer: {type: DataTypes.INTEGER, allowNull: false},
 });
 
 // связующая промежуточная таблица
@@ -73,5 +73,5 @@ Answer.belongsTo(Question);
 
 // экспортирую созданные модели по бд
 module.exports = {
-    User, Result, Test, Question, Answer, True_answer, QuestionToTest
+    User, Result, Test, Question, Answer, True_answer, QuestionToTest, Valid_Answer
 };
