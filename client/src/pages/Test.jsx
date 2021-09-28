@@ -14,6 +14,7 @@ import Single from "../components/UI/testing_questions/Single";
 import Multiply from "../components/UI/testing_questions/Multiply";
 import DnD from "../components/UI/testing_questions/DnD";
 import DnDcopy from "../components/UI/testing_questions/DnD_copy";
+import {checkResults} from "../http/resultsAPI";
 
 const Test = () => {
     const history = useHistory();
@@ -34,6 +35,21 @@ const Test = () => {
     });
 
     const testEnd = () => {
+        const userResults = reduxStore.getState().answers;
+        if(Object.keys(userResults).length !== Object.keys(questions).length) {
+            if(!window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
+                return;
+            } else {
+                questions.forEach((question) => {
+                    if(!userResults[question.id]) {
+                        userResults[question.id] = '0';
+                    }
+                });
+            }
+        }
+        console.log(userResults)
+        console.log(checkResults(userResults));
+
         setTestId('');
         setTestName('');
         history.push('/profile');
@@ -79,7 +95,7 @@ const Test = () => {
     return (
         <div className='test-page'>
             <Prompt
-                when={reduxStore.getState().answers.length !== questions.length}
+                when={Object.keys(reduxStore.getState().answers).length !== Object.keys(questions).length}
                 message="Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые."
             />
 

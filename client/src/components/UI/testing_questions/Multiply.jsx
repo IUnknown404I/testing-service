@@ -5,14 +5,18 @@ import reduxStore from "../../../redux/store";
 
 const Multiply = ({currentQuestion, answers}) => {
     const dispatch = useDispatch();
-    const [currentAnswers, setCurrentAnswers] = useState('');
+    const [currentAnswers, setCurrentAnswers] = useState('#');
 
     const checkVerify = (event) => {
-        if(event.target.checked) {
-            setCurrentAnswers(currentAnswers + event.target.id);
 
+        if(event.target.checked) {
+            if(currentAnswers[0] === '#') {
+                setCurrentAnswers(currentAnswers.replace('#', '') + event.target.id + '#');
+            } else {
+                setCurrentAnswers(currentAnswers + event.target.id + '#');
+            }
         } else {
-            setCurrentAnswers(currentAnswers.replace((event.target.id), ''));
+            setCurrentAnswers(currentAnswers.replace(`${event.target.id}#`, ''));
         }
     }
 
@@ -24,6 +28,7 @@ const Multiply = ({currentQuestion, answers}) => {
     }, [currentQuestion]);
 
     useEffect(() => {
+        console.log(currentAnswers);
         if(currentAnswers!=='#') {
             dispatch(Actions.insertAnswer(`${currentQuestion.id}:${currentAnswers}`))
         }

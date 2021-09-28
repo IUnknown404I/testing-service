@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import reduxStore from "../redux/store";
 import {getResults} from "../http/resultsAPI";
 import Loader from "../components/UI/Loader/Loader";
 import UserResults from "../components/UserResults";
@@ -10,7 +9,7 @@ const Profile = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     const fetchTests = async () => {
-        const res = await getResults(reduxStore.getState().login);
+        const res = await getResults();
         setResults(res);
         setIsLoading(false);
     }

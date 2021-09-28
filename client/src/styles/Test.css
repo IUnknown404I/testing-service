@@ -21,12 +21,17 @@
     background: lightcyan;
 }
 
+.doneQuestion {
+    background: lightgreen;
+}
+
 .pagination-but:hover {
     border-color: darkorange;
 }
 
 .current-but {
-    border: 3px inset darkviolet;
+    border: 2px inset darkviolet;
+    border-radius: 4px;
     font-weight: bold;
 }
 
@@ -39,13 +44,14 @@
     margin: 10px auto;
     /*margin-top: 20px;*/
     transition: all 0.2s;
-    border: 1px solid blueviolet;
+    border: 1px double teal;
+    border-radius: 3px;
     box-shadow: 1px 1px 0 0 #a22800;
     font-size: 16px;
 }
 
 .end-testing-but:hover {
     box-shadow: none;
-    background: bisque;
+    border-color: darkorange;
     transform: translateY(1px) translateX(1px);
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import reduxStore from "../redux/store";
 
 const Pagination = ({questions, currentQuestion, setCurrentQuestion}) => {
     return (
@@ -7,8 +8,13 @@ const Pagination = ({questions, currentQuestion, setCurrentQuestion}) => {
                 questions.map((question, index) =>
                     <button
                         className={currentQuestion.id === question.id
-                            ? 'pagination-but current-but'
-                            : 'pagination-but'}
+                            ? reduxStore.getState().answers[question.id]
+                                ? 'pagination-but current-but doneQuestion'
+                                : 'pagination-but current-but'
+                            : reduxStore.getState().answers[question.id]
+                                ? 'pagination-but doneQuestion'
+                                : 'pagination-but'
+                        }
                         key={question.id}
                         id={question.id}
                         onClick={() => setCurrentQuestion(question)}
