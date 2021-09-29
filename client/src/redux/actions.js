@@ -6,6 +6,13 @@ export class Actions {
         }
     }
 
+    static updateAnswers(payload) {
+        return {
+            type: 'UPDATE ANSWERS',
+            payload: payload
+        }
+    }
+
     static clearAnswers() {
         return {
             type: 'CLEAR ANSWERS'

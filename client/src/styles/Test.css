@@ -1,3 +1,27 @@
+.navBarReplacer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 50px;
+    width: 100%;
+    padding: 5px 20px;
+    margin-bottom: 40px;
+    /*background: skyblue;*/
+    background: teal;
+    border-bottom: 3px double teal;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.navBarReplacer span {
+    color: whitesmoke;
+    font-size: 26px;
+    margin-top: 5px;
+}
+
 .test-page {
     display: flex;
     flex-direction: column;
@@ -6,27 +30,33 @@
 
 .pagination-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     margin-top: 20px;
     margin-bottom: 40px;
 }
 
 .pagination-but {
-    min-width: 35px;
-    margin: 0 10px;
+    width: 37px;
+    height: 40px;
+    margin: 0 10px 10px;
     padding: 10px;
     border: 1px solid teal;
     cursor: pointer;
     text-align: center;
     background: lightcyan;
-}
-
-.doneQuestion {
-    background: lightgreen;
+    box-shadow: 1px 1px;
+    transition: all 0.1s ease-in;
 }
 
 .pagination-but:hover {
     border-color: darkorange;
+    box-shadow: none;
+    transform: translateX(1px) translateY(1px);
+}
+
+.doneQuestion {
+    background: lightgreen;
 }
 
 .current-but {

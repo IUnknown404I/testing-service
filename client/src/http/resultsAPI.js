@@ -1,6 +1,5 @@
 import {$host} from "./index";
 import jwtDecode from "jwt-decode";
-import reduxStore from "../redux/store";
 
 export const getResults = async () => {
     const id = jwtDecode(localStorage.getItem('token')).id;
@@ -9,11 +8,7 @@ export const getResults = async () => {
     return data;
 }
 
-const send = async (userResults) => {
-    const {data} = await $host.post('api/check-results', {userResults});
+export const checkResults = async (userResults, elapsed_time, test_name, login) => {
+    const {data} = await $host.post('api/check-results', {userResults, elapsed_time, test_name, login});
     return data;
-}
-
-export const checkResults = async (userResults) => {
-    return await send(userResults);
 }

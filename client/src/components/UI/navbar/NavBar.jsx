@@ -28,9 +28,9 @@ const NavBar = () => {
         <div className={classes.myNav}>
             <MyButton onClick={() => logout()}>Выйти</MyButton>
             <div>
-                <NavLink className={classes.navLink} to='/test_choose'>Тесты</NavLink>
-                <NavLink className={classes.navLink} to='/info'>Информация</NavLink>
-                <NavLink className={classes.navLink} to='/profile'>Профиль</NavLink>
+                <NavLink className={classes.navLink} activeClassName={classes.active} to='/test_choose'>Тесты</NavLink>
+                <NavLink className={classes.navLink} activeClassName={classes.active} to='/info'>Информация</NavLink>
+                <NavLink className={classes.navLink} activeClassName={classes.active} to='/profile'>Профиль</NavLink>
             </div>
         </div>
     );

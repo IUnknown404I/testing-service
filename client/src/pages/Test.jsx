@@ -13,16 +13,20 @@ import {Actions} from "../redux/actions";
 import Single from "../components/UI/testing_questions/Single";
 import Multiply from "../components/UI/testing_questions/Multiply";
 import DnD from "../components/UI/testing_questions/DnD";
-import DnDcopy from "../components/UI/testing_questions/DnD_copy";
 import {checkResults} from "../http/resultsAPI";
+import usePreventReload from "../hooks/usePreventReload";
+import DnDcopy from "../components/UI/testing_questions/DnD_copy";
 
 const Test = () => {
+    usePreventReload(true);
     const history = useHistory();
     const dispatch = useDispatch();
     const {testName, testId, setTestId, setTestName} = useContext(AuthContext);
     const [questions, setQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState({});
     const [answers, setAnswers] = useState([]);
+    const [time, setTime] = useState(0);
+    // const [canEnd, setCanEnd] = useState(false);
 
     const [fetchQuestions, isQuestionsLoading] = useFetching(async () => {
         const res = await getQuestions(testId);
@@ -33,27 +37,6 @@ const Test = () => {
         const res = await getAnswers(currentQuestion.id);
         setAnswers(res);
     });
-
-    const testEnd = () => {
-        const userResults = reduxStore.getState().answers;
-        if(Object.keys(userResults).length !== Object.keys(questions).length) {
-            if(!window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
-                return;
-            } else {
-                questions.forEach((question) => {
-                    if(!userResults[question.id]) {
-                        userResults[question.id] = '0';
-                    }
-                });
-            }
-        }
-        console.log(userResults)
-        console.log(checkResults(userResults));
-
-        setTestId('');
-        setTestName('');
-        history.push('/profile');
-    }
 
     const navigation = (isNext) => {
         let currentQuestionId;
@@ -70,6 +53,26 @@ const Test = () => {
             setCurrentQuestion(questions[currentQuestionId + 1])
             : currentQuestionId!==0 &&
             setCurrentQuestion(questions[currentQuestionId - 1])
+    }
+
+    const testEnd = () => {
+        const userResults = reduxStore.getState().answers;
+        if(Object.keys(userResults).length !== Object.keys(questions).length) {
+            if(!window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
+                return;
+            } else {
+                questions.forEach((question) => {
+                    if(!userResults[question.id]) {
+                        userResults[question.id] = '0';
+                    }
+                });
+            }
+        }
+
+        // setCanEnd(true);
+        dispatch(Actions.updateAnswers(userResults));
+        console.log(checkResults(userResults, time, testName, reduxStore.getState().login));
+        history.push('/profile');
     }
 
     useEffect(() => {
@@ -94,13 +97,15 @@ const Test = () => {
 
     return (
         <div className='test-page'>
-            <Prompt
-                when={Object.keys(reduxStore.getState().answers).length !== Object.keys(questions).length}
-                message="Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые."
-            />
+            {/*<Prompt*/}
+            {/*    // when={Object.keys(reduxStore.getState().answers).length !== Object.keys(questions).length}*/}
+            {/*    when={!canEnd}*/}
+            {/*    message="Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые."*/}
+            {/*/>*/}
+            <div className='navBarReplacer'><span>Тестирование по теме "{testName}"</span></div>
 
-            <Timer/>
-            <h1 style={{textAlign: 'center'}}>Тестирование по теме "{testName}"</h1>
+
+            <Timer time={time} setTime={setTime}/>
 
             {isQuestionsLoading || isAnswersLoading
                 ? <Loader/>

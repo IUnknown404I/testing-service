@@ -13,6 +13,8 @@ const reducer = (state = reduxState, action) => {
             Object.assign(newAnswers, state.answers);
             newAnswers[+action.payload.split(':')[0]] = action.payload.split(':')[1];
             return {...state, answers: newAnswers};
+        case 'UPDATE ANSWERS':
+            return {...state, answers: action.payload};
         case 'CLEAR ANSWERS':
             return {...state, answers: {}};
 

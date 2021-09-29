@@ -45,6 +45,7 @@
     width: 100px;
     height: 30px;
     background: azure;
+    margin-left: 5px;
     box-shadow: 0 1px 0 0 teal;
     transition: all 0.2s;
 }

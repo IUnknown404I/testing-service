@@ -33,7 +33,7 @@ const ModalTestAccept = () => {
     return (
         <div className={classes.modalOpacity}>
             <div className={classes.modal}>
-                <h2>Подтвердить начало прохождение теста <i>{testName}</i></h2>
+                <h2>Подтвердить начало прохождения теста "<i>{testName}</i>"</h2>
                 <span>Вопросов в тесте: {questionsCount}, Время прохождения: {questionsCount * 1.25} минут.</span>
                 <div className={classes.modalButCont}>
                     <button onClick={() => cancel()}>Отменить</button>

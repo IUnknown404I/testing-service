@@ -33,7 +33,13 @@
 .navLink:hover {
     color: navajowhite;
     text-decoration: underline;
-    transform: scale(1.15);
+    transform: scale(1.08);
+}
+
+.active {
+    color: navajowhite;
+    text-decoration: underline;
+    transform: scale(1.08);
 }
 
 .myNav button {
