@@ -21,7 +21,7 @@ const Test = () => {
     usePreventReload(true);
     const history = useHistory();
     const dispatch = useDispatch();
-    const {testName, testId, setTestId, setTestName} = useContext(AuthContext);
+    const {testName, testId, setTestId, setTestName, timeLimit, setTimeLimit} = useContext(AuthContext);
     const [questions, setQuestions] = useState([]);
     const [currentQuestion, setCurrentQuestion] = useState({});
     const [answers, setAnswers] = useState([]);
@@ -30,6 +30,8 @@ const Test = () => {
 
     const [fetchQuestions, isQuestionsLoading] = useFetching(async () => {
         const res = await getQuestions(testId);
+        shuffle(res);
+
         setQuestions(res);
         setCurrentQuestion(res[0])
     });
@@ -37,6 +39,14 @@ const Test = () => {
         const res = await getAnswers(currentQuestion.id);
         setAnswers(res);
     });
+
+    const shuffle = (arr) => {
+        for (let i = arr.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+    }
 
     const navigation = (isNext) => {
         let currentQuestionId;
@@ -58,7 +68,7 @@ const Test = () => {
     const testEnd = () => {
         const userResults = reduxStore.getState().answers;
         if(Object.keys(userResults).length !== Object.keys(questions).length) {
-            if(!window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
+            if(!(time >= timeLimit) && !window.confirm('Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые.')) {
                 return;
             } else {
                 questions.forEach((question) => {
@@ -84,6 +94,7 @@ const Test = () => {
         return () => {
             setTestId('');
             setTestName('');
+            setTimeLimit(0);
             dispatch(Actions.clearAnswers());
         }
     }, []);
@@ -93,6 +104,12 @@ const Test = () => {
             fetchAnswers(currentQuestion.id);
         }
     }, [currentQuestion]);
+
+    useEffect(() => {
+        if(time >= timeLimit) {
+            testEnd();
+        }
+    }, [time]);
 
 
     return (

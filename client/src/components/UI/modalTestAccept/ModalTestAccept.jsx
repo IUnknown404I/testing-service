@@ -6,7 +6,7 @@ import {getQuestions} from "../../../http/questionsAPI";
 import {getTest} from "../../../http/testChooseAPI";
 
 const ModalTestAccept = () => {
-    const {testName, setTestName, setTestId} = useContext(AuthContext);
+    const {testName, setTestName, setTestId, setTimeLimit} = useContext(AuthContext);
     const [questionsCount, setQuestionsCount] = useState(0);
     const history = useHistory();
 
@@ -15,25 +15,26 @@ const ModalTestAccept = () => {
         setQuestionsCount(Array.from(await getQuestions(id)).length);
     }
 
-    useEffect(() => {
-        getCount();
-    }, [])
-
     const cancel = () => {
         setTestName('');
         setTestId('');
         document.querySelector(`.${classes.modalOpacity}`).remove();
     }
     const approve = () => {
+        setTimeLimit(Math.floor(questionsCount * 1.25 * 60));
         history.push('/test');
 
         document.querySelector(`.${classes.modalOpacity}`).remove();
     }
+    useEffect(() => {
+        getCount();
+    }, [])
+
 
     return (
         <div className={classes.modalOpacity}>
             <div className={classes.modal}>
-                <h2>Подтвердить начало прохождения теста "<i>{testName}</i>"</h2>
+                <h2>Подтвердите начало прохождения теста "<i>{testName}</i>"</h2>
                 <span>Вопросов в тесте: {questionsCount}, Время прохождения: {questionsCount * 1.25} минут.</span>
                 <div className={classes.modalButCont}>
                     <button onClick={() => cancel()}>Отменить</button>

@@ -25,7 +25,7 @@ const TestCard = (props) => {
             </form>
 
             {testName &&
-            <ModalTestAccept/>
+                <ModalTestAccept/>
             }
         </div>
     );

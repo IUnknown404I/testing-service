@@ -21,6 +21,7 @@ const App = () => {
     const [testName, setTestName] = useState('');
     const [testId, setTestId] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [timeLimit, setTimeLimit] = useState(0);
     const dispatch = useDispatch();
 
     const inputUserInfo = (decodedJWT) => {
@@ -48,6 +49,8 @@ const App = () => {
           setTestName,
           testId,
           setTestId,
+          timeLimit,
+          setTimeLimit,
       }}>
           <BrowserRouter>
               <div className="App">

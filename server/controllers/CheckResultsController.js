@@ -5,13 +5,14 @@ class CheckResultsController {
     async checkResults(req, res, next) {
         const {userResults, elapsed_time, test_name, login} = req.body;
         const answersCount = Object.keys(userResults).length;
+        const mistakesAccumulator = [];
         let trueAnswersCount = 0;
         if(!userResults || !elapsed_time || !test_name || !login) {
             return next(ApiError.badRequest('Не указаны все атрибуты!'));
         }
 
         for(const [questionId, value] of Object.entries(userResults)) {
-            if(await checkAnswer(value, questionId)) {
+            if(await checkAnswer(value, questionId, mistakesAccumulator)) {
                 trueAnswersCount++
             }
         }
@@ -25,7 +26,8 @@ class CheckResultsController {
         const {id} = await User.findOne({where:{login}});
         const userId = id;
 
-        return res.json(await Result.create({test_name, date, elapsed_time, mark, userId}));
+        const create = await Result.create({test_name, date, elapsed_time, mark, userId});
+        return res.json({create, mistakesAccumulator});
     }
 
     async addValidAns(req, res, next) {
@@ -40,10 +42,11 @@ class CheckResultsController {
 }
 
 
-const checkAnswer = async (value, questionId) => {
+const checkAnswer = async (value, questionId, mistakesAccumulator) => {
     if(value.includes('#')) {
         let questionResult = true;
-        let trueAnswers = [];
+        const trueAnswers = [];
+        let mistakes = '';
         [...await Valid_Answer.findAll({where:{questionId}})].forEach((obj) => {
             trueAnswers.push(obj.dataValues.true_answer);
         })
@@ -52,15 +55,26 @@ const checkAnswer = async (value, questionId) => {
             if(ans!=='') {
                 if(trueAnswers.indexOf(+ans) === -1) {
                     questionResult = false;
+                    mistakes += ans+'#';
                 } else {
                     trueAnswers.splice(trueAnswers.indexOf(+ans), 1);
                 }
             }
         })
 
+        if(trueAnswers.length) {
+            mistakes += 'Ответ не полон.#'
+        }
+        if(mistakes) {
+            mistakesAccumulator.push({questionId:{questionId}, ans:{mistakes}});
+        }
         return questionResult && !trueAnswers.length;
     } else {
         const {true_answer} = await Valid_Answer.findOne({where:{questionId}});
+
+        if(+value !== true_answer) {
+            mistakesAccumulator.push({questionId:{questionId}, ans:{value}});
+        }
         return +value === true_answer;
     }
 }
