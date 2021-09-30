@@ -12,10 +12,16 @@
 					"name": "create true_answers",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Boar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwibG9naW4iOiJhZG1pbjEiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzIzMDg5ODYsImV4cCI6MTYzMjM5NTM4Nn0.fMcB_CEQHMthwlPpacqvMEYkPQ6ly3Q1yudO2lRDjjo",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"valid_answers\": \"\",\r\n    \"testId\": \"\"\r\n}",
+							"raw": "{\r\n    \"valid_answers\": \"123123\",\r\n    \"testId\": \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -42,10 +48,16 @@
 					"name": "create test",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImxvZ2luIjoicm4iLCJlbWFpbCI6InJ1c2xhbnN1YmFldkB5YW5kZXgucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzI0OTI4NTIsImV4cCI6MTYzMjU3OTI1Mn0.Nr2lmS0qCSXZGN4FuXqrHYGhucAAbO6HII351J2CfeI",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Тестовый модуль\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -72,10 +84,16 @@
 					"name": "create question",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Boar eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImxvZ2luIjoicm4iLCJlbWFpbCI6InJ1c2xhbnN1YmFldkB5YW5kZXgucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzI1NzU0NjcsImV4cCI6MTYzMjY2MTg2N30.5OK4Uo7fiCVz3WHW9koXXy0Zpm-he9kd0wRgoSVbFOQ",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"type\": \"text\",\r\n    \"question\": \"Выберите неверное высказывание!\",\r\n    \"testId\": \"1\"\r\n}",
+							"raw": "{\r\n    \"type\": \"text\",\r\n    \"question\": \"JS- плохооптимизированный функциональный ЯП?\",\r\n    \"testId\": \"1\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -101,10 +119,16 @@
 					"name": "create answer",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImxvZ2luIjoicm4iLCJlbWFpbCI6InJ1c2xhbnN1YmFldkB5YW5kZXgucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzI4NjEwNzIsImV4cCI6MTYzMjk0NzQ3Mn0.iU_S-Sv2Yu-kEtazdzrU8Nd3ykJWUpAjiNQ4t1q1IXo",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"answer\": \"\",\r\n    \"questionId\": \"\"\r\n}",
+							"raw": "{\r\n    \"answer\": \"333\",\r\n    \"questionId\": \"2\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -134,7 +158,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"date\": \"2021 09 21\",\r\n    \"elapsed_time\": \"90\",\r\n    \"mark\": \"5\",\r\n    \"userId\": \"4\"\r\n}",
+							"raw": "{\r\n    \"date\": \"2021 09 25\",\r\n    \"elapsed_time\": \"666\",\r\n    \"mark\": \"2\",\r\n    \"userId\": \"20\",\r\n    \"test_name\": \"Тестовый модуль\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -164,7 +188,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"login\": \"\",\r\n    \"password\": \"\",\r\n    \"role\": \"\"\r\n}",
+							"raw": "{\r\n    \"login\": \"tester\",\r\n    \"password\": \"123\",\r\n    \"email\": \"tester@mail.ru\",\r\n    \"role\": \"USER\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,6 +210,42 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "create valid answer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImxvZ2luIjoicm4iLCJlbWFpbCI6InJ1c2xhbnN1YmFldkB5YW5kZXgucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzI4NjEwNzIsImV4cCI6MTYzMjk0NzQ3Mn0.iU_S-Sv2Yu-kEtazdzrU8Nd3ykJWUpAjiNQ4t1q1IXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"true_answer\": \"8\",\r\n    \"questionId\": \"15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/check-results/addValid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"check-results",
+								"addValid"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -198,7 +258,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/question/answers?questionId=1",
+							"raw": "http://localhost:7000/api/question/answers?questionId=10",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -212,7 +272,7 @@
 							"query": [
 								{
 									"key": "questionId",
-									"value": "1"
+									"value": "10"
 								}
 							]
 						}
@@ -276,9 +336,15 @@
 					"name": "user auth",
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTcsImxvZ2luIjoiMTIzIiwiZW1haWwiOiIxQDEiLCJyb2xlIjoiVVNFUiIsImlhdCI6MTYzMjQ3NTE0MiwiZXhwIjoxNjMyNTYxNTQyfQ.s666hyttAOT_KKsoK3vceIYvSl1_LtiZbOh-bYm5Zcc",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "http://localhost:7000/api/user/auth?login=rn",
+							"raw": "http://localhost:7000/api/user/auth",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -288,12 +354,6 @@
 								"api",
 								"user",
 								"auth"
-							],
-							"query": [
-								{
-									"key": "login",
-									"value": "rn"
-								}
 							]
 						}
 					},
@@ -305,7 +365,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/test/",
+							"raw": "http://localhost:7000/api/test/?name=Нативный JavaScript",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -315,6 +375,12 @@
 								"api",
 								"test",
 								""
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Нативный JavaScript"
+								}
 							]
 						}
 					},
@@ -326,7 +392,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:7000/api/user/result?date=2020 20 20&elapsed_time=30&mark=5",
+							"raw": "http://localhost:7000/api/user/result?userId=20",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -339,17 +405,75 @@
 							],
 							"query": [
 								{
-									"key": "date",
-									"value": "2020 20 20"
-								},
-								{
-									"key": "elapsed_time",
-									"value": "30"
-								},
-								{
-									"key": "mark",
-									"value": "5"
+									"key": "userId",
+									"value": "20"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user authorization",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"rn\",\r\n    \"password\": \"rn\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/user/authorization",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"user",
+								"authorization"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check results\\",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTksImxvZ2luIjoicm4iLCJlbWFpbCI6InJ1c2xhbnN1YmFldkB5YW5kZXgucnUiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE2MzI4NjEwNzIsImV4cCI6MTYzMjk0NzQ3Mn0.iU_S-Sv2Yu-kEtazdzrU8Nd3ykJWUpAjiNQ4t1q1IXo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"testId\": \"1\",\r\n    \"answers\": \"123111\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:7000/api/check-results/addValid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "7000",
+							"path": [
+								"api",
+								"check-results",
+								"addValid"
 							]
 						}
 					},

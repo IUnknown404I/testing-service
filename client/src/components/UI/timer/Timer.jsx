@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import classes from './Timer.module.css'
 
 const Timer = ({time, setTime}) => {

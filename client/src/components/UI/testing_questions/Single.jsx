@@ -8,7 +8,6 @@ const Single = ({currentQuestion, answers}) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        console.log('initializing')
         if(reduxStore.getState().answers[currentQuestion.id]) {
             setCurrentChoose(+reduxStore.getState().answers[currentQuestion.id]);
         }

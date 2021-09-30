@@ -25,7 +25,6 @@ const App = () => {
     const dispatch = useDispatch();
 
     const inputUserInfo = (decodedJWT) => {
-        console.log(decodedJWT)
         dispatch(Actions.insertLogin(decodedJWT.login));
         if(decodedJWT.email)
             dispatch(Actions.insertEmail(decodedJWT.email));

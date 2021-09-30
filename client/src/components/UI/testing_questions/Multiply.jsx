@@ -21,14 +21,12 @@ const Multiply = ({currentQuestion, answers}) => {
     }
 
     useEffect(() => {
-       console.log('initializing');
         if(reduxStore.getState().answers[currentQuestion.id]) {
             setCurrentAnswers(reduxStore.getState().answers[currentQuestion.id]);
         }
     }, [currentQuestion]);
 
     useEffect(() => {
-        console.log(currentAnswers);
         if(currentAnswers!=='#') {
             dispatch(Actions.insertAnswer(`${currentQuestion.id}:${currentAnswers}`))
         }

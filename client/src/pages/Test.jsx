@@ -81,8 +81,8 @@ const Test = () => {
 
         // setCanEnd(true);
         dispatch(Actions.updateAnswers(userResults));
-        console.log(checkResults(userResults, time, testName, reduxStore.getState().login));
-        history.push('/profile');
+        checkResults(userResults, time, testName, reduxStore.getState().login).then(res => dispatch(Actions.insertResults(res)));
+        history.push('/test_choose');
     }
 
     useEffect(() => {

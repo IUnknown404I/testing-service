@@ -16,7 +16,8 @@
     height: 45px;
     border: 2px outset teal;
     border-radius: 5px;
-    background: lightyellow;
+    /*background: lightyellow;*/
+    background: lightcyan;
     box-shadow: 1px 1px 0 0 teal;
 }
 

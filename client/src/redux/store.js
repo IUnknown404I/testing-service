@@ -4,6 +4,7 @@ const reduxState = {
     answers: {},
     login: '',
     email: '',
+    results: {},
 }
 
 const reducer = (state = reduxState, action) => {
@@ -29,12 +30,17 @@ const reducer = (state = reduxState, action) => {
         case 'DELETE TOKEN':
             return {...state, token: ''};
 
+        case 'INSERT RESULTS':
+            return {...state, results: action.payload};
+        case 'CLEAR RESULTS':
+            return {...state, results: {}};
+
         default:
             return state;
     }
 }
 
 const reduxStore = createStore(reducer);
-reduxStore.subscribe(() => console.info(reduxStore.getState()));
+// reduxStore.subscribe(() => console.info(reduxStore.getState()));
 
 export default reduxStore;

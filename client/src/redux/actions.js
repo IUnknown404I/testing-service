@@ -32,4 +32,17 @@ export class Actions {
             payload: payload
         }
     }
+
+    static insertResults(payload) {
+        return {
+            type: 'INSERT RESULTS',
+            payload: payload
+        }
+    }
+
+    static clearResults() {
+        return {
+            type: 'INSERT RESULTS'
+        }
+    }
 }

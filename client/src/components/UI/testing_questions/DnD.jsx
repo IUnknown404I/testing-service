@@ -18,6 +18,7 @@ const DnD = ({answers, currentQuestion}) => {
                 indexOfAns = index;
                 return true;
             }
+            return false;
         });
 
         return [indexOfAns, ans];

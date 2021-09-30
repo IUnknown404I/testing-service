@@ -1,11 +1,11 @@
-const {Valid_Answer, User, Result} = require("../models/models");
+const {Valid_Answer, User, Result, Answer, Question} = require("../models/models");
 const ApiError = require('../error/ApiError');
 
 class CheckResultsController {
     async checkResults(req, res, next) {
         const {userResults, elapsed_time, test_name, login} = req.body;
         const answersCount = Object.keys(userResults).length;
-        const mistakesAccumulator = [];
+        let mistakesAccumulator = [];
         let trueAnswersCount = 0;
         if(!userResults || !elapsed_time || !test_name || !login) {
             return next(ApiError.badRequest('Не указаны все атрибуты!'));
@@ -27,6 +27,7 @@ class CheckResultsController {
         const userId = id;
 
         const create = await Result.create({test_name, date, elapsed_time, mark, userId});
+        mistakesAccumulator = await getMistakes(mistakesAccumulator);
         return res.json({create, mistakesAccumulator});
     }
 
@@ -66,17 +67,57 @@ const checkAnswer = async (value, questionId, mistakesAccumulator) => {
             mistakes += 'Ответ не полон.#'
         }
         if(mistakes) {
-            mistakesAccumulator.push({questionId:{questionId}, ans:{mistakes}});
+            mistakesAccumulator.push({questionId:questionId, ans:mistakes});
         }
         return questionResult && !trueAnswers.length;
     } else {
         const {true_answer} = await Valid_Answer.findOne({where:{questionId}});
 
         if(+value !== true_answer) {
-            mistakesAccumulator.push({questionId:{questionId}, ans:{value}});
+            mistakesAccumulator.push({questionId:questionId, ans:value});
         }
         return +value === true_answer;
     }
+}
+
+const getMistakes = async (mistakesAccumulator) => {
+    if(!mistakesAccumulator.length) {
+        return
+    }
+
+    const reference = [];
+    for(const obj of mistakesAccumulator) {
+        if(+obj.ans === 0) {
+            const id = obj.questionId;
+            const {question} = await Question.findOne({where: {id}});
+            reference.push({question: question, mistake: 'Ответ не указан!'});
+        }
+        else if (!obj.ans.includes('#')) {
+            let id = obj.ans;
+            const {answer} = await Answer.findOne({where: {id}});
+            id = obj.questionId;
+            const {question} = await Question.findOne({where: {id}});
+            reference.push({question: question, mistake: answer});
+        }
+        else {
+            const mistakes = [];
+            let id = obj.questionId;
+            const {question} = await Question.findOne({where: {id}});
+            for (const miss of obj.ans.split('#')) {
+                if (miss !== '') {
+                    if (miss === 'Ответ не полон.') {
+                        mistakes.push('Ответ не полон.');
+                    } else {
+                        id = +miss;
+                        const {answer} = await Answer.findOne({where: {id}});
+                        mistakes.push(answer);
+                    }
+                }
+            }
+            reference.push({question: question, mistake: mistakes});
+        }
+    }
+    return reference;
 }
 
 const getDate = () => {

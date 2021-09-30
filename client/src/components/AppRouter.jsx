@@ -18,14 +18,19 @@ const AppRouter = () => {
 
                 {isAuth &&
                 privateRoutes.map((route) =>
-                                <Route
-                                    key = {Date.now() + 6}
-                                    component = {route.component}
-                                    path = {route.path}
-                                    exact = {route.exact}
-                                />)
+                    <Route
+                        key = {Date.now() + 6}
+                        component = {route.component}
+                        path = {route.path}
+                        exact = {route.exact}
+                    />)
                 }
-                    <Redirect to='/login'/>
+
+                {isAuth
+                    ? <Redirect to='/profile'/>
+                    : <Redirect to='/login'/>
+                }
+
                 </Switch>
     );
 };
