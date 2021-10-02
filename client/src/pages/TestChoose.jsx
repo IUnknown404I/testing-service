@@ -13,6 +13,12 @@ const TestChoose = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [modal, setModal] = useState(false);
 
+    const check = setTimeout(() => {
+        if(reduxStore.getState().results && Object.keys(reduxStore.getState().results).length && !modal) {
+            setModal(true);
+        }
+    }, 300);
+
     const fetchTests = async () => {
         const res = await getAllTests();
         setTests(res);
@@ -29,6 +35,7 @@ const TestChoose = () => {
         fetchTests()
 
         return () => {
+            clearTimeout(check);
             dispatch(Actions.clearResults());
         }
     }, [])

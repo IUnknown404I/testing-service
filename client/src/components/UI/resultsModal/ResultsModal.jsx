@@ -40,32 +40,36 @@ const ResultsModal = ({setModal}) => {
                     </span>
                 </fieldset>
 
-                <div className={classes.res_errors_container}>
-                    <h2>Допущенные ошибки</h2>
+                {mistakesAccumulator?.length
+                    ?
+                    <div className={classes.res_errors_container}>
+                        <h2>Допущенные ошибки</h2>
 
-                    <div className={classes.res_errors}>
-                        {mistakesAccumulator.map((miss, index) =>
-                            <div key={index+1} className={classes.error}>
-                                <strong>Вопрос: </strong><i>{miss.question}</i><br/>
-                                {Array.isArray(miss.mistake)
-                                    ?
-                                    <span>
+                        <div className={classes.res_errors}>
+                            {mistakesAccumulator.map((miss, index) =>
+                                <div key={index+1} className={classes.error}>
+                                    <strong>Вопрос: </strong><i>{miss.question}</i><br/>
+                                    {Array.isArray(miss.mistake)
+                                        ?
+                                        <span>
                                         <strong>Ошибки: </strong>
-                                        {miss.mistake.map((err, index) =>
-                                            <span key={index+666}>
+                                            {miss.mistake.map((err, index) =>
+                                                <span key={index+666}>
                                                 {err !== 'Ответ не полон.' ? `"${err}"; ` : `${err}`}
                                             </span>)
-                                        }
+                                            }
                                     </span>
-                                    : <span><strong>Ошибка: </strong>{miss.mistake}</span>
-                                }
+                                        : <span><strong>Ошибка: </strong>{miss.mistake}</span>
+                                    }
 
-                            </div>
-                        )
+                                </div>
+                            )
 
-                        }
+                            }
+                        </div>
                     </div>
-                </div>
+                    : void(0)
+                }
 
                 <button onClick={() => {forward()}}>Продолжить</button>
             </div>
