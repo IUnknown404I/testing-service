@@ -1,0 +1,97 @@
+.courses_main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.courses__definition {
+    display: block;
+    grid-column: 3 / 11;
+    margin: 10px 0 30px;
+}
+
+.course__variant {
+    grid-column: 2 / span 10;
+    display: flex;
+    padding: 15px;
+    border: 2px solid teal;
+    margin-top: 15px;
+    justify-content: space-between;
+    align-items: center;
+    background: lightcyan;
+}
+
+.course__variant__content {
+    font-size: 20px;
+}
+
+.course__variant__content div {
+    font-size: 17px;
+}
+
+.course__variant__info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    justify-items: center;
+    align-items: center;
+}
+
+.course__variant__info button {
+    width: 95px;
+    height: 40px;
+    font-size: 15px;
+}
+
+.course__variant__info button:hover {
+    border-color: coral;
+    background: lightyellow;
+}
+
+.course_eco__main {
+    margin-top: -40px;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+}
+
+.eco_info {
+    position: absolute;
+    /*top: 100px;*/
+    top: 20%;
+    left: 10%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    background: transparent;
+    color: limegreen;
+    font-family: "Copperplate Gothic Light", monospace;
+}
+
+.eco_info button {
+    width: 140px;
+    height: 60px;
+    color: lightgreen;
+    font-size: 18px;
+    background: green;
+    margin: 60px 0 0;
+    border: 1px inset lightgreen;
+    border-radius: 2px;
+    box-shadow: 1px 1px 0 0 lightgreen;
+    transition: all 0.15s ease-in;
+}
+
+.eco_info button:hover {
+    background: forestgreen;
+    box-shadow: none;
+    transform: translateX(1px) translateY(1px);
+    border: 1px inset lightgreen;
+}
+
+.earth {
+    grid-column: 1 / span 8;
+    /*grid-column: 1 / span 8;*/
+}
+
+.canvas_Earth {
+    width: 100%;
+    height: 100%;
+}

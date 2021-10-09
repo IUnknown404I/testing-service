@@ -9,7 +9,7 @@ import Favicon from "react-favicon";
 ReactDOM.render(
 
     <Provider store={reduxStore}>
-        <Favicon url='../public/favicon.ico'/>
+        <Favicon url='../favicon.ico'/>
         <App />
     </Provider>,
 

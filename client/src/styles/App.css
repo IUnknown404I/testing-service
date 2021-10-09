@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.body, .head {
+    height: 100%;
+}
+
 #root {
     display: flex;
     flex-direction: column;

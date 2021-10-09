@@ -1,9 +1,10 @@
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
-import Information from "../pages/Information";
+import Courses from "../pages/Courses";
 import Profile from "../pages/Profile";
 import TestChoose from "../pages/TestChoose";
 import Test from "../pages/Test";
+import CourseEco from "../pages/CourseEco";
 
 export const publicRoutes = [
     {path: '/login', component: Login, exact: true},
@@ -11,7 +12,8 @@ export const publicRoutes = [
 ]
 
 export const privateRoutes = [
-    {path: '/info', component: Information, exact: true},
+    {path: '/courses/:name', component: CourseEco, exact: true},
+    {path: '/courses', component: Courses, exact: true},
     {path: '/profile', component: Profile, exact: true},
     {path: '/test_choose', component: TestChoose, exact: true},
     {path: '/test', component: Test, exact: true},
