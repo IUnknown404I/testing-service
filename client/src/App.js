@@ -7,6 +7,7 @@ import './styles/Test.css';
 import './styles/Testing.css';
 import './styles/DnD.css';
 import './styles/Courses.css';
+import './styles/Eco.css';
 import {BrowserRouter} from "react-router-dom";
 import NavBar from "./components/UI/navbar/NavBar";
 import {AuthContext} from "./context";

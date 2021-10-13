@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import {AuthContext} from "../context";
 import {Switch, Route, Redirect} from "react-router-dom";
-import {publicRoutes, privateRoutes} from "../router/routes";
+import {publicRoutes, privateRoutes, ecoRoutes} from "../router/routes";
 
 const AppRouter = () => {
     const {isAuth} = useContext(AuthContext);
@@ -18,6 +18,16 @@ const AppRouter = () => {
 
                 {isAuth &&
                 privateRoutes.map((route) =>
+                    <Route
+                        key = {Date.now() + 6}
+                        component = {route.component}
+                        path = {route.path}
+                        exact = {route.exact}
+                    />)
+                }
+
+                {isAuth &&
+                ecoRoutes.map((route) =>
                     <Route
                         key = {Date.now() + 6}
                         component = {route.component}

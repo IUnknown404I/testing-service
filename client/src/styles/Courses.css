@@ -10,13 +10,12 @@
 }
 
 .course__variant {
-    grid-column: 2 / span 10;
+    grid-column: 3 / span 8;
     display: flex;
+    flex-direction: column;
     padding: 15px;
     border: 2px solid teal;
     margin-top: 15px;
-    justify-content: space-between;
-    align-items: center;
     background: lightcyan;
 }
 
@@ -29,10 +28,13 @@
 }
 
 .course__variant__info {
+    padding: 0 20px;
+    margin-top: 15px;
+    font-size: 16px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -48,7 +50,8 @@
 }
 
 .course_eco__main {
-    margin-top: -40px;
+    overflow: hidden;
+    margin-top: -42px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
 }
@@ -56,7 +59,7 @@
 .eco_info {
     position: absolute;
     /*top: 100px;*/
-    top: 20%;
+    top: 15%;
     left: 10%;
     display: flex;
     flex-direction: column;
@@ -68,14 +71,14 @@
 
 .eco_info button {
     width: 140px;
-    height: 60px;
+    height: 70px;
     color: lightgreen;
     font-size: 18px;
     background: green;
     margin: 60px 0 0;
     border: 1px inset lightgreen;
     border-radius: 2px;
-    box-shadow: 1px 1px 0 0 lightgreen;
+    box-shadow: 1px 1px 0 0 darkgreen;
     transition: all 0.15s ease-in;
 }
 

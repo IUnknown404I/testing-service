@@ -67,3 +67,11 @@
     color: black;
     background: transparent;
 }
+
+.ant-page-header-back-button {
+    color: floralwhite !important;
+}
+
+.ant-page-header-back-button:hover {
+    color: antiquewhite !important;
+}
