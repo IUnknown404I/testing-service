@@ -35,7 +35,7 @@ const EcoMain = () => {
         <Eco6/>,
         <Eco7/>,
     ]);
-    const [titles, setTitles] = useState([
+    const [titles, setTitles] = useState([[
        '1. Федеральный закон от 10.01.2002 N 7-ФЗ "Об охране окружающей среды"',
        '2. Федеральный закон от 04.05.1999 N 96-ФЗ "Об охране атмосферного воздуха"',
        '3. Федеральный закон от 30.03.1999 N 52-ФЗ (ред. от 02.07.2021) "О санитарно-эпидемиологическом благополучии населения"',
@@ -43,10 +43,14 @@ const EcoMain = () => {
        '5. Категорийность объектов по степени негативного воздействия на окружающую среду',
        '5. Категорийность объектов по степени негативного воздействия на окружающую среду',
        '5. Категорийность объектов по степени негативного воздействия на окружающую среду',
+    ]]);
+    const [subTitles, setSubTitles] = useState([
+        'Раздел 1',
     ]);
     const [currentPage, setCurrentPage] = useState(pages[0]);
-    const [currentTitle, setCurrentTitle] = useState(titles[0]);
-    const [switchToGlossary, setSwitchToGlossary] = useState(false);
+    const [currentTitle, setCurrentTitle] = useState(titles[0][0]);
+    const [currentSubTitle, setCurrentSubTitle] = useState(subTitles[0]);
+    const [switchToGlossary, setSwitchToGlossary] = useState(true);
 
     const changePage = isNext => {
         if(isNext && currentPage.type.name !== pages[pages.length - 1].type.name) {
@@ -59,7 +63,7 @@ const EcoMain = () => {
         }
     }
 
-    const changeSelectedMenuItem = () => {
+    const getSelectedMenuItem = () => {
         if(!switchToGlossary) {
             switch (currentPage) {
                 case pages[0]: return('11');
@@ -71,13 +75,54 @@ const EcoMain = () => {
                 case pages[6]: return('15');
             }
         } else {
+            // setCurrentTitle('Глоссарий');
+            // setCurrentSubTitle('');
             return '4';
         }
     }
 
+    const changeCurrentTitle = () => {
+        if(switchToGlossary) {
+            setCurrentTitle('Глоссарий');
+            return;
+        }
+
+        let index = pages.indexOf(currentPage);
+        if(index < titles[0].length) {
+            setCurrentTitle(titles[0][pages.indexOf(currentPage)]);
+            return;
+        }
+
+        index = (index - titles[0].length);
+        if(index < titles[1].length) {
+            setCurrentTitle(titles[0][pages.indexOf(currentPage)]);
+            return;
+        }
+    }
+
+    const changeCurrentSubTitle = () => {
+        if(switchToGlossary) {
+            setCurrentSubTitle('');
+        } else {
+            let index = pages.indexOf(currentPage);
+            if(index < titles[0].length) {
+                setCurrentSubTitle(subTitles[0]);
+                return;
+            }
+
+            index = (index - titles[0].length);
+            if(index < titles[1].length) {
+                setCurrentSubTitle(subTitles[1]);
+                return;
+            }
+        }
+    }
+
     useEffect(() => {
-        setSelectedKeys([changeSelectedMenuItem()]);
-        setCurrentTitle(titles[pages.indexOf(currentPage)]);
+        changeCurrentTitle();
+        changeCurrentSubTitle();
+        setSelectedKeys([getSelectedMenuItem()]);
+
     }, [currentPage, switchToGlossary]);
 
 
@@ -159,7 +204,7 @@ const EcoMain = () => {
                     className="site-page-header"
                     onBack={() => history.push('/courses/eco')}
                     title={<span style={{color: 'floralwhite'}}>{currentTitle}</span>}
-                    subTitle={<span style={{color: 'floralwhite'}}>Раздел 1</span>}
+                    subTitle={<span style={{color: 'floralwhite'}}>{currentSubTitle}</span>}
                 />
 
                 <Content style={{ margin: '10px 0' }}>
