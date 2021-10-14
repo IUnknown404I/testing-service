@@ -2,10 +2,12 @@ import React, {useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
 import {PageHeader, Layout, Menu, Divider, Col, Row, Button} from 'antd';
 import {
-    DesktopOutlined,
+    ImportOutlined,
     PieChartOutlined,
     LeftCircleTwoTone,
-    RightCircleTwoTone, AppstoreOutlined,
+    RightCircleTwoTone,
+    AppstoreOutlined,
+    ProfileOutlined,
 } from '@ant-design/icons';
 import {useHistory, NavLink} from 'react-router-dom';
 import Eco1 from "./Eco1";
@@ -75,8 +77,6 @@ const EcoMain = () => {
                 case pages[6]: return('15');
             }
         } else {
-            // setCurrentTitle('Глоссарий');
-            // setCurrentSubTitle('');
             return '4';
         }
     }
@@ -144,7 +144,7 @@ const EcoMain = () => {
                             <Menu.Item key="111">Система государственного управления</Menu.Item>
                         </Menu.ItemGroup>
                     </SubMenu>
-                    <SubMenu key="sub2" icon={<DesktopOutlined />} title="Вернуться">
+                    <SubMenu key="sub2" icon={<ImportOutlined />} title="Вернуться">
                         <Menu.Item onClick={() => {history.push('/profile')}} key="21">Профиль</Menu.Item>
                         <Menu.Item onClick={() => {history.push('/test_choose')}} key="22">Выбор тестов</Menu.Item>
                         <Menu.Item onClick={() => {history.push('/courses')}} key="23">Выбор курсов</Menu.Item>
@@ -188,7 +188,7 @@ const EcoMain = () => {
                     </SubMenu>
                     <Menu.Item
                         key="4"
-                        icon={<PieChartOutlined />}
+                        icon={<ProfileOutlined />}
                         onClick={() => {
                             setSwitchToGlossary(true);
                         }}
@@ -207,7 +207,7 @@ const EcoMain = () => {
                     subTitle={<span style={{color: 'floralwhite'}}>{currentSubTitle}</span>}
                 />
 
-                <Content style={{ margin: '10px 0' }}>
+                <Content className='course_content'>
                     <div className="site-layout-background" style={{ padding: 10, minHeight: 360 }}>
                         {switchToGlossary
                             ? <Glossary setSwitchToGlossary={setSwitchToGlossary}/>
@@ -227,6 +227,7 @@ const EcoMain = () => {
                                     icon={<LeftCircleTwoTone />}
                                     className='eco-pagination-but'
                                     size="large"
+                                    disabled={currentPage===pages[0]}
                                 >
                                     Назад
                                 </Button>
@@ -234,6 +235,7 @@ const EcoMain = () => {
                                     onClick={() => {changePage(true)}}
                                     icon={<RightCircleTwoTone />}
                                     className='eco-pagination-but' size="large"
+                                    disabled={currentPage===pages[pages.length - 1]}
                                 >
                                     Далее
                                 </Button>
@@ -243,7 +245,7 @@ const EcoMain = () => {
                 }
 
 
-                <Divider/>
+                <Divider className='footer_divider'/>
                 <Footer style={{ textAlign: 'center' }}>НОЦ ООО «Газпром межрегионгаз инжиниринг», 2021.</Footer>
             </Layout>
 

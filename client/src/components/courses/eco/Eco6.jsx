@@ -232,7 +232,7 @@ const Eco6 = () => {
             </Row>
 
             <Row style={{marginTop: '50px'}}>
-                <Col offset={1} span={10}>
+                <Col offset={0} span={10} className='epi-img-col'>
                     <Image
                         className='epi-img'
                         src={'/out2.jpg'}
@@ -243,7 +243,7 @@ const Eco6 = () => {
                     />
                 </Col>
 
-                <Col span={11} offset={1}>
+                <Col span={13} offset={0} >
                     <h1 style={{fontSize: '19px', marginBottom: '20px', textAlign: 'center'}}>Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности:</h1>
 
                     <div className='eco-list-style'>

@@ -46,12 +46,26 @@
     height: 30px;
     background: azure;
     margin-left: 5px;
+    border: 1px solid teal;
     box-shadow: 0 1px 0 0 teal;
     transition: all 0.2s;
 }
 
 .modalButCont button:hover {
     background: bisque;
+    box-shadow: none;
+    transform:  translateY(1px);
+}
+
+.modalButCont button:disabled {
+    color: rgba(110, 108, 106, 1);
+    background: rgba(181, 176, 170, 0.25);
+    border-color: darkgrey;
+    box-shadow: 0 1px 0 0 gray;
+}
+
+.modalButCont button:disabled:hover {
+    /*background: bisque;*/
     box-shadow: none;
     transform:  translateY(1px);
 }

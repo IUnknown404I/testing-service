@@ -1,8 +1,8 @@
 .timer {
     position: fixed;
     width: 200px;
-    height: 85px;
-    top: 80px;
+    height: 100px;
+    top: 70px;
     right: -170px;
     background: azure;
     border: 1px solid teal;
@@ -24,8 +24,8 @@
     color: navajowhite;
     font-size: 22px;
     cursor: pointer;
-    left: -50px;
-    top: 29px;
+    left: -54px;
+    top: 32px;
 }
 
 .out {
@@ -34,10 +34,10 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 5px auto;
+    margin: 4px auto;
 }
 
 .time {
-    margin-top: 4px;
+    margin-top: 1px;
     font-size: 20px;
 }

@@ -487,7 +487,7 @@ const Eco5 = () => {
                 </Col>
             </Row>
 
-            <Row style={{marginTop: '50px'}}>
+            <Row style={{marginTop: '30px'}}>
                 <Col span={11} offset={1}>
                     <h1 style={{fontSize: '19px', marginBottom: '20px', textAlign: 'center'}}>Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности:</h1>
 
@@ -507,14 +507,14 @@ const Eco5 = () => {
                     </div>
                 </Col>
 
-                <Col offset={0} span={11} className='epi-img-col'>
+                <Col offset={1} span={10} className='epi-img-col'>
                     <Image
                         className='epi-img'
                         src={'/catigories.jpg'}
                         placeholder={
                             <Skeleton.Image />
                         }
-                        style={{width: '100%', maxWidth: '1100px', marginLeft: '40px'}}
+                        style={{width: '100%', maxWidth: '1100px'}}
                     />
                 </Col>
             </Row>

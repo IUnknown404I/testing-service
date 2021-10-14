@@ -13,7 +13,7 @@ const GlossaryParagraph = ({text, twoToneColor}) => {
         <>
             <Paragraph
                 copyable={{
-                    text: {text},
+                    text: text,
                     tooltips: ['Нажми для копирования', 'Скопировано!'],
                 }}
             >

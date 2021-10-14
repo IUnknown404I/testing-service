@@ -61,27 +61,28 @@
 
 .current-but {
     border: 2px inset darkviolet;
+    padding: 8px 10px;
     border-radius: 4px;
     font-weight: bold;
 }
 
 .end-testing-but {
     width: 150px;
-    height: 50px;
+    height: 55px;
     color: black;
     background: lightcyan;
-    padding: 0 7px;
+    padding: 2px 7px;
     margin: 10px auto;
     /*margin-top: 20px;*/
     transition: all 0.2s;
     border: 1px double teal;
     border-radius: 3px;
-    box-shadow: 1px 1px 0 0 #a22800;
+    box-shadow: 0 1px 0 0 teal;
     font-size: 16px;
 }
 
 .end-testing-but:hover {
     box-shadow: none;
     border-color: darkorange;
-    transform: translateY(1px) translateX(1px);
+    transform: translateY(1px);
 }

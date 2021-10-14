@@ -150,7 +150,7 @@ const Eco2 = () => {
                                 preview = {false}
                                 src={'/eco-par.png'}
                                 placeholder={
-                                    <Skeleton.Image />
+                                    <Skeleton.Image className='eco-img-par'/>
                                 }
                             />
                             <span>

@@ -1,5 +1,23 @@
+.site-layout {
+    background: white !important;
+}
+
+.footer_divider {
+    margin-bottom: 0 !important;
+    background: darkgray;
+}
+
+.course_content {
+    font-family: Roboto sans-serif;
+    /*font-size: 20px;*/
+}
+
 .pop_text {
     background: lightcyan;
+}
+
+.ant-card-body:focus {
+    transform: rotate(180deg) !important;
 }
 
 .pop_text:hover {
@@ -93,6 +111,7 @@
 .eco-img-par {
     width: 60px !important;
     margin-right: 15px;
+    background: transparent;
 }
 
 .eco-img-ico {
@@ -111,6 +130,10 @@
     flex-direction: row;
     align-items: center;
     margin-bottom: 15px;
+    background: whitesmoke;
+    padding: 5px 10px;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 forestgreen;
 }
 
 .eco-img-div-item span {
@@ -127,9 +150,9 @@
 .extra {
     padding: 7px 10px;
     margin-top: 60px;
-    box-shadow: 0 1px 1px 0 forestgreen;
+    box-shadow: 0 1px 3px 0 forestgreen;
     transition: all ease-out 0.2s;
-    background: white;
+    background: whitesmoke;
 }
 
 .extra:hover {

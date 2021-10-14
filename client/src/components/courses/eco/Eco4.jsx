@@ -83,7 +83,7 @@ const Eco4 = () => {
                 </Col>
             </Row>
 
-            <Row style={{marginTop: '50px'}}>
+            <Row style={{marginTop: '30px'}}>
                 <Col offset={2} span={20}>
                     <Table
                         className='rights_table'
@@ -91,7 +91,7 @@ const Eco4 = () => {
                         dataSource={data1}
                         bordered
                         pagination={false}
-                        title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '16px'}}>Для Граждан</div>}
+                        title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '18px'}}>Для Граждан</div>}
                     />
                 </Col>
             </Row>
@@ -104,7 +104,7 @@ const Eco4 = () => {
                         dataSource={data2}
                         bordered
                         pagination={false}
-                        title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '16px'}}>Для индивидуальных предпринимателей и юридических лиц</div>}
+                        title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '18px'}}>Для индивидуальных предпринимателей и юридических лиц</div>}
                     />
                 </Col>
             </Row>

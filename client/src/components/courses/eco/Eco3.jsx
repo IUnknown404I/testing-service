@@ -48,7 +48,7 @@ const Eco3 = () => {
                 </Col>
             </Row>
 
-            <Row style={{marginTop: '60px'}}>
+            <Row style={{marginTop: '30px'}}>
                 <Col offset={1} span={10} style={{marginTop: '14px'}}>
                     <h1 style={{fontSize: '19px', marginBottom: '20px', textAlign: 'center'}}>Санитарно-эпидемиологическое благополучие населения обеспечивается посредством:</h1>
 

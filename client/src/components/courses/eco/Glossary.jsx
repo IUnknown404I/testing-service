@@ -1,9 +1,7 @@
 import React from 'react';
-import {Typography, Col, Row, Button, BackTop} from "antd";
-import {LeftCircleTwoTone, InfoCircleTwoTone} from "@ant-design/icons";
+import {Col, Row, Button, BackTop} from "antd";
+import {LeftCircleTwoTone} from "@ant-design/icons";
 import GlossaryParagraph from "../../UI/glossary_paragraph/Glossary_Paragraph";
-
-const { Paragraph } = Typography;
 
 const Glossary = ({setSwitchToGlossary}) => {
     return (
@@ -11,17 +9,17 @@ const Glossary = ({setSwitchToGlossary}) => {
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={1} offset={1} style={{textAlign: 'center'}}>
+                <Col span={2} offset={1} style={{textAlign: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToGlossary(false)}}
                         icon={<LeftCircleTwoTone />}
                         className='eco-pagination-but'
                         size="large"
                     >
-                        Вернуться
+                        К курсу
                     </Button>
                 </Col>
-                <Col span={17} offset={1} style={{textAlign: 'center'}}>
+                <Col span={16} offset={1} style={{textAlign: 'center'}}>
                     <h1 style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline'}}>Глоссарий</h1>
                 </Col>
             </Row>
