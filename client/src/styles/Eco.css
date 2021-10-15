@@ -9,7 +9,8 @@
 
 .course_content {
     font-family: Roboto sans-serif;
-    /*font-size: 20px;*/
+    font-size: 20px;
+    font-weight: 300 !important;
 }
 
 .pop_text {
@@ -25,41 +26,83 @@
     cursor: pointer;
 }
 
+.ant-carousel {
+    width: 100%;
+    border: 4px double green;
+    background: rgba(2, 158, 72, 0.04);
+}
+
+.slick-dots button {
+    background: forestgreen !important;
+}
+
 .eco-carousel-card {
     display: flex !important;
     align-items: center;
     text-align: center;
     justify-items: center;
-    height: 300px;
-    padding: 10px 10px;
-    /*background: #364d79;*/
-    background: seagreen;
-    line-height: 30px;
+    min-height: 300px;
+    padding: 10px 5%;
     border-radius: 2px;
 }
 
 .eco-carousel-item {
     display: inline-block;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 20px;
 }
 .eco-carousel-item, .eco-carousel-item h1 {
     margin-top: -5%;
-    color: #fff;
+    /*color: #fff;*/
+    font-weight: 500;
+    line-height: 40px;
 }
 
 .eco-colorized-comp {
-    /*background: rgba(58, 224, 122, 0.2);*/
-    background: ghostwhite;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(21, 173, 89, 0.2);
     padding: 20px 20px;
-    border: 2px dotted seagreen;
     border-radius: 5%;
 }
 
 .eco-colorized-comp h1 {
     text-align: center;
-    font-size: 19px;
     margin-bottom: 20px;
+}
+.eco-but-col {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.eco-but-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    width: 90%;
+}
+
+.eco-but-inside {
+    width: 90%;
+    height: max-content !important;
+    min-height: 60px;
+    padding: 20px 0 !important;
+    font-family: Roboto serif !important;
+    font-size: 20px !important;
+    border: 3px double forestgreen !important;
+}
+
+.eco-but-inside-fill {
+    background: rgba(21, 173, 89, 0.1) !important;
+}
+
+.eco-but-inside-hover:hover {
+    background: rgba(60,179,113, 0.05) !important;
 }
 
 .eco-pagination-row {
@@ -77,31 +120,46 @@
     border-color: steelblue !important;
 }
 
-/*.eco-pagination-but .anticon{*/
-/*    margin: 0 0;*/
-/*    margin-right: 0;*/
-/*}*/
-
 .eco-pagination-but:hover {
     background: azure !important;
     color: steelblue;
 }
 
 .eco-list-style {
-    background: ghostwhite;
-    padding: 5px 15px;
-
     border: none !important;
-    box-shadow: 0 2px 2px 0 forestgreen;
+    box-shadow: 1px 1px 1px 0 forestgreen;
+    padding: 5px 15px;
+}
+
+.eco-list-item-style {
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 18px;
+    border: none !important;
+}
+
+.eco-list-item-style span {
+    margin-right: 10px;
+    padding: 10px 10px;
+    background: lightgreen;
+    border-radius: 15%;
 }
 
 .eco-list-style-tree {
     margin-top: 20px !important;
-    background: ghostwhite !important;
+    background: white !important;
 }
 
 .ant-tree-switcher, .ant-tree-switcher-noop {
     background: transparent !important;
+}
+
+.ant-tree-list {
+    font-size: 16px;
+}
+
+.ant-tree-treenode {
+    margin-bottom: 7px;
 }
 
 .eco-img {
@@ -115,7 +173,7 @@
 }
 
 .eco-img-ico {
-    width: 100px !important;
+    width: 80px !important;
     margin-right: 15px;
 }
 
@@ -163,19 +221,23 @@
 .eco-list-card-style {
     box-shadow: 0 1px 2px 0 forestgreen;
     transition: all 1s;
-    font-size: 15px !important;
+    font-size: 19px !important;
 }
 
 .eco-list-card-style:hover {
     background: lightgreen;
 }
 
+.ant-tabs-ink-bar {
+    background: green !important;
+}
+
 /*.ant-layout-sider-has-trigger  {*/
-    /*z-index: 1000 !important;*/
-    /*display: flex !important;*/
-    /*flex-basis: unset !important;*/
-    /*width: auto !important;*/
-    /*max-width: 500px !important;*/
+/*    z-index: 1000 !important;*/
+/*    display: flex !important;*/
+/*    flex-basis: 300px !important;*/
+/*    width: auto !important;*/
+/*    max-width: 500px !important;*/
 /*}*/
 
 /*.ant-menu-submenu {*/
@@ -218,8 +280,8 @@
 }
 
 .eco-panel-style {
-    background: rgba(46,139,87, 0.15);
-    background: mediumseagreen;
+    font-size: 16px;
+    background: rgba(60,179,113, 0.45);
 }
 
 .eco-glossary {
@@ -233,4 +295,55 @@
 
 .ant-typography-copy {
     margin-left: 10px !important;
+}
+
+.slide-heading {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 400 !important;
+    text-decoration: underline;
+}
+
+.ant-modal {
+    width: 80% !important;
+    max-width: 800px !important;
+}
+
+.ant-modal-header {
+    background: rgba(60,179,113, 0.45) !important;
+    border-bottom: 1px solid grey !important;
+}
+
+.ant-modal-title {
+    font-size: 24px !important;
+    font-weight: 400 !important;
+    line-height: 35px !important;
+    padding: 0 40px 0 20px;
+}
+
+.ant-modal-body {
+    margin-top: 12px;
+}
+
+.ant-modal-content {
+    border: 2px solid grey !important;
+}
+
+.ant-modal h3 {
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.ant-modal p {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.ant-modal p:first-of-type {
+    margin-top: 15px !important;
+}
+
+.eco-collapse {
+    margin-top: 10px !important;
+    text-align: center;
 }

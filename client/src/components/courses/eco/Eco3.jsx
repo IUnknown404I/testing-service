@@ -43,14 +43,14 @@ const Eco3 = () => {
             <BackTop />
 
             <Row style={{margin: '20px 0'}}>
-                <Col span={20} offset={2} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline'}}>Обеспечение санитарно-эпидемиологического благополучия населения</h1>
+                <Col span={20} offset={2}>
+                    <h1 className='slide-heading'>Обеспечение санитарно-эпидемиологического благополучия населения</h1>
                 </Col>
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={1} span={10} style={{marginTop: '14px'}}>
-                    <h1 style={{fontSize: '19px', marginBottom: '20px', textAlign: 'center'}}>Санитарно-эпидемиологическое благополучие населения обеспечивается посредством:</h1>
+                <Col offset={1} span={11} style={{marginTop: '14px'}}>
+                    <h1 style={{fontSize: '22px', marginBottom: '20px'}}>Санитарно-эпидемиологическое благополучие населения обеспечивается посредством:</h1>
 
                     <List
                         grid={{
@@ -65,10 +65,10 @@ const Eco3 = () => {
                     />
                 </Col>
 
-                <Col offset={1} span={11} className='epi-img-col'>
+                <Col offset={2} span={9} className='epi-img-col'>
                     <Image
                         className='epi-img'
-                        width={500}
+                        // width={500}
                         src={'/epi.jpg'}
                         placeholder={
                             <Skeleton.Image />

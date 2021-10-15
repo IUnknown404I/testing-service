@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Col, Row, Button, BackTop} from "antd";
 import {LeftCircleTwoTone} from "@ant-design/icons";
 import GlossaryParagraph from "../../UI/glossary_paragraph/Glossary_Paragraph";
 
 const Glossary = ({setSwitchToGlossary}) => {
+    useEffect(() => {
+        window.scrollTo(0,1);
+    }, []);
     return (
         <>
             <BackTop />

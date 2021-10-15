@@ -176,8 +176,8 @@ const Eco7 = () => {
             <BackTop />
 
             <Row style={{margin: '20px 0'}}>
-                <Col span={20} offset={2} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline'}}>Критерии отнесения объектов, оказывающих незначительное негативное и негативное воздействие на окружающую среду</h1>
+                <Col span={20} offset={2}>
+                    <h1 className='slide-heading'>Критерии отнесения объектов, оказывающих незначительное негативное и негативное воздействие на окружающую среду</h1>
                 </Col>
             </Row>
 

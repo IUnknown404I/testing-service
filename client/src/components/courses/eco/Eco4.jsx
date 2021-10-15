@@ -78,8 +78,8 @@ const Eco4 = () => {
             <BackTop />
 
             <Row style={{margin: '20px 0'}}>
-                <Col span={20} offset={2} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline'}}>Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц</h1>
+                <Col span={20} offset={2}>
+                    <h1 className='slide-heading'>Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц</h1>
                 </Col>
             </Row>
 

@@ -12,6 +12,7 @@ import {
 import {useHistory, NavLink} from 'react-router-dom';
 import Eco1 from "./Eco1";
 import Eco2 from "./Eco2";
+import Eco2_1 from "./Eco2_1";
 import Eco3 from "./Eco3";
 import Eco4 from "./Eco4";
 import Eco5 from "./Eco5";
@@ -31,6 +32,7 @@ const EcoMain = () => {
     const [pages, setPages] = useState([
         <Eco1/>,
         <Eco2/>,
+        <Eco2_1/>,
         <Eco3/>,
         <Eco4/>,
         <Eco5/>,
@@ -39,6 +41,7 @@ const EcoMain = () => {
     ]);
     const [titles, setTitles] = useState([[
        '1. Федеральный закон от 10.01.2002 N 7-ФЗ "Об охране окружающей среды"',
+       '2. Федеральный закон от 04.05.1999 N 96-ФЗ "Об охране атмосферного воздуха"',
        '2. Федеральный закон от 04.05.1999 N 96-ФЗ "Об охране атмосферного воздуха"',
        '3. Федеральный закон от 30.03.1999 N 52-ФЗ (ред. от 02.07.2021) "О санитарно-эпидемиологическом благополучии населения"',
        '4. Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц',
@@ -70,11 +73,12 @@ const EcoMain = () => {
             switch (currentPage) {
                 case pages[0]: return('11');
                 case pages[1]: return('12');
-                case pages[2]: return('13');
-                case pages[3]: return('14');
-                case pages[4]: return('15');
+                case pages[2]: return('12');
+                case pages[3]: return('13');
+                case pages[4]: return('14');
                 case pages[5]: return('15');
                 case pages[6]: return('15');
+                case pages[7]: return('15');
             }
         } else {
             return '4';
