@@ -37,7 +37,6 @@ class CheckResultsController {
         if(!true_answer || !questionId) {
             return next(ApiError.badRequest('Не указаны все атрибуты!'));
         }
-
         return res.json(await Valid_Answer.create({true_answer, questionId}));
     }
 }

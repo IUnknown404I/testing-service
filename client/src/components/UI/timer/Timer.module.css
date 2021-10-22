@@ -2,7 +2,7 @@
     position: fixed;
     width: 200px;
     height: 100px;
-    top: 70px;
+    top: 80px;
     right: -170px;
     background: azure;
     border: 1px solid teal;
@@ -17,14 +17,15 @@
 }
 
 .timer:before {
+    font-family: Segoe UI sans-serif;
     content: 'таймер';
     position: absolute;
     text-transform: capitalize;
     transform: rotate(-90deg);
     color: navajowhite;
-    font-size: 22px;
+    font-size: 23px !important;
     cursor: pointer;
-    left: -54px;
+    left: -51px;
     top: 32px;
 }
 
@@ -34,10 +35,11 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 4px auto;
+    margin: 5px auto !important;
+    font-size: 16px !important;
 }
 
 .time {
     margin-top: 1px;
-    font-size: 20px;
+    font-size: 20px !important;
 }

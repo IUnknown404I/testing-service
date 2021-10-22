@@ -17,7 +17,7 @@ import {checkResults} from "../http/resultsAPI";
 import usePreventReload from "../hooks/usePreventReload";
 import DnDcopy from "../components/UI/testing_questions/DnD_copy";
 
-const Test = () => {
+const Test = ({setTestResult}) => {
     usePreventReload(true);
     const history = useHistory();
     const dispatch = useDispatch();
@@ -81,8 +81,12 @@ const Test = () => {
 
         // setCanEnd(true);
         dispatch(Actions.updateAnswers(userResults));
-        checkResults(userResults, time, testName, reduxStore.getState().login).then(res => dispatch(Actions.insertResults(res)));
-        history.push('/test_choose');
+        if(setTestResult) {
+            checkResults(userResults, time, testName, reduxStore.getState().login).then(res => {dispatch(Actions.insertResults(res)); setTestResult(res)});
+        } else {
+            checkResults(userResults, time, testName, reduxStore.getState().login).then(res => dispatch(Actions.insertResults(res)));
+            history.push('/test_choose');
+        }
     }
 
     useEffect(() => {
@@ -119,7 +123,10 @@ const Test = () => {
             {/*    when={!canEnd}*/}
             {/*    message="Вы не ответили на все вопросы, закончить тест? Все неотвеченные вопросы будут помечены как нерешённые."*/}
             {/*/>*/}
-            <div className='navBarReplacer'><span>Тестирование по теме "{testName}"</span></div>
+            {setTestResult
+                ? void(0)
+                : <div className='navBarReplacer'><span>Тестирование по теме "{testName}"</span></div>
+            }
 
 
             <Timer time={time} setTime={setTime}/>

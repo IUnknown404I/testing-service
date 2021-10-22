@@ -44,7 +44,7 @@ const True_answer = sequelize.define('true_answer', {
     valid_answers: {type: DataTypes.STRING, allowNull: false},
 });
 
-const Valid_Answer = sequelize.define('valid_answer', {
+const Valid_Answer = sequelize.define('valid_answers', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
     // question_id: {type: DataTypes.INTEGER},
     true_answer: {type: DataTypes.INTEGER, allowNull: false},

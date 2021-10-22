@@ -4,13 +4,16 @@ import reduxStore from "../../../redux/store";
 import {useDispatch} from "react-redux";
 import {Actions} from "../../../redux/actions";
 
-const ResultsModal = ({setModal}) => {
+const ResultsModal = ({setModal, setReturnFromTest}) => {
     const {create, mistakesAccumulator} = reduxStore.getState().results;
     const dispatch = useDispatch();
 
     const forward = () => {
-        dispatch(Actions.clearResults());
         setModal(false);
+        if(setReturnFromTest) {
+            setReturnFromTest(true);
+        }
+        dispatch(Actions.clearAnswers());
     }
 
     return (

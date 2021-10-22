@@ -7,6 +7,7 @@ const Glossary = ({setSwitchToGlossary}) => {
     useEffect(() => {
         window.scrollTo(0,1);
     }, []);
+
     return (
         <>
             <BackTop />
@@ -19,11 +20,11 @@ const Glossary = ({setSwitchToGlossary}) => {
                         className='eco-pagination-but'
                         size="large"
                     >
-                        К курсу
+                        Вернуться
                     </Button>
                 </Col>
                 <Col span={16} offset={1} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'underline'}}>Глоссарий</h1>
+                    <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}>Глоссарий</h1>
                 </Col>
             </Row>
 

@@ -9,6 +9,6 @@ export const getResults = async () => {
 }
 
 export const checkResults = async (userResults, elapsed_time, test_name, login) => {
-    const {data} = await $host.post('api/check-results', {userResults, elapsed_time, test_name, login});
+    const {data} = await $host.post('api/check_results', {userResults, elapsed_time, test_name, login});
     return data;
 }

@@ -32,7 +32,15 @@
     background: rgba(2, 158, 72, 0.04);
 }
 
-.slick-dots button {
+.ant-carousel .slick-dots {
+    margin: unset !important;
+}
+
+.ant-carousel .slick-dots button::before {
+    content: unset !important;
+}
+
+.ant-carousel .slick-dots button {
     background: forestgreen !important;
 }
 
@@ -52,7 +60,7 @@
     font-size: 20px;
 }
 .eco-carousel-item, .eco-carousel-item h1 {
-    margin-top: -5%;
+    margin-top: -3%;
     /*color: #fff;*/
     font-weight: 500;
     line-height: 40px;
@@ -129,6 +137,10 @@
     border: none !important;
     box-shadow: 1px 1px 1px 0 forestgreen;
     padding: 5px 15px;
+}
+
+.eco-list-style .anticon-carry-out {
+    color: darkgreen;
 }
 
 .eco-list-item-style {
@@ -210,7 +222,7 @@
     margin-top: 60px;
     box-shadow: 0 1px 3px 0 forestgreen;
     transition: all ease-out 0.2s;
-    background: whitesmoke;
+    background: white;
 }
 
 .extra:hover {
@@ -268,24 +280,39 @@
 
 .rights_table thead th {
     background: azure !important;
+    font-size: 17px !important;
+}
+
+.rights_table .ant-table-tbody .ant-table-cell {
+    font-size: 17px !important;
 }
 
 .ant-table-title {
-    background: lightseagreen;
+    background: rgba(60,179,113, 0.50);
+}
+
+.eco-tab-list .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: forestgreen !important;
 }
 
 .special-list-item {
     display: inline-block !important;
     justify-content: left;
+    font-size: 17px;
 }
 
 .eco-panel-style {
     font-size: 16px;
-    background: rgba(60,179,113, 0.45);
+    background: rgba(60,179,113, 0.25);
+    margin-bottom: 5px;
 }
 
 .eco-glossary {
     font-size: 20px;
+}
+
+.eco-literature .ant-typography {
+    margin-bottom: 15px !important;
 }
 
 .anticon-info-circle {
@@ -346,4 +373,263 @@
 .eco-collapse {
     margin-top: 10px !important;
     text-align: center;
+}
+
+.eco-steps-style {
+    margin-left: 25px !important;
+}
+
+.eco-steps-style .ant-steps-item-container {
+    margin-bottom: 18px;
+}
+
+.eco-steps-style .ant-steps-item-title {
+    margin-left: 10px;
+    font-size: 18px !important;
+    font-weight: 100 !important;
+    line-height: 27px !important;
+}
+
+.eco-steps-style .ant-steps-icon-dot {
+    width: 20px !important;
+    height: 20px !important;
+    background: forestgreen !important;
+    margin: -6px 0 0 -4px;
+}
+
+.eco-tab-list .ant-tabs-nav {
+    margin: unset !important;
+}
+.eco-tab-list .ant-tabs-content-holder {
+    border-left: 1px solid rgba(240,242,245, 0.9);
+    padding: 20px 15px;
+}
+
+.eco-tab-list .ant-tabs-tab {
+    font-size: 18px !important;
+}
+
+.eco-tab-list .ant-tabs-tab-active .ant-tabs-tab-btn {
+    /*color: rgba(60,179,113, 1) !important;*/
+}
+
+.eco-flex-col {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.eco-flex-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.eco-numeration {
+    align-items: center;
+    display: flex;
+    padding: 7px 7px;
+    margin-right: 13px;
+    background: rgba(60,179,113, 0.5);
+    border-radius: 10%;
+}
+
+.eco-flex-row .eco-numeration-text {
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+}
+
+.eco-col-header {
+    font-size: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    background: rgba(60,179,113, 0.5);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+/********* CAROUSEL ARROWS *********/
+.slick-arrow.slick-prev, .slick-arrow.slick-next {
+    font-size: 10px;
+}
+.ant-carousel .slick-prev::before,
+.ant-carousel .slick-next::before {
+    content: '<' !important;
+    display: flex !important;
+    position: relative;
+    right: 15px;
+     /*width: 100px;*/
+    font-size: 25px;
+    font-weight: bold;
+    color: green;
+    background-color: white;
+    border: 1px solid forestgreen;
+    justify-content: space-around !important;
+    align-items: flex-end;
+    text-align: center;
+    padding: 5px;
+    border-radius: 50%;
+    width: 33px;
+    height: 33px;
+}
+.ant-carousel .slick-next::before {
+    content: '>' !important;
+    right: 0;
+    left: 1px;
+}
+/********************************/
+
+.eco-div-padding {
+    padding: 10px 10px;
+}
+
+.eco-float-ico {
+    display: unset !important;
+    max-width: 80px;
+    float: left;
+    margin: 0 22px 7px 0;
+}
+
+.eco-div-withFloat .ant-image {
+    display: block !important;
+}
+
+.eco-blue-empty-but {
+    /*border-color: rgba(132,219,255, 0.7) !important;*/
+    border-color: steelblue !important;
+    padding: 10px 5px !important;
+    height: unset !important;
+    min-height: 50px !important;
+    font-size: 17px !important;
+}
+
+.eco-materials .eco-panel-style {
+    font-size: 20px;
+    text-align: center;
+    background: #BDD2F2;
+}
+
+.eco-materials-link-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.eco-materials-link {
+    padding: 10px 40%;
+    border: 1px solid lightblue;
+    background: rgba(132,219,255, 0.1);
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.inner-eco-link {
+/*rgba(60,179,113, 0.1)*/
+    background: rgba(132,219,255, 0.2) !important;
+    font-size: 17px !important;
+}
+
+.eco-carousel-height-250 .eco-carousel-card {
+    min-height: 150px;
+}
+
+.eco-carousel-height-250 .eco-carousel-item {
+    margin: -2% auto 0;
+}
+
+.fieldset-eco {
+    width: 90%;
+    border: 1px solid forestgreen;
+    margin: 40px auto;
+    padding: 15px 15px;
+}
+
+.fieldset-eco legend {
+    font-size: 18px;
+    color: black;
+    background: transparent;
+}
+
+.fieldset-eco-modal {
+    width: 100%;
+    margin: 0 auto !important;
+}
+
+.borderless {
+    border: unset !important;
+}
+
+.divChildren-margin-bottom-15 div {
+    margin-bottom: 15px;
+}
+
+.no-hover:hover {
+    transform: none !important;
+}
+
+.eco-description-container .ant-descriptions-view {
+    padding: 0 10px !important;
+}
+
+.eco-description-container .ant-descriptions {
+    border-left: 2px solid rgba(60,179,113, 0.4);
+}
+
+.ant-descriptions-item-container span {
+    font-size: 17px !important;
+}
+
+.ant-descriptions-item-container span:first-of-type {
+    font-weight: bold;
+}
+
+.eco-description-container .ant-descriptions-title {
+    text-align: center;
+    padding: 8px 10px;
+    background: rgba(60,179,113, 0.4);
+    font-size: 18px;
+}
+
+.eco-skeleton-tree-style .ant-tree-list {
+    font-size: 18px !important;
+}
+
+.eco-skeleton-tree-style .ant-tree-treenode {
+    margin-bottom: 10px;
+}
+
+.eco-skeleton-tree-style .eco-skeleton-tree-chapter {
+    font-size: 23px;
+    color: darkblue;
+}
+
+.eco-skeleton-tree-style .eco-skeleton-tree-theme {
+    font-size: 20px;
+    color: steelblue;
+}
+
+.eco-skeleton-tree-style .ant-tree-list .ant-tree-list-holder .ant-tree-list-holder-inner .ant-tree-treenode .ant-tree-indent-unit::before {
+    display: inline-block !important;
+}
+
+.skeleton-but {
+    height: unset !important;
+    font-size: 20px !important;
+    padding: 5px 5px !important;
+    box-shadow: 1px 2px lightsteelblue !important;
+    border: 2px solid steelblue !important;
+    border-radius: 20px !important;
+}
+
+.skeleton-but:hover {
+    box-shadow: none !important;
+    transform: translateY(2px) translateX(1px);
+    background: rgba(230,247,255, 0.3) !important;
+}
+
+.eco-skeleton-panel-style {
+    font-size: 20px;
+    background: #BDD2F2;
+    margin-bottom: 5px;
 }
