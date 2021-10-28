@@ -45,7 +45,6 @@ const EcoChap1Theme3_6 = () => {
             <Row style={{marginTop: '25px'}}>
                 <Col offset={1} span={22}>
                     <Collapse
-                        defaultActiveKey={1}
                         expandIconPosition='right'
                         accordion
                     >

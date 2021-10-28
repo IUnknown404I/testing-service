@@ -16,7 +16,7 @@ const NumListCard = ({num, text, popover}) => {
                         content={<span>{popover}.</span>}
                         title=''
                         trigger="hover">
-                        {text};
+                        {text}
                     </Popover>
                 </div>
             </div>
@@ -27,7 +27,7 @@ const NumListCard = ({num, text, popover}) => {
             <div className='eco-flex-row'>
                 <div className='eco-numeration'>{num}</div>
                 <div className='eco-numeration-text' style={{fontSize: '19px'}}>
-                    {text};
+                    {text}
                 </div>
             </div>
         );

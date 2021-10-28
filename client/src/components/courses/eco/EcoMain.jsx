@@ -5,26 +5,10 @@ import {
     LeftCircleTwoTone,
     RightCircleTwoTone,
 } from '@ant-design/icons';
-
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import EcoSubMenu from "./EcoSubMenu";
-import Eco_chap1_theme1_1 from "./chapter1/theme1/Eco_chap1_theme1_1";
-import Eco_chap1_theme1_2 from "./chapter1/theme1/Eco_chap1_theme1_2";
-import Eco_chap1_theme1_2_1 from "./chapter1/theme1/Eco_chap1_theme1_2_1";
-import Eco_chap1_theme1_3 from "./chapter1/theme1/Eco_chap1_theme1_3";
-import Eco_chap1_theme1_4 from "./chapter1/theme1/Eco_chap1_theme1_4";
-import Eco_chap1_theme1_5 from "./chapter1/theme1/Eco_chap1_theme1_5";
-import Eco_chap1_theme1_5_1 from "./chapter1/theme1/Eco_chap1_theme1_5_1";
-import Eco_chap1_theme1_5_2 from "./chapter1/theme1/Eco_chap1_theme1_5_2";
-import EcoChap1Theme2_1 from "./chapter1/theme2/Eco_chap1_theme2_1";
-import EcoChap1Theme3_1 from "./chapter1/theme3/EcoChap1Theme3_1";
-import EcoChap1Theme3_2 from "./chapter1/theme3/EcoChap1Theme3_2";
-import EcoChap1Theme3_3 from "./chapter1/theme3/EcoChap1Theme3_3";
-import EcoChap1Theme3_4 from "./chapter1/theme3/EcoChap1Theme3_4";
-import EcoChap1Theme3_5 from "./chapter1/theme3/EcoChap1Theme3_5";
-import EcoChap1Theme3_6 from "./chapter1/theme3/EcoChap1Theme3_6";
 import CourseSkeleton from "./CourseSkeleton";
 import Literature from "./Literature";
 import Glossary from "./Glossary";
@@ -37,6 +21,7 @@ import ResultsModal from "../../UI/resultsModal/ResultsModal";
 import {getQuestions} from "../../../http/questionsAPI";
 import {useDispatch} from "react-redux";
 import {Actions} from "../../../redux/actions";
+import {FirstChapter, SecondChapter} from "./nav/nav";
 
 const { Content, Footer, Sider } = Layout;
 
@@ -45,52 +30,14 @@ const EcoMain = () => {
     const {setTestName, setTestId, setTimeLimit} = useContext(AuthContext);
     const [selectedKeys, setSelectedKeys] = useState([]);
     const [collapsed, setCollapsed] = useState(true);
-    const [themes, setThemes] = useState([
-        [
-            <Eco_chap1_theme1_1/>,   <Eco_chap1_theme1_2/>,
-            <Eco_chap1_theme1_2_1/>, <Eco_chap1_theme1_3/>,
-            <Eco_chap1_theme1_4/>,   <Eco_chap1_theme1_5/>,
-            <Eco_chap1_theme1_5_1/>, <Eco_chap1_theme1_5_2/>,
-        ],
-        [
-            <EcoChap1Theme2_1/>,
-        ],
-        [
-            <EcoChap1Theme3_1/>, <EcoChap1Theme3_2/>,
-            <EcoChap1Theme3_3/>, <EcoChap1Theme3_4/>,
-            <EcoChap1Theme3_5/>, <EcoChap1Theme3_6/>,
-        ],
-    ]);
-    const [titles, setTitles] = useState([
-        [
-            '1.1 Федеральный закон от 10.01.2002 N 7-ФЗ "Об охране окружающей среды"',
-            '1.2 Федеральный закон от 04.05.1999 N 96-ФЗ "Об охране атмосферного воздуха"',
-            '1.3 Федеральный закон от 04.05.1999 N 96-ФЗ "Об охране атмосферного воздуха"',
-            '1.4 Федеральный закон от 30.03.1999 N 52-ФЗ (ред. от 02.07.2021) "О санитарно-эпидемиологическом благополучии населения"',
-            '1.5 Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц',
-            '1.6 Категорийность объектов по степени негативного воздействия на окружающую среду',
-            '1.7 Категорийность объектов по степени негативного воздействия на окружающую среду',
-            '1.8 Категорийность объектов по степени негативного воздействия на окружающую среду',
-        ],
-        [
-            '2.1 Система государственного управления в области охраны окружающей среды',
-        ],
-        [
-            '3.1 Организационно-распорядительные документы',
-            '3.2 Документация по охране атмосферного воздуха',
-            '3.3 Документация по охране водных объектов',
-            '3.4 Документация по обращению с отходами',
-            '3.5 Государственная статистическая отчетность',
-            '3.6 Статистическая отчетность предприятия',
-        ],
-    ]);
-    const [subTitles, setSubTitles] = useState([
-        'Раздел 1',
-    ]);
+
+    const [currentChapter, setCurrentChapter] = useState(new FirstChapter());
+    const [themes, setThemes] = useState(currentChapter.themes);
+    const [titles, setTitles] = useState(currentChapter.titles);
 
     const [currentPage, setCurrentPage] = useState(themes[0][0]);
     const [currentTitle, setCurrentTitle] = useState(titles[0][0]);
-    const [currentSubTitle, setCurrentSubTitle] = useState(subTitles[0]);
+    const [currentSubTitle, setCurrentSubTitle] = useState('');
     const [switchToGlossary, setSwitchToGlossary] = useState(false);
     const [switchToLiterature, setSwitchToLiterature] = useState(false);
     const [switchToMaterials, setSwitchToMaterials] = useState(false);
@@ -143,35 +90,6 @@ const EcoMain = () => {
         }
     }
 
-    const getSelectedMenuItem = () => {
-        if(!switchToGlossary && !switchToLiterature && !switchToMaterials && !switchToSkeleton) {
-            switch (currentPage) {
-                case themes[0][0]: return('11');
-                case themes[0][1]: return('12');
-                case themes[0][2]: return('12');
-                case themes[0][3]: return('13');
-                case themes[0][4]: return('14');
-                case themes[0][5]: return('15');
-                case themes[0][6]: return('15');
-                case themes[0][7]: return('15');
-
-                case themes[1][0]: return('111');
-
-                case themes[2][0]: return('121');
-                case themes[2][1]: return('122');
-                case themes[2][2]: return('123');
-                case themes[2][3]: return('124');
-                case themes[2][4]: return('125');
-                case themes[2][5]: return('126');
-            }
-        } else {
-            if (switchToGlossary) return '4';
-            if (switchToLiterature) return '5';
-            if (switchToMaterials) return '6';
-            if (switchToSkeleton) return '7';
-        }
-    }
-
     const changeCurrentTitle = () => {
         if(switchToGlossary) {
             setCurrentTitle('Глоссарий');
@@ -219,6 +137,29 @@ const EcoMain = () => {
         setTimeLimit(Math.floor(Array.from(await getQuestions(id)).length * 1.25 * 60));
     }
 
+    const changeChapter = (isNext) => {
+        let chap = null;
+        if(isNext) {
+            chap = new SecondChapter();
+        } else {
+            chap = new FirstChapter();
+        }
+
+        setCurrentChapter(chap);
+        setThemes(chap.themes);
+        setTitles(chap.titles);
+        setCurrentPage(chap.themes[0][0]);
+        setCurrentTitle(chap.titles[0][0]);
+    }
+
+    const setChapter = (chapter, page, title) => {
+        setCurrentChapter(chapter);
+        setThemes(chapter.themes);
+        setTitles(chapter.titles);
+        setCurrentPage(page);
+        setCurrentTitle(title);
+    }
+
     useEffect(() => {
         fetchTests();
 
@@ -228,14 +169,14 @@ const EcoMain = () => {
     //         setTimeLimit(0);
             dispatch(Actions.clearAnswers());
         }
-    }, []);
+    }, [currentChapter]);
 
     useEffect(() => {
         window.scrollTo(0,0);
 
         changeCurrentTitle();
         changeCurrentSubTitle();
-        setSelectedKeys([getSelectedMenuItem()]);
+        setSelectedKeys([currentChapter.getSelectedMenuItem(themes, currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton)]);
     }, [currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton]);
 
     useEffect(() => {
@@ -256,14 +197,16 @@ const EcoMain = () => {
 
             <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)} style={{width: '600px'}}>
                 <div className="logo" />
-                <EcoSubMenu selectedKeys={selectedKeys}
-                            setCurrentPage={setCurrentPage}
-                            setSwitchToGlossary={setSwitchToGlossary}
-                            setSwitchToLiterature={setSwitchToLiterature}
-                            setSwitchToMaterials={setSwitchToMaterials}
-                            setSwitchToSkeleton={setSwitchToSkeleton}
-                            themes={themes}
-                            collapsed={collapsed}
+                <EcoSubMenu
+                    currentChapter={currentChapter}
+                    selectedKeys={selectedKeys}
+                    setCurrentPage={setCurrentPage}
+                    setSwitchToGlossary={setSwitchToGlossary}
+                    setSwitchToLiterature={setSwitchToLiterature}
+                    setSwitchToMaterials={setSwitchToMaterials}
+                    setSwitchToSkeleton={setSwitchToSkeleton}
+                    themes={themes}
+                    collapsed={collapsed}
                 />
             </Sider>
 
@@ -286,12 +229,15 @@ const EcoMain = () => {
                                     ? <Materials setSwitchToMaterials={setSwitchToMaterials}/>
                                     : switchToSkeleton
                                         ? <CourseSkeleton
+                                            currentChapter={currentChapter}
                                             themes={themes}
                                             setCurrentPage={setCurrentPage}
                                             setSwitchToGlossary={setSwitchToGlossary}
                                             setSwitchToLiterature={setSwitchToLiterature}
                                             setSwitchToMaterials={setSwitchToMaterials}
-                                            setSwitchToSkeleton={setSwitchToSkeleton}/>
+                                            setSwitchToSkeleton={setSwitchToSkeleton}
+                                            setChapter={setChapter}
+                                        />
                                         : redirectToTest
                                             ? <Test setTestResult={setTestResult}/>
                                             : currentPage
@@ -311,11 +257,17 @@ const EcoMain = () => {
                         <Col span={20} offset={2}>
                             <div className='eco-pagination'>
                                 <Button
-                                    onClick={() => {changePage(false)}}
+                                    onClick={() => {
+                                        if(currentPage===themes[0][0]) {
+                                            changeChapter(false)
+                                        } else {
+                                            changePage(false);
+                                        }
+                                    }}
                                     icon={<LeftCircleTwoTone />}
                                     className='eco-pagination-but'
                                     size="large"
-                                    disabled={currentPage===themes[0][0]}
+                                    disabled={currentPage===themes[0][0] && currentChapter.id === 1}
                                 >
                                     {currentPage===themes[0][0] ? 'Предыдущий раздел' : 'Назад'}
                                 </Button>
@@ -324,13 +276,16 @@ const EcoMain = () => {
                                         if(!isLastPage())
                                             changePage(true)
                                         else {
-                                            setRedirectToTest(true);
+                                            changeChapter(true)
+                                            // setRedirectToTest(true);
                                         }
                                     }}
-                                    icon={<RightCircleTwoTone />}
-                                    className='eco-pagination-but' size="large"
+                                    className='eco-pagination-but'
+                                    size="large"
+                                    disabled={isLastPage() && currentChapter.id === 2}
                                 >
-                                    {isLastPage() ? 'Перейти к тестированию' : 'Далее'}
+                                    {isLastPage() ? 'Следующий раздел' : 'Далее'}
+                                    <RightCircleTwoTone />
                                 </Button>
                             </div>
                         </Col>

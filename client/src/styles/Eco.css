@@ -28,7 +28,7 @@
 
 .ant-carousel {
     width: 100%;
-    border: 4px double green;
+    border: 4px double forestgreen;
     background: rgba(2, 158, 72, 0.04);
 }
 
@@ -315,12 +315,12 @@
     margin-bottom: 15px !important;
 }
 
-.anticon-info-circle {
+.eco-glossary .anticon-info-circle {
     margin-left: 10%;
     margin-right: 10px !important;
 }
 
-.ant-typography-copy {
+.eco-glossary .ant-typography-copy {
     margin-left: 10px !important;
 }
 
@@ -385,7 +385,7 @@
 
 .eco-steps-style .ant-steps-item-title {
     margin-left: 10px;
-    font-size: 18px !important;
+    font-size: 18px;
     font-weight: 100 !important;
     line-height: 27px !important;
 }
@@ -420,17 +420,19 @@
 
 .eco-flex-row {
     margin-bottom: 15px;
-    display: flex;
+    display: flex !important;
     flex-direction: row;
 }
 
 .eco-numeration {
-    align-items: center;
+    align-items: center !important;
     display: flex;
     padding: 7px 7px;
     margin-right: 13px;
-    background: rgba(60,179,113, 0.5);
-    border-radius: 10%;
+    background: rgb(76,175,80);
+    color: white;
+    font-size: 1.25rem;
+    border-radius: 10px;
 }
 
 .eco-flex-row .eco-numeration-text {
@@ -534,8 +536,12 @@
     min-height: 150px;
 }
 
-.eco-carousel-height-250 .eco-carousel-item {
-    margin: -2% auto 0;
+.eco-carousel-height-250 .eco-carousel-item, .eco-carousel-height-150 .eco-carousel-item  {
+    margin: -1% auto 0;
+}
+
+.eco-carousel-height-150 .eco-carousel-card {
+    min-height: 100px;
 }
 
 .fieldset-eco {
@@ -569,26 +575,28 @@
 }
 
 .eco-description-container .ant-descriptions-view {
-    padding: 0 10px !important;
+    padding: 0 15px !important;
 }
 
 .eco-description-container .ant-descriptions {
-    border-left: 2px solid rgba(60,179,113, 0.4);
+    border-left: 4px solid rgb(76,175,80);
 }
 
-.ant-descriptions-item-container span {
-    font-size: 17px !important;
+.eco-description-container .ant-descriptions-item-container span {
+    font-size: 1.25rem !important;
 }
 
-.ant-descriptions-item-container span:first-of-type {
+.eco-description-container .ant-descriptions-item-container span:first-of-type {
     font-weight: bold;
+    text-decoration: underline;
 }
 
 .eco-description-container .ant-descriptions-title {
+    color: white;
     text-align: center;
-    padding: 8px 10px;
-    background: rgba(60,179,113, 0.4);
-    font-size: 18px;
+    padding: 12px 10px;
+    background: rgb(76,175,80);
+    font-size: 1.5rem !important;
 }
 
 .eco-skeleton-tree-style .ant-tree-list {
@@ -632,4 +640,268 @@
     font-size: 20px;
     background: #BDD2F2;
     margin-bottom: 5px;
+}
+
+.simple-card .ant-card-body {
+    font-size: 1.25rem !important;
+    box-shadow: 0 0 8px darkseagreen !important;
+    border-left: 5px solid darkseagreen;
+}
+
+.simple-card-orange .ant-card-body {
+    font-size: 1.25rem !important;
+    box-shadow: 0 0 3px orange !important;
+    border-left: 5px solid darkorange;
+
+}
+
+.simple-card .ant-card-body strong,  .simple-card-orange .ant-card-body strong{
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.mycollapse .eco-panel-style {
+    font-size: 1.2rem;
+    background: rgb(76,175,80);
+}
+
+.mycollapse .eco-panel-style .ant-collapse-header {
+    font-size: 1.3rem;
+    color: white !important;
+}
+
+.mybut {
+    margin-top: 20px;
+    min-height: 50px;
+    font-size: 1.3rem !important;
+    color: forestgreen !important;
+    border-color: rgb(84,178,88) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 2px darkseagreen !important;
+}
+
+.mybut:hover {
+    border-color: forestgreen !important;
+    color: forestgreen !important;
+    background: rgba(84,178,88, 0.2) !important;
+    box-shadow: none !important;
+}
+
+.mybut-primary {
+    margin-top: 20px;
+    min-height: 55px;
+    font-size: 1.3rem !important;
+    color: white !important;
+    background: rgb(76,175,80) !important;
+    border-color: rgb(84,178,88) !important;
+    border-radius: 10px !important;
+    box-shadow: 2px 2px 5px gainsboro !important;
+}
+
+.mybut-primary:hover {
+    border-color: forestgreen !important;
+    background: rgba(76,175,80, 0.85) !important;
+    box-shadow: none !important;
+}
+
+.eco-slider .slick-prev:before, .eco-slider .slick-next:before {
+    color: forestgreen;
+}
+
+.eco-slider .slick-list {
+    border: 2px outset forestgreen;
+    min-height: 80px;
+    font-size: 1.25rem !important;
+}
+
+.eco-slider-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 80px;
+    height: 100%;
+}
+
+.eco-slider-container .slick-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    height: 100%;
+}
+
+.eco-p-low p {
+    margin: 10px 0;
+}
+
+.eco-num-row {
+    background: rgb(76,175,80);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.eco-num-text {
+    text-align: left;
+    padding: 5px 15px;
+}
+
+.text-centered {
+    text-align: center !important;
+}
+
+.eco-num-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 30px;
+    height: 100%;
+    background: rgb(76,175,80);
+    border-radius: 10px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.flex-centered {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.eco-sample-next-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    right: -23px;
+    height: 100%;
+    min-width: 25px;
+    border: 2px solid forestgreen;
+    border-bottom-color: black;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    background: rgb(76,175,80);
+    transition: all 0.5s;
+}
+
+.eco-sample-next-arrow::before {
+    content: '>';
+    font-weight: bold;
+    color: white;
+    font-size: 1.6rem;
+    transition: all 0.35s;
+}
+
+.eco-sample-prev-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: -23px;
+    height: 100%;
+    min-width: 25px;
+    border: 2px outset forestgreen;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    cursor: pointer;
+    background: rgb(76,175,80);
+    transition: all 0.5s;
+}
+
+.eco-sample-prev-arrow::before {
+    content: '<';
+    font-weight: bold;
+    color: white;
+    font-size: 1.6rem;
+    transition: all 0.35s;
+}
+
+.eco-sample-next-arrow:hover::before, .eco-sample-prev-arrow:hover::before {
+    color: forestgreen !important;
+}
+
+.eco-sample-next-arrow:hover, .eco-sample-prev-arrow:hover {
+    background: rgba(76,175,80, 0.3);
+}
+
+.eco-timeline-container .ant-timeline {
+    padding: 5px 15px 0;
+}
+
+.eco-timeline-container .ant-timeline .ant-timeline-item {
+    font-size: 1.25rem;
+    line-height: 40px;
+}
+
+.eco-inv-card {
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 2px 1px lightgrey;
+}
+
+.eco-container-left-border {
+    border-left: 4px solid rgb(76,175,80);
+    padding: 7px 25px;
+    border-radius: 15px;
+}
+
+.eco-container-right-border {
+    border-right: 4px solid rgb(76,175,80);
+    padding: 7px 25px;
+    border-radius: 15px;
+}
+
+.eco-steps-style-light .ant-steps-icon-dot {
+    background: rgb(141,173,76) !important;
+    border: 1px solid darkolivegreen;
+}
+
+
+.eco-steps-style-light .ant-steps-item-title {
+    font-size: 1.35rem;
+    line-height: 35px !important;
+}
+
+.eco-numeration-container-blue .eco-numeration {
+    background: rgb(0,151,206);
+}
+
+.eco-carousel-container {
+    width: 45%;
+    text-align: left;
+    font-size: 1.3rem !important;
+}
+
+.coef_table {
+    margin-top: 30px;
+    border: 1px solid rgb(76,175,80);
+}
+
+.coef_table thead th {
+    background: rgb(76,175,80) !important;
+    font-size: 17px !important;
+}
+
+.coef_table .ant-table-tbody .ant-table-cell {
+    font-size: 1.25rem !important;
+    text-align: center;
+}
+
+.coef_table .ant-pagination-item-active {
+    border-color: rgb(76,175,80);
+}
+
+.coef_table .ant-pagination-item-active a {
+    color: rgb(76,175,80);
+}
+
+.coef_table .ant-pagination-item-active:hover, .coef_table .ant-pagination-item-active a:hover {
+    border-color: rgb(76,175,80);
+    color: rgb(76,175,80);
 }
