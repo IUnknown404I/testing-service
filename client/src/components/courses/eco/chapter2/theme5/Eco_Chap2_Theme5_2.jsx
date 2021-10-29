@@ -67,7 +67,7 @@ const Eco_Chap2_Theme5_2 = () => {
         <>
             <BackTop />
 
-            <Row style={{marginTop: '30px'}}>
+            <Row style={{marginTop: '40px'}}>
                 <Col offset={1} span={22}>
                     <div className='eco-slider-container'>
                         <Slider {...carouselState} className='eco-slider'>

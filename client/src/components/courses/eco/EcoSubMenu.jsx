@@ -52,30 +52,30 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
             case 2: setCurrentSub1(
                 <SubMenu key="sub1" icon={<PieChartOutlined />} title="Навигация">
                     <Menu.ItemGroup key="g1" title="Тема 1">
-                        <Menu.Item key="11" onClick={() => {setCurrentPage(themes[0][0]); clearSwitches();}}>Производственный экологический контроль</Menu.Item>
-                        <Menu.Item key="12" onClick={() => {setCurrentPage(themes[0][1]); clearSwitches();}}>Основные требования экологического контроля</Menu.Item>
-                        <Menu.Item key="13" onClick={() => {setCurrentPage(themes[0][2]); clearSwitches();}}>Категории экологического контроля</Menu.Item>
-                        <Menu.Item key="14" onClick={() => {setCurrentPage(themes[0][3]); clearSwitches();}}>Проведение экологического контроля</Menu.Item>
+                        <Menu.Item key="211" onClick={() => {setCurrentPage(themes[0][0]); clearSwitches();}}>Производственный экологический контроль</Menu.Item>
+                        <Menu.Item key="212" onClick={() => {setCurrentPage(themes[0][1]); clearSwitches();}}>Основные требования экологического контроля</Menu.Item>
+                        <Menu.Item key="213" onClick={() => {setCurrentPage(themes[0][2]); clearSwitches();}}>Категории экологического контроля</Menu.Item>
+                        <Menu.Item key="214" onClick={() => {setCurrentPage(themes[0][3]); clearSwitches();}}>Проведение экологического контроля</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g2" title="Тема 2">
-                        <Menu.Item key="21" onClick={() => {setCurrentPage(themes[1][0]); clearSwitches();}}>Требования к предприятиям</Menu.Item>
-                        <Menu.Item key="22" onClick={() => {setCurrentPage(themes[1][1]); clearSwitches();}}>Требования охраны атмосферного воздуха</Menu.Item>
+                        <Menu.Item key="221" onClick={() => {setCurrentPage(themes[1][0]); clearSwitches();}}>Требования к предприятиям</Menu.Item>
+                        <Menu.Item key="222" onClick={() => {setCurrentPage(themes[1][1]); clearSwitches();}}>Требования охраны атмосферного воздуха</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g3" title="Тема 3">
-                        <Menu.Item key="31" onClick={() => {setCurrentPage(themes[2][0]); clearSwitches();}}>Требования охраны водных объектов</Menu.Item>
+                        <Menu.Item key="231" onClick={() => {setCurrentPage(themes[2][0]); clearSwitches();}}>Требования охраны водных объектов</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g4" title="Тема 4">
-                        <Menu.Item key="41" onClick={() => {setCurrentPage(themes[3][0]); clearSwitches();}}>Паспортизация отходов</Menu.Item>
-                        <Menu.Item key="42" onClick={() => {setCurrentPage(themes[3][1]); clearSwitches();}}>Требования к сотрудникам</Menu.Item>
-                        <Menu.Item key="43" onClick={() => {setCurrentPage(themes[3][2]); clearSwitches();}}>Полномочия органов местного самоуправления</Menu.Item>
+                        <Menu.Item key="241" onClick={() => {setCurrentPage(themes[3][0]); clearSwitches();}}>Паспортизация отходов</Menu.Item>
+                        <Menu.Item key="242" onClick={() => {setCurrentPage(themes[3][1]); clearSwitches();}}>Требования к сотрудникам</Menu.Item>
+                        <Menu.Item key="243" onClick={() => {setCurrentPage(themes[3][2]); clearSwitches();}}>Полномочия органов местного самоуправления</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g5" title="Тема 5">
-                        <Menu.Item key="51" onClick={() => {setCurrentPage(themes[4][0]); clearSwitches();}}>Плата за негативное воздействие</Menu.Item>
-                        <Menu.Item key="52" onClick={() => {setCurrentPage(themes[4][1]); clearSwitches();}}>Плата по отходам</Menu.Item>
-                        <Menu.Item key="53" onClick={() => {setCurrentPage(themes[4][2]); clearSwitches();}}>Коэффициенты к ставкам платы</Menu.Item>
-                        <Menu.Item key="54" onClick={() => {setCurrentPage(themes[4][3]); clearSwitches();}}>Правила исчисления и взимания платы</Menu.Item>
-                        <Menu.Item key="55" onClick={() => {setCurrentPage(themes[4][4]); clearSwitches();}}>Исчисление и взимание платы</Menu.Item>
-                        <Menu.Item key="56" onClick={() => {setCurrentPage(themes[4][5]); clearSwitches();}}>Административная ответственность</Menu.Item>
+                        <Menu.Item key="251" onClick={() => {setCurrentPage(themes[4][0]); clearSwitches();}}>Плата за негативное воздействие</Menu.Item>
+                        <Menu.Item key="252" onClick={() => {setCurrentPage(themes[4][1]); clearSwitches();}}>Плата по отходам</Menu.Item>
+                        <Menu.Item key="253" onClick={() => {setCurrentPage(themes[4][2]); clearSwitches();}}>Коэффициенты к ставкам платы</Menu.Item>
+                        <Menu.Item key="254" onClick={() => {setCurrentPage(themes[4][3]); clearSwitches();}}>Правила исчисления и взимания платы</Menu.Item>
+                        <Menu.Item key="255" onClick={() => {setCurrentPage(themes[4][4]); clearSwitches();}}>Исчисление и взимание платы</Menu.Item>
+                        <Menu.Item key="256" onClick={() => {setCurrentPage(themes[4][5]); clearSwitches();}}>Административная ответственность</Menu.Item>
                     </Menu.ItemGroup>
                 </SubMenu>
             ); return;

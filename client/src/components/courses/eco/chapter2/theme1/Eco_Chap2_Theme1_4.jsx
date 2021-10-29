@@ -16,28 +16,30 @@ const Eco_Chap2_Theme1_4 = () => {
 
             <Row>
                 <Col offset={2} span={8} className='eco-flex-col eco-inv-card'>
-                    <div className='eco-img-col'>
-                        <Image
-                            width={400}
-                            src={'/images/stamp.png'}
-                            preview={false}
-                            placeholder={
-                                <Skeleton.Image />
-                            }
-                        />
-                    </div>
-                    <div style={{marginTop: '-25px',borderLeft: '3px solid forestgreen', padding: '5px 0 5px 15px', borderTopLeftRadius: '10px', borderBottomLeftRadius: '10px'}}>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong style={{fontWeight: 'bold'}}>Внеплановую инспекционную проверку</strong> проводят в случае получения результатов производственного эколого-аналитического (инструментального) контроля и&nbsp;
-                        <Popover
-                            color={"azure"}
-                            overlayStyle={{maxWidth: '450px'}}
-                            className='pop_text'
-                            style={{maxWidth: '200px'}}
-                            content={<span>Далее – ПЭМ.</span>}
-                            title=''
-                            trigger="hover">
-                            производственного экологического мониторинга
-                        </Popover>, свидетельствующих о фактах нарушения природоохранных требований, установленных нормативов допустимого воздействия на окружающую среду, невыполнения природоохранных мероприятий
+                    <div className='eco-container-left-border'>
+                        <div className='eco-img-col'>
+                            <Image
+                                width={400}
+                                src={'/images/stamp.png'}
+                                preview={false}
+                                placeholder={
+                                    <Skeleton.Image />
+                                }
+                            />
+                        </div>
+                        <div>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong style={{fontWeight: 'bold'}}>Внеплановую инспекционную проверку</strong> проводят в случае получения результатов производственного эколого-аналитического (инструментального) контроля и&nbsp;
+                            <Popover
+                                color={"azure"}
+                                overlayStyle={{maxWidth: '450px'}}
+                                className='pop_text'
+                                style={{maxWidth: '200px'}}
+                                content={<span>Далее – ПЭМ.</span>}
+                                title=''
+                                trigger="hover">
+                                производственного экологического мониторинга
+                            </Popover>, свидетельствующих о фактах нарушения природоохранных требований, установленных нормативов допустимого воздействия на окружающую среду, невыполнения природоохранных мероприятий
+                        </div>
                     </div>
                 </Col>
 

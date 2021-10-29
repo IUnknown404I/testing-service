@@ -157,26 +157,26 @@ export class SecondChapter {
     getSelectedMenuItem = (themes, currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton) => {
         if(!switchToGlossary && !switchToLiterature && !switchToMaterials && !switchToSkeleton) {
             switch (currentPage) {
-                case themes[0][0]: return('11');
-                case themes[0][1]: return('12');
-                case themes[0][2]: return('13');
-                case themes[0][3]: return('14');
+                case themes[0][0]: return('211');
+                case themes[0][1]: return('212');
+                case themes[0][2]: return('213');
+                case themes[0][3]: return('214');
 
-                case themes[1][0]: return('21');
-                case themes[1][1]: return('22');
+                case themes[1][0]: return('221');
+                case themes[1][1]: return('222');
 
-                case themes[2][0]: return('31');
+                case themes[2][0]: return('231');
 
-                case themes[3][0]: return('41');
-                case themes[3][1]: return('42');
-                case themes[3][2]: return('43');
+                case themes[3][0]: return('241');
+                case themes[3][1]: return('242');
+                case themes[3][2]: return('243');
 
-                case themes[4][0]: return('51');
-                case themes[4][1]: return('52');
-                case themes[4][2]: return('53');
-                case themes[4][3]: return('54');
-                case themes[4][4]: return('55');
-                case themes[4][5]: return('56');
+                case themes[4][0]: return('251');
+                case themes[4][1]: return('252');
+                case themes[4][2]: return('253');
+                case themes[4][3]: return('254');
+                case themes[4][4]: return('255');
+                case themes[4][5]: return('256');
             }
         } else {
             if (switchToGlossary) return '4';
