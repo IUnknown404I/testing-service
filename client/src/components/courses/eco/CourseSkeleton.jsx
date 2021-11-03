@@ -1,25 +1,29 @@
 import React from 'react';
 import {BackTop, Button, Col, Collapse, Divider, Row, Tree} from "antd";
 import {
-    BookTwoTone, BulbTwoTone,
+    BookTwoTone,
+    BulbTwoTone,
     CarryOutOutlined,
     DownOutlined,
+    KeyOutlined,
     LeftCircleTwoTone,
-    LinkOutlined, MenuOutlined,
+    LinkOutlined,
+    MenuOutlined,
     ProfileTwoTone,
     PushpinTwoTone
 } from "@ant-design/icons";
 import {NavLink} from "react-router-dom";
-import {FirstChapter, SecondChapter} from "./nav/nav";
+import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
 
 const { Panel } = Collapse;
 
-const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, setSwitchToSkeleton, setSwitchToGlossary, setSwitchToLiterature, setSwitchToMaterials}) => {
+const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, setSwitchToSkeleton, setSwitchToGlossary, setSwitchToLiterature, setSwitchToMaterials, setSwitchToChapterTesting, setChapterForTesting}) => {
     const clearSwitches = () => {
         setSwitchToGlossary(false);
         setSwitchToLiterature(false);
         setSwitchToMaterials(false);
         setSwitchToSkeleton(false);
+        setSwitchToChapterTesting(false);
     }
 
     const verifyChapterChange = (chap, theme, page) => {
@@ -578,6 +582,101 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
             ]
         },
     ];
+    const treeData2 = [
+        {
+            title: <span className='eco-skeleton-tree-theme'>Тема 2</span>,
+            key: '0-1',
+            children: [
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 0)) {
+                                    setCurrentPage(themes[0][0])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Административная ответственность за совершение экологических правонарушений
+                        </span>
+                    ),
+                    key: '0-1-0',
+                    switcherIcon: <>1.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 1)) {
+                                    setCurrentPage(themes[0][1])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Экологические преступления
+                        </span>
+                    ),
+                    key: '0-1-1',
+                    switcherIcon: <>2.</>,
+                },
+            ]
+        },
+    ];
+
+    const treeDataTests = [
+        {
+            title: <div className='eco-skeleton-tree-chapter'>Тесты</div>,
+            key: '1',
+            icon: <DownOutlined/>,
+            children: [
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                clearSwitches();
+                                setChapterForTesting(1);
+                                setSwitchToChapterTesting(true);
+                            }}
+                        >
+                            По <strong style={{fontWeight: 'bold'}}>1-ому</strong> разделу
+                        </span>
+                    ),
+                    key: '11',
+                    switcherIcon: <KeyOutlined style={{color: 'brown'}}/>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                clearSwitches();
+                                setChapterForTesting(2);
+                                setSwitchToChapterTesting(true);
+                            }}
+                        >
+                            По <strong style={{fontWeight: 'bold'}}>2-ому</strong> разделу
+                        </span>
+                    ),
+                    key: '12',
+                    switcherIcon: <KeyOutlined style={{color: 'brown'}}/>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                clearSwitches();
+                                setChapterForTesting(3);
+                                setSwitchToChapterTesting(true);
+                            }}
+                        >
+                            По <strong style={{fontWeight: 'bold'}}>3-ему</strong> разделу
+                        </span>
+                    ),
+                    key: '13',
+                    switcherIcon: <KeyOutlined style={{color: 'brown'}}/>,
+                },
+            ]
+        },
+    ];
 
     const treeData3 = [
         {
@@ -708,7 +807,31 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                                 />
                             </>
                         </Panel>
-                        <Panel header="Ссылки" key="3" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Третий раздел" key="3" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                            <>
+                                <Tree
+                                    className='eco-list-style-tree eco-skeleton-tree-style'
+                                    showLine = {true}
+                                    defaultExpandedKeys = {['0-1']}
+                                    treeData = {treeData2}
+                                    switcherIcon={<DownOutlined />}
+                                    icon={<CarryOutOutlined />}
+                                />
+                            </>
+                        </Panel>
+                        <Panel header="Тестирование по разделам" key="4" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                            <>
+                                <Tree
+                                    defaultExpandedKeys = {['1']}
+                                    className='eco-list-style-tree eco-skeleton-tree-style'
+                                    showLine = {true}
+                                    treeData = {treeDataTests}
+                                    switcherIcon={<DownOutlined />}
+                                    icon={<CarryOutOutlined />}
+                                />
+                            </>
+                        </Panel>
+                        <Panel header="Ссылки" key="5" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
                             <>
                                 <Tree
                                     defaultExpandedKeys = {['1']}

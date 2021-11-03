@@ -4,6 +4,7 @@ import {PageHeader, Layout, Divider, Col, Row, Button} from 'antd';
 import {
     LeftCircleTwoTone,
     RightCircleTwoTone,
+    KeyOutlined,
 } from '@ant-design/icons';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -21,7 +22,8 @@ import ResultsModal from "../../UI/resultsModal/ResultsModal";
 import {getQuestions} from "../../../http/questionsAPI";
 import {useDispatch} from "react-redux";
 import {Actions} from "../../../redux/actions";
-import {FirstChapter, SecondChapter} from "./nav/nav";
+import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
+import Test_Main from "./tests/Test_Main";
 
 const { Content, Footer, Sider } = Layout;
 
@@ -34,6 +36,8 @@ const EcoMain = () => {
     const [currentChapter, setCurrentChapter] = useState(new FirstChapter());
     const [themes, setThemes] = useState(currentChapter.themes);
     const [titles, setTitles] = useState(currentChapter.titles);
+    const [switchToChapterTesting, setSwitchToChapterTesting] = useState(false);
+    const [chapterForTesting, setChapterForTesting] = useState(1);
 
     const [currentPage, setCurrentPage] = useState(themes[0][0]);
     const [currentTitle, setCurrentTitle] = useState(titles[0][0]);
@@ -107,13 +111,17 @@ const EcoMain = () => {
             setCurrentTitle('Структура курса');
             return;
         }
+        if(switchToChapterTesting) {
+            setCurrentTitle(`Тестирование по ${chapterForTesting} разделу`);
+            return;
+        }
 
         const currentTheme = getCurrentTheme();
         setCurrentTitle(titles[themes.indexOf(currentTheme)][currentTheme.indexOf(currentPage)]);
     }
 
     const changeCurrentSubTitle = () => {
-        if(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton) {
+        if(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || switchToChapterTesting) {
             setCurrentSubTitle('');
         } else {
             setCurrentSubTitle(`Тема ${themes.indexOf(getCurrentTheme()) + 1}`);
@@ -140,9 +148,9 @@ const EcoMain = () => {
     const changeChapter = (isNext) => {
         let chap = null;
         if(isNext) {
-            chap = new SecondChapter();
+            chap = currentChapter.id === 1 ? new SecondChapter() : new ThirdChapter();
         } else {
-            chap = new FirstChapter();
+            chap = currentChapter.id === 3 ? new SecondChapter() : new FirstChapter();
         }
 
         setCurrentChapter(chap);
@@ -205,6 +213,8 @@ const EcoMain = () => {
                     setSwitchToLiterature={setSwitchToLiterature}
                     setSwitchToMaterials={setSwitchToMaterials}
                     setSwitchToSkeleton={setSwitchToSkeleton}
+                    setSwitchToChapterTesting={setSwitchToChapterTesting}
+                    setChapterForTesting={setChapterForTesting}
                     themes={themes}
                     collapsed={collapsed}
                 />
@@ -236,11 +246,18 @@ const EcoMain = () => {
                                             setSwitchToLiterature={setSwitchToLiterature}
                                             setSwitchToMaterials={setSwitchToMaterials}
                                             setSwitchToSkeleton={setSwitchToSkeleton}
+                                            setSwitchToChapterTesting={setSwitchToChapterTesting}
+                                            setChapterForTesting={setChapterForTesting}
                                             setChapter={setChapter}
                                         />
                                         : redirectToTest
                                             ? <Test setTestResult={setTestResult}/>
-                                            : currentPage
+                                            : switchToChapterTesting
+                                                ? <Test_Main
+                                                    chapter={chapterForTesting}
+                                                    setSwitchToChapterTesting={setSwitchToChapterTesting}
+                                                />
+                                                : currentPage
                         }
 
                         {modal
@@ -250,7 +267,7 @@ const EcoMain = () => {
                     </div>
                 </Content>
 
-                {(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || redirectToTest)
+                {(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || redirectToTest || switchToChapterTesting)
                     ? void(0)
                     :
                     <Row className='eco-pagination-row'>
@@ -264,13 +281,28 @@ const EcoMain = () => {
                                             changePage(false);
                                         }
                                     }}
-                                    icon={<LeftCircleTwoTone />}
+                                    icon={<LeftCircleTwoTone/>}
                                     className='eco-pagination-but'
                                     size="large"
                                     disabled={currentPage===themes[0][0] && currentChapter.id === 1}
                                 >
                                     {currentPage===themes[0][0] ? 'Предыдущий раздел' : 'Назад'}
                                 </Button>
+
+                                {isLastPage() &&
+                                <Button
+                                    onClick={() => {
+                                        setChapterForTesting(currentChapter.id);
+                                        setSwitchToChapterTesting(true);
+                                    }}
+                                    icon={<KeyOutlined  style={{color: 'brown', fontSize: '18px'}}/>}
+                                    className='eco-pagination-but'
+                                    size="large"
+                                >
+                                    Проверь себя!
+                                </Button>
+                                }
+
                                 <Button
                                     onClick={() => {
                                         if(!isLastPage())
@@ -282,7 +314,7 @@ const EcoMain = () => {
                                     }}
                                     className='eco-pagination-but'
                                     size="large"
-                                    disabled={isLastPage() && currentChapter.id === 2}
+                                    disabled={isLastPage() && currentChapter.id === 3}
                                 >
                                     {isLastPage() ? 'Следующий раздел' : 'Далее'}
                                     <RightCircleTwoTone />

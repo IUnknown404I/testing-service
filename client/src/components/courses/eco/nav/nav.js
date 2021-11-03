@@ -30,6 +30,8 @@ import Eco_Chap2_Theme5_3 from "../chapter2/theme5/Eco_Chap2_Theme5_3";
 import Eco_Chap2_Theme5_4 from "../chapter2/theme5/Eco_Chap2_Theme5_4";
 import Eco_Chap2_Theme5_5 from "../chapter2/theme5/Eco_Chap2_Theme5_5";
 import Eco_Chap2_Theme5_6 from "../chapter2/theme5/Eco_Chap2_Theme5_6";
+import Eco_Chap3_Theme2_1 from "../chapter3/theme2/Eco_Chap3_Theme2_1";
+import Eco_Chap3_Theme2_2 from "../chapter3/theme2/Eco_Chap3_Theme2_2";
 
 
 export class FirstChapter {
@@ -177,6 +179,34 @@ export class SecondChapter {
                 case themes[4][3]: return('254');
                 case themes[4][4]: return('255');
                 case themes[4][5]: return('256');
+            }
+        } else {
+            if (switchToGlossary) return '4';
+            if (switchToLiterature) return '5';
+            if (switchToMaterials) return '6';
+            if (switchToSkeleton) return '7';
+        }
+    }
+}
+
+export class ThirdChapter {
+    id = 3;
+    themes = [
+        [
+            <Eco_Chap3_Theme2_1/>,   <Eco_Chap3_Theme2_2/>,
+        ],
+    ];
+    titles = [
+        [
+            '2.1 Административная ответственность за совершение экологических правонарушений',
+            '2.2 Экологические преступления',
+        ],
+    ];
+    getSelectedMenuItem = (themes, currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton) => {
+        if(!switchToGlossary && !switchToLiterature && !switchToMaterials && !switchToSkeleton) {
+            switch (currentPage) {
+                case themes[0][0]: return('111');
+                case themes[0][1]: return('112');
             }
         } else {
             if (switchToGlossary) return '4';

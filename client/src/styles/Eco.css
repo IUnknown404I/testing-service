@@ -687,7 +687,7 @@
     box-shadow: none !important;
 }
 
-.mybut-primary {
+.mybut-primary, .mybut-primary-orange {
     margin-top: 20px;
     min-height: 55px;
     font-size: 1.3rem !important;
@@ -701,6 +701,17 @@
 .mybut-primary:hover {
     border-color: forestgreen !important;
     background: rgba(76,175,80, 0.85) !important;
+    box-shadow: none !important;
+}
+
+.mybut-primary-orange {
+    background: darkorange !important;
+    border-color: darkgoldenrod !important;
+}
+
+.mybut-primary-orange:hover  {
+    background: rgba(255,140,0, 0.6) !important;
+    color: lightgrey;
     box-shadow: none !important;
 }
 
@@ -851,7 +862,7 @@
     border-radius: 15px;
 }
 
-.eco-container-right-border {
+.mybut-primary {
     border-right: 4px solid rgb(76,175,80);
     padding: 7px 25px;
     border-radius: 15px;
@@ -904,4 +915,111 @@
 .coef_table .ant-pagination-item-active:hover, .coef_table .ant-pagination-item-active a:hover {
     border-color: rgb(76,175,80);
     color: rgb(76,175,80);
+}
+
+.eco-steps-interaction-container .steps-content {
+    margin: 15px 0 8px;
+    padding: 20px 20px;
+    border-left: 2px solid rgb(240,240,240);
+    border-radius: 3px;
+}
+
+.eco-steps-interaction-container .steps-action button {
+    color: white;
+    font-size: 1.35rem;
+    min-height: 40px;
+    background: rgb(76,175,80);
+    border-color: white;
+    box-shadow: 1px 2px 2px 0 lightgrey;
+}
+
+.eco-steps-interaction-container .steps-action button:hover {
+    color: limegreen;
+    background: rgba(76,175,80, 0.05);
+    border-color: limegreen;
+    box-shadow: none;
+    transform: translateX(1px) translateY(1px);
+}
+
+.eco-steps-interaction-container .steps-action button:focus {
+    color: limegreen;
+    background: rgba(76,175,80, 0.05);
+    border-color: limegreen;
+}
+
+.eco-steps-interaction .ant-steps-item-process .ant-steps-item-container .ant-steps-item-icon {
+    background: rgb(76,175,80);
+    border-color: rgb(76,175,80);
+}
+
+.eco-steps-interaction .ant-steps-item-finish .ant-steps-item-container .ant-steps-item-icon {
+    border-color: rgb(76,175,80);
+}
+.eco-steps-interaction .ant-steps-item-finish .ant-steps-item-container .ant-steps-icon {
+    color: rgb(76,175,80);
+}
+
+.eco-steps-interaction .ant-steps-item-finish .ant-steps-item-container .ant-steps-item-content .ant-steps-item-title::after {
+    background-color: rgb(76,175,80);
+}
+
+.eco-test-container .testing-form {
+    margin-bottom: 10px;
+    padding: 20px;
+    border: none;
+    border: 2px solid teal;
+    border-top: none;
+    border-bottom: none;
+    border-radius: 20px;
+}
+
+.eco-test-container .testing-form h2 {
+    color: teal;
+    margin-bottom: 25px;
+}
+
+.eco-test-container .testing-form label {
+    display: block;
+    padding: 10px 10px;
+    text-align: left;
+    font-size: 18px;
+    margin: 10px 0;
+    border: 1px inset teal;
+    border-radius: 10px;
+}
+
+.eco-test-container .testing-form label:hover {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.eco-test-container .testing-form input {
+    margin-right: 13px;
+    width: 17px;
+    height: 17px;
+}
+
+.eco-test-container .testing-form input:hover {
+    cursor: pointer;
+}
+
+.eco-test-result {
+    text-align: center;
+    font-size: 1.35rem;
+    margin: 20px auto 50px;
+}
+
+.eco-test-buttons-container button {
+    border-color: steelblue !important;
+    font-size: 1.25rem;
+    min-height: 50px;
+    box-shadow: 0 2px 3px 0 lightgrey;
+    transition: all 0.2s ease-in-out;
+}
+
+.eco-test-buttons-container button:hover {
+    background: azure !important;
+    color: steelblue;
+    box-shadow: none;
+    transform: translateY(1px);
 }

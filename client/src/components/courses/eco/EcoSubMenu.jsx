@@ -7,13 +7,14 @@ import {
     BookOutlined,
     LinkOutlined,
     DeploymentUnitOutlined,
+    KeyOutlined,
 } from "@ant-design/icons";
 import {Image, Menu, Skeleton} from "antd";
 import {NavLink, useHistory} from "react-router-dom";
 
 const { SubMenu } = Menu;
 
-const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGlossary, setSwitchToLiterature, setSwitchToMaterials, setSwitchToSkeleton, themes, collapsed}) => {
+const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGlossary, setSwitchToLiterature, setSwitchToMaterials, setSwitchToSkeleton, themes, collapsed, setChapterForTesting, setSwitchToChapterTesting}) => {
     const history = useHistory();
     const [currentSub1, setCurrentSub1] = useState(<></>);
 
@@ -22,6 +23,7 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
         setSwitchToLiterature(false);
         setSwitchToMaterials(false);
         setSwitchToSkeleton(false);
+        setSwitchToChapterTesting(false);
     }
 
     useEffect(() => {
@@ -76,6 +78,15 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                         <Menu.Item key="254" onClick={() => {setCurrentPage(themes[4][3]); clearSwitches();}}>Правила исчисления и взимания платы</Menu.Item>
                         <Menu.Item key="255" onClick={() => {setCurrentPage(themes[4][4]); clearSwitches();}}>Исчисление и взимание платы</Menu.Item>
                         <Menu.Item key="256" onClick={() => {setCurrentPage(themes[4][5]); clearSwitches();}}>Административная ответственность</Menu.Item>
+                    </Menu.ItemGroup>
+                </SubMenu>
+            ); return;
+
+            case 3: setCurrentSub1(
+                <SubMenu key="sub1" icon={<PieChartOutlined />} title="Навигация">
+                    <Menu.ItemGroup key="g2" title="Тема 2">
+                        <Menu.Item key="111" onClick={() => {setCurrentPage(themes[0][0]); clearSwitches();}}>Совершение экологических правонарушений</Menu.Item>
+                        <Menu.Item key="112" onClick={() => {setCurrentPage(themes[0][1]); clearSwitches();}}>Экологические преступления</Menu.Item>
                     </Menu.ItemGroup>
                 </SubMenu>
             ); return;
@@ -185,6 +196,40 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
             >
                 Глоссарий
             </Menu.Item>
+
+            <SubMenu key="subTests" icon={<KeyOutlined />} title="Тестирование">
+                <Menu.Item
+                    onClick={() => {
+                    clearSwitches();
+                    setChapterForTesting(1);
+                    setSwitchToChapterTesting(true);
+                }}
+                    key="test-1"
+                >
+                    Тест - Раздел 1
+                </Menu.Item>
+                <Menu.Item
+                    onClick={() => {
+                    clearSwitches();
+                    setChapterForTesting(2);
+                    setSwitchToChapterTesting(true);
+                }}
+                    key="test-2"
+                >
+                    Тест - Раздел 2
+                </Menu.Item>
+                <Menu.Item
+                    onClick={() => {
+                    clearSwitches();
+                    setChapterForTesting(3);
+                    setSwitchToChapterTesting(true);
+                }}
+                    key="test-3"
+                >
+                    Тест - Раздел 3
+                </Menu.Item>
+            </SubMenu>
+
             <Menu.Item
                 key="6"
                 icon={<PaperClipOutlined />}
