@@ -32,6 +32,11 @@ import Eco_Chap2_Theme5_5 from "../chapter2/theme5/Eco_Chap2_Theme5_5";
 import Eco_Chap2_Theme5_6 from "../chapter2/theme5/Eco_Chap2_Theme5_6";
 import Eco_Chap3_Theme2_1 from "../chapter3/theme2/Eco_Chap3_Theme2_1";
 import Eco_Chap3_Theme2_2 from "../chapter3/theme2/Eco_Chap3_Theme2_2";
+import Eco_Chap3_Theme1_1 from "../chapter3/theme1/Eco_Chap3_Theme1_1";
+import Eco_Chap3_Theme1_2 from "../chapter3/theme1/Eco_Chap3_Theme1_2";
+import Eco_Chap3_Theme1_3 from "../chapter3/theme1/Eco_Chap3_Theme1_3";
+import Eco_Chap3_Theme1_4 from "../chapter3/theme1/Eco_Chap3_Theme1_4";
+import Eco_Chap3_Theme1_5 from "../chapter3/theme1/Eco_Chap3_Theme1_5";
 
 
 export class FirstChapter {
@@ -193,10 +198,22 @@ export class ThirdChapter {
     id = 3;
     themes = [
         [
+            <Eco_Chap3_Theme1_1/>,   <Eco_Chap3_Theme1_2/>,
+            <Eco_Chap3_Theme1_3/>,   <Eco_Chap3_Theme1_4/>,
+            <Eco_Chap3_Theme1_5/>,
+        ],
+        [
             <Eco_Chap3_Theme2_1/>,   <Eco_Chap3_Theme2_2/>,
         ],
     ];
     titles = [
+        [
+            '1.1 Обеспечение экологической безопасности при обращении с опасными отходами',
+            '1.2 Общественный контроль',
+            '1.3 Государственный экологический надзор',
+            '1.4 Права должностных лиц органов государственного экологического надзора. Объекты государственного экологического надзора',
+            '1.5 Действия эколога при проведении проверки предприятия',
+        ],
         [
             '2.1 Административная ответственность за совершение экологических правонарушений',
             '2.2 Экологические преступления',
@@ -207,6 +224,12 @@ export class ThirdChapter {
             switch (currentPage) {
                 case themes[0][0]: return('111');
                 case themes[0][1]: return('112');
+                case themes[0][2]: return('113');
+                case themes[0][3]: return('114');
+                case themes[0][4]: return('115');
+
+                case themes[1][0]: return('121');
+                case themes[1][1]: return('122');
             }
         } else {
             if (switchToGlossary) return '4';

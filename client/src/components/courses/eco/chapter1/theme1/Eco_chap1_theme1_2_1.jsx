@@ -15,9 +15,9 @@ const Eco_chap1_theme1_2_1 = () => {
     ];
     const treeData = [
         {
-            title: '- предельно допустимые выбросы;',
+            title: <strong>- предельно допустимые выбросы;</strong>,
             key: '0-0',
-            icon: <DownOutlined />,
+            icon: <DownOutlined/>,
             children: [
                 {
                     title: (
@@ -36,38 +36,38 @@ const Eco_chap1_theme1_2_1 = () => {
                         </>
                     ),
                     key: '0-0-0',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green', fontSize: '20px'}}/>,
                 }
             ],
         },
         {
-            title: '- технологические нормативы выбросов;',
+            title: <strong>- технологические нормативы выбросов;</strong>,
             key: '0-2',
             icon: <DownOutlined />,
             children: [
                 {
                     title: 'Технологический норматив выброса устанавливается в соответствии с законодательством в области охраны окружающей среды.',
                     key: '0-2-0',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green', fontSize: '20px'}}/>,
                 }
             ],
         },
         {
-            title: '- технические нормативы выбросов.',
+            title: <strong>- технические нормативы выбросов.</strong>,
             key: '0-3',
             icon: <DownOutlined />,
             children: [
                 {
                     title: 'Для передвижных источников технические нормативы выбросов устанавливаются техническими регламентами, принимаемыми в соответствии с законодательством Российской Федерации о техническом регулировании.',
                     key: '0-3-0',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green', fontSize: '20px'}}/>,
                 }
             ],
         },
         {
-            title: '- предельно допустимые нормативы вредных физических воздействий на атмосферный воздух;',
+            title: <>- <strong>предельно допустимые нормативы</strong> вредных физических воздействий на атмосферный воздух;</>,
             key: '0-1',
-            switcherIcon: <CarryOutOutlined />,
+            switcherIcon: <CarryOutOutlined style={{color: 'green', fontSize: '20px'}}/>,
         },
     ];
 
@@ -76,9 +76,9 @@ const Eco_chap1_theme1_2_1 = () => {
 
     return (
         <>
-            <Row style={{margin: '20px 0 30px'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Основные принципы государственного управления в области охраны атмосферного воздуха</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Основные принципы государственного управления в области охраны атмосферного воздуха</strong></h1>
                 </Col>
             </Row>
 
@@ -94,16 +94,16 @@ const Eco_chap1_theme1_2_1 = () => {
                     />
                 </Col>
 
-                <Col span={16} offset={0}>
+                <Col span={15} offset={0}>
                     <div>
                         <List
                             className='eco-list-style'
                             size="small"
                             bordered = {false}
                             header={
-                                <div style={{fontSize: '21px', marginBottom: '10px'}}>
+                                <div style={{fontSize: '22px', marginBottom: '10px'}}>
                                     <span>
-                                        Государственное управление в области охраны атмосферного воздуха основывается на следующих принципах:
+                                        <strong style={{fontWeight: 'bold'}}>Государственное управление в области охраны атмосферного воздуха основывается</strong> на следующих принципах:
                                     </span>
                                 </div>}
                             dataSource={data1}
@@ -126,9 +126,9 @@ const Eco_chap1_theme1_2_1 = () => {
                             title='Нормативы выбросов загрязняющих веществ в атмосферный воздух и вредных физических воздействий на атмосферный воздух'
                             content={
                                 <>
-                                    <div className='eco-list-style' style={{marginTop: '-20px'}}>
-                                         <span style={{fontSize: '18px'}}>
-                                            В целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:
+                                    <div className='' style={{marginTop: '-20px'}}>
+                                         <span style={{fontSize: '20px'}}>
+                                            <strong>В целях государственного регулирования выбросов загрязняющих веществ</strong> в атмосферный воздух устанавливаются:
                                         </span>
 
                                         <Tree
@@ -136,7 +136,7 @@ const Eco_chap1_theme1_2_1 = () => {
                                             showLine = {true}
                                             defaultExpandedKeys = {['0-0']}
                                             treeData = {treeData}
-                                            switcherIcon={<DownOutlined />}
+                                            switcherIcon={<DownOutlined style={{color: 'green', fontSize: '18px'}}/>}
                                             icon={<CarryOutOutlined />}
                                         />
                                     </div>

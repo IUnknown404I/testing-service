@@ -62,7 +62,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
         let wrongAnswersString = '';
         if(wrongAnswers.length !== 0) {
             wrongAnswers.forEach((ans) => {
-                wrongAnswersString += `№${ans}, `;
+                wrongAnswersString += `${ans}, `;
             })
             wrongAnswersString = wrongAnswersString.slice(0, wrongAnswersString.length - 2);
         }
@@ -108,7 +108,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
                     </Button>
                 </Col>
                 <Col span={12} offset={3} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}> Тестирование - Раздел {chapter}.</h1>
+                    <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}> Тестирование - Раздел {chapter}</h1>
                 </Col>
                 <Col span={5} offset={0} style={{textAlign: 'center'}}>
                     <div>
@@ -133,9 +133,10 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
                             </div>
                             {result.wrongQuestions !== '' &&
                             <div>
-                                Обратите внимание на следующие вопросы: {result.wrongQuestions} !
+                                Обратите внимание на следующие вопросы: <strong style={{fontWeight: 'bold'}}>{result.wrongQuestions}</strong> !
                             </div>
                             }
+                            <hr/>
                         </div>
                     </Col>
                 }

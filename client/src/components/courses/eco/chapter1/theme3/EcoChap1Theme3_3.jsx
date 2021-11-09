@@ -1,15 +1,15 @@
 import React, {useState} from 'react';
 import {BackTop, Button, Carousel, Col, Image, List, Popover, Row, Skeleton} from "antd";
-import {BookTwoTone} from "@ant-design/icons";
+import {BookTwoTone, CheckOutlined, WarningTwoTone} from "@ant-design/icons";
 import Draggable_Modal from "../../../../UI/draggable_modal/Draggable_Modal";
 
 const EcoChap1Theme3_3 = () => {
     const data = [
-        <> - При невозможности соблюдения нормативов допустимых сбросов - план снижения сбросов загрязняющих веществ в водный объект и отчёт о ходе выполнения плана снижения сбросов загрязняющих веществ в водные объекты;</>,
-        <> - Санитарно-эпидемиологическое заключение о соответствии водного объекта санитарным правилам;</>,
-        <> - Разрешение на сброс загрязняющих веществ в окружающую среду;</>,
-        <> - Нормативы допустимых сбросов (далее - НДС) веществ и микроорганизмов в водные объекты. Для предприятий, у которых фактический сброс ниже расчётных значений допустимых сбросов, НДС устанавливается по фактическому сбросу;</>,
-        <> - Решение о предоставлении водного объекта в пользование для сброса сточных и (или) дренажных вод;</>,
+        <> - При невозможности соблюдения нормативов допустимых сбросов - <strong style={{fontWeight: 'bold'}}>план снижения сбросов загрязняющих веществ</strong> в водный объект и <strong style={{fontWeight: 'bold'}}>отчёт о ходе выполнения плана снижения сбросов</strong> загрязняющих веществ в водные объекты;</>,
+        <> - <strong style={{fontWeight: 'bold'}}>Санитарно-эпидемиологическое заключение</strong> о соответствии водного объекта санитарным правилам;</>,
+        <> - <strong style={{fontWeight: 'bold'}}>Разрешение на сброс</strong> загрязняющих веществ в окружающую среду;</>,
+        <> - <strong style={{fontWeight: 'bold'}}>Нормативы допустимых сбросов</strong> (далее - НДС) веществ и микроорганизмов в водные объекты. Для предприятий, у которых фактический сброс ниже расчётных значений допустимых сбросов, НДС устанавливается по фактическому сбросу;</>,
+        <> - <strong style={{fontWeight: 'bold'}}>Решение о предоставлении водного объекта в пользование</strong> для сброса сточных и (или) дренажных вод;</>,
     ];
     const [showModal, setShowModal] = useState(false);
 
@@ -17,9 +17,9 @@ const EcoChap1Theme3_3 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0 40px'}}>
+            <Row style={{margin: '20px 0 30px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Для предприятий, осуществляющих любой сброс вод в водные объекты, основная документация включает:</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Для предприятий, осуществляющих любой сброс вод в водные объекты, основная документация включает</strong></h1>
                 </Col>
             </Row>
 
@@ -86,7 +86,7 @@ const EcoChap1Theme3_3 = () => {
                 <Col offset={1} span={11}>
                     <div className='eco-img-col'>
                         <Image
-                            style={{border: '1px solid forestgreen'}}
+                            style={{border: '1px solid forestgreen', borderRadius: '15px'}}
                             src={'/images/water.jpg'}
                             preview={false}
                             placeholder={
@@ -96,7 +96,7 @@ const EcoChap1Theme3_3 = () => {
                     </div>
 
                     <Button
-                        className='eco-but-inside'
+                        className='mybut-primary'
                         style={{width: '100%', marginTop: '10px'}}
                         onClick={() => setShowModal(true)}
                     >
@@ -106,8 +106,6 @@ const EcoChap1Theme3_3 = () => {
                         title='Дополнительная документация по охране водных объектов'
                         content={
                             <>
-                                <h3 style={{marginTop: '-20px'}}>Также включаются:</h3>
-
                                 <fieldset className='fieldset-eco fieldset-eco-modal'>
                                     <List
                                         className='borderless'
@@ -124,15 +122,15 @@ const EcoChap1Theme3_3 = () => {
                     />
                 </Col>
 
-                <Col offset={1} span={10} style={{borderLeft: '3px solid rgb(157,217,184)'}}>
-                    <h1 className='eco-col-header' style={{background: 'rgb(157,217,184)', borderRadius: 'unset'}}>Сопроводительная документация</h1>
+                <Col offset={1} span={10} style={{borderLeft: '3px solid rgb(76,175,80)', borderTopLeftRadius: '12px'}}>
+                    <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomLeftRadius: '0', color: 'white'}}>Сопроводительная документация</h1>
                     <div className='eco-div-padding'>
                         <div style={{marginLeft: '5px'}}>
                             <h4 style={{marginBottom: '30px'}}>
-                                Документирование деятельности по охране водных объектов в настоящее время регламентировано преимущественно Водным кодексом РФ от 03.06.2006 № 74-ФЗ.
+                                <WarningTwoTone twoToneColor='darkorange' style={{fontSize: '24px'}}/>&nbsp; <strong>Документирование деятельности по охране водных объектов в настоящее время регламентировано преимущественно Водным кодексом РФ от 03.06.2006 № 74-ФЗ.</strong>
                             </h4>
                             <div>
-                                -&nbsp;
+                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                 <Popover
                                     color={"azure"}
                                     overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
@@ -145,7 +143,7 @@ const EcoChap1Theme3_3 = () => {
                                 </Popover> (в части водоотведения и других показателей);
                             </div> <br/>
                             <div>
-                                -&nbsp;
+                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                 <Popover
                                     color={"azure"}
                                     overlayStyle={{width: 'fit-content', maxWidth: '1000px'}}
@@ -168,10 +166,10 @@ const EcoChap1Theme3_3 = () => {
                                 </Popover> в организации;
                             </div> <br/>
                             <div>
-                                - Копии аттестатов аккредитации лабораторий, выполняющих лабораторные исследования проб воды;
+                                <CheckOutlined style={{color: 'green'}}/>&nbsp; Копии аттестатов аккредитации лабораторий, выполняющих лабораторные исследования проб воды;
                             </div> <br/>
                             <div>
-                                -&nbsp;
+                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                 <Popover
                                     color={"azure"}
                                     overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}

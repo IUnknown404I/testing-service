@@ -1,6 +1,6 @@
 import React from 'react';
 import {BackTop, Col, Collapse, Image, Popover, Row, Skeleton} from "antd";
-import {MenuOutlined, CheckOutlined} from "@ant-design/icons";
+import {CheckOutlined, WarningTwoTone} from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
@@ -10,26 +10,27 @@ const Eco_chap1_theme1_5 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Критерии отнесения объектов, оказывающих значительное негативное воздействие на окружающую среду и относящихся к областям применения наилучших доступных технологий, к объектам I категории</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Критерии отнесения объектов, оказывающих значительное негативное воздействие на окружающую среду и относящихся к областям применения наилучших доступных технологий, к объектам I категории</strong></h1>
                 </Col>
             </Row>
 
             <Row style={{marginTop: '30px'}}>
                 <Col span={11} offset={1}>
-                    <h1 style={{fontSize: '20px', marginBottom: '20px', textAlign: 'center'}}>Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности в целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:</h1>
+                    <h1 style={{fontSize: '1.35rem', margin: '0 0 20px 10px'}}><WarningTwoTone twoToneColor='darkorange' style={{fontSize: '26px'}}/>&nbsp;&nbsp;Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности <strong>в целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:</strong></h1>
 
-                    <div className='eco-list-style'>
+                    <div className=''>
                         <Collapse
-                            defaultActiveKey={3}
-                            expandIconPosition='right'
+                            className='mycollapse'
+                            defaultActiveKey={1}
+                            expandIconPosition='left'
                             accordion
                         >
-                            <Panel header="По металлургическому производству с использованием оборудования" key="1" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
-                                <>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                            <Panel header="По металлургическому производству с использованием оборудования" key="1" className='eco-panel-style'>
+                                <div className='eco-flex-col' style={{gap: '15px'}}>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -40,25 +41,25 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             для производства чугуна или стали
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для обработки черных металлов с использованием станов горячей прокатки;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для нанесения защитных распыленных металлических покрытий;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для литейного производства черных металлов;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для производства цветных металлов из руды, концентратов или вторичного сырья;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -69,17 +70,17 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             для плавки и разливки цветных металлов
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для производства ферросплавов;
-                                    </p>
-                                </>
+                                    </div>
+                                </div>
                             </Panel>
-                            <Panel header="По производству следующей неметаллической минеральной продукции" key="2" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
-                                <>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                            <Panel header="По производству следующей неметаллической минеральной продукции" key="2" className='eco-panel-style'>
+                                <div className='eco-flex-col' style={{gap: '15px'}}>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -91,13 +92,13 @@ const Eco_chap1_theme1_5 = () => {
                                             стекло и изделия из стекла
                                         </Popover>
                                         , включая стекловолокно;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         огнеупорные керамические изделия и строительные керамические материалы;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -108,13 +109,13 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             керамические или фарфоровые изделия
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         цементный клинкер во вращающихся печах или в других печах;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -126,13 +127,13 @@ const Eco_chap1_theme1_5 = () => {
                                             известь
                                         </Popover>
                                         &nbsp;при наличии печей;
-                                    </p>
-                                </>
+                                    </div>
+                                </div>
                             </Panel>
-                            <Panel header="По производству химических веществ и химических продуктов следующих основных органических химических веществ" key="3" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
-                                <>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                            <Panel header="По производству химических веществ и химических продуктов следующих основных органических химических веществ" key="3" className='eco-panel-style'>
+                                <div className='eco-flex-col' style={{gap: '15px'}}>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -143,9 +144,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             простые углеводороды
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -156,13 +157,13 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             кислородсодержащие углеводороды
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         серосодержащие углеводороды;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -173,37 +174,37 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             азотсодержащие углеводороды
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         фосфорсодержащие углеводороды;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         галогенированные углеводороды;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         полимеры, химические синтетические волокна и нити на основе целлюлозы;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         синтетический каучук;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         синтетические красители и пигменты;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         поверхностно-активные вещества;
-                                    </p>
-                                </>
+                                    </div>
+                                </div>
                             </Panel>
-                            <Panel header="По производству химических веществ и химических продуктов следующих неорганических веществ" key="4" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
-                                <>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                            <Panel header="По производству химических веществ и химических продуктов следующих неорганических веществ" key="4" className='eco-panel-style'>
+                                <div className='eco-flex-col' style={{gap: '15px'}}>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -214,9 +215,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             газы
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -227,9 +228,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             кислоты
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -240,9 +241,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             основания
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -253,9 +254,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             соли
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -266,9 +267,9 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             неметаллы, оксиды металлов или другие неорганические соединения
                                         </Popover>;
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -279,12 +280,12 @@ const Eco_chap1_theme1_5 = () => {
                                             trigger="hover">
                                             специальные неорганические химикаты
                                         </Popover>
-                                    </p>
-                                    <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                    </div>
+                                    <div>
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         оксид магния;
-                                    </p>
-                                </>
+                                    </div>
+                                </div>
                             </Panel>
                         </Collapse>
                     </div>
@@ -298,7 +299,7 @@ const Eco_chap1_theme1_5 = () => {
                         style={{width: '100%', maxWidth: '1100px'}}
                     />
 
-                    <h3>А также:</h3>
+                    <h3><strong>А также:</strong></h3>
                     <div className='eco-flex-col'>
                         <div>
                             <div className='eco-flex-row'>
@@ -310,7 +311,7 @@ const Eco_chap1_theme1_5 = () => {
                             <div className='eco-flex-row'>
                                 <div className='eco-numeration'>2</div>
                                 <div className='eco-numeration-text'>
-                                    <span> по добыче сырой нефти и (или)&nbsp;
+                                    <span> по производству нефтепродуктов и добыче сырой нефти и (или)&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -328,19 +329,7 @@ const Eco_chap1_theme1_5 = () => {
                         <div className='eco-flex-row'>
                             <div className='eco-numeration'>3</div>
                             <div className='eco-numeration-text'>
-                                по производству нефтепродуктов;
-                            </div>
-                        </div>
-                        <div className='eco-flex-row'>
-                            <div className='eco-numeration'>4</div>
-                            <div className='eco-numeration-text'>
-                                по добыче и (или) обогащению железных руд;
-                            </div>
-                        </div>
-                        <div className='eco-flex-row'>
-                            <div className='eco-numeration'>5</div>
-                            <div className='eco-numeration-text'>
-                                <span> по добыче и (или) подготовке&nbsp;
+                                <span> по добыче и (или) обогащению железных руд и по добыче и (или) подготовке&nbsp;
                                     <Popover
                                         color={"azure"}
                                         overlayStyle={{maxWidth: '450px'}}
@@ -350,12 +339,12 @@ const Eco_chap1_theme1_5 = () => {
                                         title=''
                                         trigger="hover">
                                     руд цветных металлов
-                                </Popover>;
+                                    </Popover>
                                 </span>
                             </div>
                         </div>
                         <div className='eco-flex-row'>
-                            <div className='eco-numeration'>6</div>
+                            <div className='eco-numeration'>4</div>
                             <div className='eco-numeration-text'>
                                 <span> по обеспечению электрической энергией, газом и паром&nbsp;
                                     <Popover

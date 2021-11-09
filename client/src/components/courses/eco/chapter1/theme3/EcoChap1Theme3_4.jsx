@@ -1,13 +1,14 @@
 import React from 'react';
 import {BackTop, Col, Collapse, Divider, Image, List, Popover, Row, Skeleton, Tabs} from "antd";
 import NumListCard from "../../../../UI/numListCard/NumListCard";
+import {CarryOutOutlined, CheckOutlined, ExclamationCircleOutlined} from "@ant-design/icons";
 
 const { TabPane } = Tabs;
 const { Panel } = Collapse;
 
 const EcoChap1Theme3_4 = () => {
     const data = [
-        <> приказ о назначении ответственных за эксплуатацию &nbsp;
+        <> приказ <strong style={{fontWeight: 'bold'}}>о назначении ответственных за эксплуатацию</strong> &nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -19,10 +20,10 @@ const EcoChap1Theme3_4 = () => {
                 газоочистных установок
             </Popover>;
         </>,
-        <> должностные инструкции персонала, обслуживающего ГОУ;</>,
-        <> инструкции по эксплуатации и обслуживанию ГОУ;</>,
-        <> приказ о порядке ведения журналов учета работы газоочистного оборудования;</>,
-        <> приказ руководителя предприятия о порядке перехода в периоды&nbsp;
+        <> <strong style={{fontWeight: 'bold'}}>должностные инструкции</strong> персонала, обслуживающего ГОУ;</>,
+        <> <strong style={{fontWeight: 'bold'}}>инструкции по эксплуатации и обслуживанию ГОУ;</strong></>,
+        <> приказ <strong style={{fontWeight: 'bold'}}>о порядке ведения журналов учета</strong> работы газоочистного оборудования;</>,
+        <> приказ руководителя предприятия <strong style={{fontWeight: 'bold'}}>о порядке перехода в периоды&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -32,7 +33,7 @@ const EcoChap1Theme3_4 = () => {
                 title=''
                 trigger="hover">
                 неблагоприятных метеорологических условий
-            </Popover> на заданные режимы&nbsp;
+            </Popover></strong> на заданные режимы&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -50,14 +51,14 @@ const EcoChap1Theme3_4 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 30px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Документация по обращению с отходами</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Документация по обращению с отходами</strong></h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={0} span={24}>
+                <Col offset={1} span={22}>
                     <Tabs type="card" size='large' className='eco-tab-list' centered animated>
                         <TabPane tab="Основные документы по обращению с отходами" key="1">
                             <>
@@ -68,8 +69,8 @@ const EcoChap1Theme3_4 = () => {
                                 </Row>
 
                                 <Row>
-                                    <Col span={14}>
-                                        <h2 style={{marginBottom: '20px'}}>Проекты нормативов образования отходов и лимитов на их размещение, оформленные по установленным образцам и включающие следующие разделы:</h2>
+                                    <Col offset={1} span={13}>
+                                        <h2 style={{marginBottom: '20px'}}><strong>Проекты нормативов образования отходов и лимитов на их размещение,</strong> оформленные по установленным образцам и включающие следующие разделы:</h2>
                                         <div className='eco-flex-row'>
                                             <div style={{display: 'flex', flexDirection: 'column', width: '40%', alignContent: 'center'}}>
                                                 <NumListCard num={1} text='титульный лист'/>
@@ -97,8 +98,8 @@ const EcoChap1Theme3_4 = () => {
                                                     <Skeleton.Image />
                                                 }
                                             />
-                                            <span style={{fontSize: '16px'}}>
-                                                Документы по паспортизации отходов
+                                            <span>
+                                                <strong style={{fontWeight: 'bold'}}>Документы по паспортизации отходов</strong>
                                             </span>
                                         </div>
                                         <div className='eco-img-div-item extra'>
@@ -110,8 +111,8 @@ const EcoChap1Theme3_4 = () => {
                                                     <Skeleton.Image />
                                                 }
                                             />
-                                            <span style={{fontSize: '16px'}}>
-                                                Копии аттестатов аккредитации лабораторий, выполнявших анализы и исследования для паспортизации отходов
+                                            <span>
+                                                <strong style={{fontWeight: 'bold'}}>Копии аттестатов аккредитации лабораторий,</strong> выполнявших анализы и исследования для паспортизации отходов
                                             </span>
                                         </div>
                                     </Col>
@@ -127,15 +128,15 @@ const EcoChap1Theme3_4 = () => {
                                 </Row>
 
                                 <Row>
-                                    <Col offset={1} span={10} style={{borderLeft: '2px solid rgb(157,217,184)', borderBottomLeftRadius: '10px'}}>
-                                        <h1 className='eco-col-header' style={{background: 'rgb(157,217,184)', borderRadius: 'unset'}}>Приказы</h1>
+                                    <Col offset={1} span={10} style={{borderLeft: '2px solid rgb(76,175,80)', borderRadius: '12px'}}>
+                                        <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomLeftRadius: '0', color: 'white'}}>Приказы</h1>
                                         <div className='eco-div-padding'>
                                             <div style={{marginLeft: '5px', fontSize: '19px'}}>
                                                 <div>
-                                                    - приказа руководителя предприятия о создании экологической службы предприятия;
+                                                    <CarryOutOutlined style={{color: 'green'}}/>&nbsp; приказа руководителя предприятия <strong style={{fontWeight: 'bold'}}>о создании экологической службы предприятия;</strong>
                                                 </div> <br/>
                                                 <div>
-                                                    - приказа руководителя предприятия о назначении руководителя&nbsp;
+                                                    <CarryOutOutlined style={{color: 'green'}}/>&nbsp; приказа руководителя предприятия <strong style={{fontWeight: 'bold'}}>о назначении руководителя&nbsp;
                                                     <Popover
                                                         color={"azure"}
                                                         overlayStyle={{width: 'fit-content', maxWidth: '1000px'}}
@@ -145,17 +146,17 @@ const EcoChap1Theme3_4 = () => {
                                                         title=''
                                                         trigger="hover">
                                                         экологической службы предприятия
-                                                    </Popover> и утверждении Положения об экологической службе;
+                                                    </Popover></strong> и утверждении Положения об экологической службе;
                                                 </div>
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col offset={1} span={10} style={{borderRight: '2px solid rgb(157,217,184)', borderBottomRightRadius: '10px'}}>
-                                        <h1 className='eco-col-header' style={{background: 'rgb(157,217,184)', borderRadius: 'unset'}}>Документы и инструкции</h1>
+                                    <Col offset={1} span={10} style={{borderRight: '2px solid rgb(76,175,80)', borderRadius: '12px'}}>
+                                        <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomRightRadius: '0', color: 'white'}}>Документы и инструкции</h1>
                                         <div className='eco-div-padding' >
                                             <div style={{marginLeft: '5px', fontSize: '19px'}}>
                                                 <div>
-                                                    - должностных инструкций сотрудников&nbsp;
+                                                    <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '23px'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>должностных инструкций</strong> сотрудников&nbsp;
                                                     <Popover
                                                         color={"azure"}
                                                         overlayStyle={{width: 'fit-content', maxWidth: '1000px'}}
@@ -168,7 +169,7 @@ const EcoChap1Theme3_4 = () => {
                                                     </Popover>;
                                                 </div> <br/>
                                                 <div>
-                                                    - документов, подтверждающих необходимую профессиональную подготовку или переподготовку сотрудников экологической службы предприятия;
+                                                    <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '23px'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>документов, подтверждающих необходимую профессиональную подготовку или переподготовку</strong> сотрудников экологической службы предприятия;
                                                 </div>
                                             </div>
                                         </div>
@@ -210,27 +211,28 @@ const EcoChap1Theme3_4 = () => {
                                     <Col offset={0} span={13} style={{marginTop: '50px'}}>
                                         <div>
                                             <Collapse
+                                                className='mycollapse'
                                                 defaultActiveKey={2}
                                                 expandIconPosition='right'
                                                 accordion
                                             >
-                                                <Panel header={<span style={{fontSize: '18px'}}>В части охраны поверхностных вод и рационального водопользования</span>} key="1" className='eco-panel-style' showArrow>
+                                                <Panel header={<span>В части охраны поверхностных вод и рационального водопользования</span>} key="1" className='eco-panel-style' showArrow>
                                                     <div className='divChildren-margin-bottom-15'>
-                                                        <div>- Приказ о назначении лица, ответственного за эксплуатацию и обслуживание сетей водных коммуникаций и очистных сооружений</div>
-                                                        <div>- Должностные инструкции для персонала, обслуживающего водные коммуникации и очистные сооружения</div>
-                                                        <div>- Должностные инструкции для персонала, обслуживающего контрольно-измерительную аппаратуру по определению качества забираемой и сбрасываемой в водный объект воды</div>
-                                                        <div>- Порядок проведения государственной аттестации контрольно-измерительной аппаратуры по определению качества забираемой и сбрасываемой в водный объект воды</div>
-                                                        <div>- Производственные инструкции завода-изготовителя по эксплуатации оборудования очистных сооружений</div>
-                                                        <div>- Инструкции по эксплуатации и обслуживанию очистных сооружений</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Приказ о назначении лица, ответственного за эксплуатацию и обслуживание сетей водных коммуникаций и очистных сооружений</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Должностные инструкции для персонала, обслуживающего водные коммуникации и очистные сооружения</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Должностные инструкции для персонала, обслуживающего контрольно-измерительную аппаратуру по определению качества забираемой и сбрасываемой в водный объект воды</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Порядок проведения государственной аттестации контрольно-измерительной аппаратуры по определению качества забираемой и сбрасываемой в водный объект воды</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Производственные инструкции завода-изготовителя по эксплуатации оборудования очистных сооружений</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Инструкции по эксплуатации и обслуживанию очистных сооружений</div>
                                                     </div>
                                                 </Panel>
-                                                <Panel header={<span style={{fontSize: '18px'}}>В части обращения с отходами</span>} key="2" className='eco-panel-style' showArrow>
+                                                <Panel header={<span>В части обращения с отходами</span>} key="2" className='eco-panel-style' showArrow>
                                                     <div className='divChildren-margin-bottom-15'>
-                                                        <div>- Приказ о назначении лиц, допущенных к работе с опасными отходами</div>
-                                                        <div>- Приказ о направлении лиц, допущенных к работе с опасными отходами, на обучение или переподготовку</div>
-                                                        <div>- Документы, подтверждающие обучение и переподготовку лиц, допущенных к работе с опасными отходами</div>
-                                                        <div>- Приказ о введении в действие инструкции обращения с отходами производства и потребления на территории предприятия</div>
-                                                        <div>- Инструкция обращения с отходами производства и потребления на территории предприятия</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Приказ о назначении лиц, допущенных к работе с опасными отходами</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Приказ о направлении лиц, допущенных к работе с опасными отходами, на обучение или переподготовку</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Документы, подтверждающие обучение и переподготовку лиц, допущенных к работе с опасными отходами</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Приказ о введении в действие инструкции обращения с отходами производства и потребления на территории предприятия</div>
+                                                        <div><CheckOutlined style={{color: 'green'}}/>&nbsp; Инструкция обращения с отходами производства и потребления на территории предприятия</div>
                                                     </div>
                                                 </Panel>
                                             </Collapse>

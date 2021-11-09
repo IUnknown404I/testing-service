@@ -1,14 +1,15 @@
 import React from 'react';
 import {BackTop, Carousel, Col, Collapse, List, Popover, Row} from "antd";
+import {CarryOutOutlined} from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
 const EcoChap1Theme3_2 = () => {
     const data = [
-        <> - Санитарно-эпидемиологическое заключение о соответствии нормативов предельно допустимых выбросов санитарным правилам;</>,
-        <> - Копии аттестатов аккредитации лабораторий, выполняющих количественный химический анализ проб воздуха;</>,
-        <> -&nbsp;
-            <Popover
+        <> <CarryOutOutlined style={{color: 'green'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>Санитарно-эпидемиологическое заключение</strong> о соответствии нормативов предельно допустимых выбросов санитарным правилам;</>,
+        <> <CarryOutOutlined style={{color: 'green'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>Копии аттестатов аккредитации лабораторий,</strong> выполняющих количественный химический анализ проб воздуха;</>,
+        <> <CarryOutOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+            <strong style={{fontWeight: 'bold'}}><Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
                 className='pop_text'
@@ -18,19 +19,19 @@ const EcoChap1Theme3_2 = () => {
                 trigger="hover">
                 План снижения выбросов
             </Popover>
-            &nbsp;загрязняющих веществ в атмосферный воздух и отчёт о ходе выполнения этого плана в целях достижения ПДВ;
+                &nbsp;загрязняющих веществ</strong> в атмосферный воздух и отчёт о ходе выполнения этого плана в целях достижения ПДВ;
         </>,
-        <> - Приказ  о назначении лиц, ответственных за проведение производственного контроля за охраной атмосферного воздуха  и документы об организации экологической службы;</>,
-        <> - Сведения об охране атмосферного воздуха;</>,
+        <> <CarryOutOutlined style={{color: 'green'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>Приказ  о назначении лиц, ответственных за проведение производственного контроля</strong> за охраной атмосферного воздуха  и документы об организации экологической службы;</>,
+        <> <CarryOutOutlined style={{color: 'green'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>Сведения об охране атмосферного воздуха;</strong></>,
     ];
 
     return (
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0 40px'}}>
+            <Row style={{margin: '20px 0 30px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Документация по охране атмосферного воздуха включает:</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Документация по охране атмосферного воздуха включает в себя</strong></h1>
                 </Col>
             </Row>
 
@@ -156,22 +157,28 @@ const EcoChap1Theme3_2 = () => {
                 <Col offset={0} span={12} style={{marginTop: '50px'}}>
                     <div>
                         <Collapse
+                            className='mycollapse'
                             defaultActiveKey={1}
                             expandIconPosition='right'
                             accordion
                         >
-                            <Panel header={<span style={{fontSize: '18px'}}>Результаты</span>} key="1" className='eco-panel-style' showArrow>
+                            <Panel header={<span>Результаты</span>} key="1" className='eco-panel-style' showArrow>
                                 <div className='divChildren-margin-bottom-15'>
-                                    <div>Проект организации санитарно-защитной зоны и санитарно-эпидемиологическое заключение о соответствии проекта санитарным требованиям</div>
-                                    <div>Результаты производственного контроля за соблюдением установленных нормативов выбросов на источниках, периодичность контроля устанавливается в нормативах ПДВ</div>
-                                    <div>Результаты контроля качества атмосферного воздуха на границе санитарно-защитной зоны</div>
-                                    <div>Программа контроля качества атмосферного воздуха (согласованная с органами санитарно-эпидемиологического надзора) на границе санитарно-защитной зоны и на контрольных точках</div>
+                                    <div>- <strong style={{fontWeight: 'bold'}}>Проект организации санитарно-защитной зоны и санитарно-эпидемиологическое заключение</strong> о соответствии проекта санитарным требованиям;</div>
+                                    <div>- <strong style={{fontWeight: 'bold'}}>Результаты производственного контроля</strong> за соблюдением установленных нормативов выбросов на источниках, периодичность контроля устанавливается в нормативах ПДВ;</div>
+                                    <div>- <strong style={{fontWeight: 'bold'}}>Результаты контроля качества атмосферного воздуха</strong> на границе санитарно-защитной зоны;</div>
+                                    <div>- <strong style={{fontWeight: 'bold'}}>Программа контроля качества атмосферного воздуха</strong> (согласованная с органами санитарно-эпидемиологического надзора) на границе санитарно-защитной зоны и на контрольных точках.</div>
                                 </div>
                             </Panel>
-                            <Panel header={<span style={{fontSize: '18px'}}>Для потребляющих тепло предприятий</span>} key="2" className='eco-panel-style' showArrow>
-                                <>
-                                    Проект организации санитарно- защитной зоны и санитарно-эпидемиологическое заключение о соответствии проекта санитарным требованиям
-                                </>
+                            <Panel header={<span>Для потребляющих тепло предприятий</span>} key="2" className='eco-panel-style' showArrow>
+                                <div className='divChildren-margin-bottom-15'>
+                                    <div>
+                                        - <strong style={{fontWeight: 'bold'}}>Проект организации санитарно- защитной зоны и санитарно-эпидемиологическое заключение</strong> о соответствии проекта санитарным требованиям;
+                                    </div>
+                                    <div>
+                                        - <strong style={{fontWeight: 'bold'}}>Сертификаты соответствия или декларации о соответствии</strong> топлива установленным нормам и требованиям.
+                                    </div>
+                                </div>
                             </Panel>
                         </Collapse>
                     </div>

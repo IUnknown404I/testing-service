@@ -1,11 +1,43 @@
-import React from 'react';
-import {BackTop, Col, Image, List, Popover, Row, Skeleton, Tree} from "antd";
-import {CarryOutOutlined, DownOutlined} from "@ant-design/icons";
+import React, {useState} from 'react';
+import {BackTop, Col, List, Popover, Row,  Tree} from "antd";
+import {
+    CarryOutOutlined, CheckOutlined,
+    DownOutlined, ExclamationCircleOutlined, WarningTwoTone,
+} from "@ant-design/icons";
+import Slider from "react-slick";
 
 const Eco_chap1_theme1_5_2 = () => {
+    const [carouselState, setCarouselState] = useState({
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        nextArrow: <SampleNextArrow />,
+        prevArrow: <SamplePrevArrow />,
+    });
+
+    function SamplePrevArrow(props) {
+        const { onClick } = props;
+        return (
+            <div
+                className='eco-sample-prev-arrow'
+                onClick={onClick}
+            />
+        );
+    }
+    function SampleNextArrow(props) {
+        const { onClick } = props;
+        return (
+            <div
+                className='eco-sample-next-arrow'
+                onClick={onClick}
+            />
+        );
+    }
+
     const treeData = [
         {
-            title: 'Объект является:',
+            title: <strong style={{fontWeight: 'bold'}}>Объект является:</strong>,
             key: '0-0',
             icon: <DownOutlined />,
             children: [
@@ -25,7 +57,7 @@ const Eco_chap1_theme1_5_2 = () => {
                         </>
                     ),
                     key: '0-0-0',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '20px'}}/>,
                 },
                 {
                     title: (
@@ -34,12 +66,12 @@ const Eco_chap1_theme1_5_2 = () => {
                         </>
                     ),
                     key: '0-0-1',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '20px'}}/>,
                 },
             ],
         },
         {
-            title: 'Осуществление на объекте, оказывающем негативное воздействие на окружающую среду:',
+            title: <strong style={{fontWeight: 'bold'}}>Осуществление на объекте, оказывающем негативное воздействие на окружающую среду:</strong>,
             key: '0-2',
             icon: <DownOutlined />,
             children: [
@@ -49,7 +81,7 @@ const Eco_chap1_theme1_5_2 = () => {
                         хозяйственной и (или) иной деятельности на участках недр, предоставленных в пользование;
                     </>,
                     key: '0-2-0',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green'}}/>,
                 },
                 {
                     title:
@@ -57,7 +89,7 @@ const Eco_chap1_theme1_5_2 = () => {
                         хозяйственной и (или) иной деятельности с использованием водных объектов, предоставленных в пользование;
                     </>,
                     key: '0-2-1',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green'}}/>,
                 },
                 {
                     title:
@@ -65,7 +97,7 @@ const Eco_chap1_theme1_5_2 = () => {
                             хозяйственной и (или) иной деятельности по строительству объектов капитального строительства продолжительностью более 6 месяцев;
                         </>,
                     key: '0-2-2',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green'}}/>,
                 },
                 {
                     title:
@@ -73,7 +105,7 @@ const Eco_chap1_theme1_5_2 = () => {
                             хозяйственной и (или) иной деятельности исключительно по добыче подземных вод;
                         </>,
                     key: '0-2-3',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green'}}/>,
                 },
                 {
                     title:
@@ -81,32 +113,19 @@ const Eco_chap1_theme1_5_2 = () => {
                             хозяйственной и (или) иной деятельности;
                         </>,
                     key: '0-2-4',
-                    switcherIcon: <CarryOutOutlined />,
+                    switcherIcon: <CarryOutOutlined style={{color: 'green'}}/>,
                 },
             ],
         },
         {
-            title: 'Эксплуатация исследовательских ядерных установок нулевой мощности, радиационных источников, содержащих в своем составе только радионуклидные источники четвертой и пятой категорий.',
+            title: <span><strong style={{fontWeight: 'bold'}}>Эксплуатация исследовательских ядерных установок нулевой мощности, радиационных источников, содержащих в своем составе только радионуклидные источники четвертой и пятой категорий.</strong></span>,
             key: '0-3',
-            switcherIcon: <><strong style={{color: 'darkgreen', fontSize: '20px'}}>+</strong></>,
+            switcherIcon: <WarningTwoTone twoToneColor='red' style={{fontSize: '24px'}}/>,
         },
     ];
-
     const data = [
-        <> -&nbsp;
-            <Popover
-                color={"azure"}
-                overlayStyle={{maxWidth: '450px'}}
-                className='pop_text'
-                style={{maxWidth: '200px'}}
-                content={<span>Или наличие на объекте стационарных источников загрязнения окружающей среды, масса загрязняющих веществ в выбросах в атмосферный воздух которых не превышает 10 тонн в год, а также при отсутствии в составе выбросов веществ I и II классов опасности, радиоактивных веществ.</span>}
-                title=''
-                trigger="hover">
-                отсутствие выбросов загрязняющих веществ в атмосферный воздух
-            </Popover>;
-        </>,
-        <> -&nbsp;
-            <Popover
+        <> <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '20px'}}/>&nbsp;&nbsp;
+            <strong style={{fontWeight: 'bold'}}><Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
                 className='pop_text'
@@ -115,10 +134,22 @@ const Eco_chap1_theme1_5_2 = () => {
                 title=''
                 trigger="hover">
                 отсутствие сбросов загрязняющих веществ в составе сточных вод
-            </Popover>
+            </Popover></strong>
             &nbsp;в централизованные системы водоотведения, другие сооружения и системы отведения и очистки сточных вод;
         </>,
-        <> - Осуществление на объекте деятельности по&nbsp;
+        <> <ExclamationCircleOutlined style={{color: 'darkorange', fontSize: '20px'}}/>&nbsp;&nbsp;
+            <Popover
+                color={"azure"}
+                overlayStyle={{maxWidth: '450px'}}
+                className='pop_text'
+                style={{maxWidth: '200px'}}
+                content={<span>Или наличие на объекте стационарных источников загрязнения окружающей среды, масса загрязняющих веществ в выбросах в атмосферный воздух которых не превышает 10 тонн в год, а также при отсутствии в составе выбросов веществ I и II классов опасности, радиоактивных веществ.</span>}
+                title=''
+                trigger="hover">
+                <strong style={{fontWeight: 'bold'}}>отсутствие выбросов загрязняющих веществ</strong> в атмосферный воздух
+            </Popover>;
+        </>,
+        <> <CheckOutlined style={{color: 'green'}}/>&nbsp; Осуществление на объекте <strong style={{fontWeight: 'bold'}}>деятельности по&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -129,9 +160,9 @@ const Eco_chap1_theme1_5_2 = () => {
                 trigger="hover">
                 производству
             </Popover>
-            &nbsp;электрической энергии и (или) пара и горячей воды;
+            &nbsp;электрической энергии</strong> и (или) пара и горячей воды;
         </>,
-        <> - Использование на объекте оборудования исключительно для&nbsp;
+        <> <CheckOutlined style={{color: 'green'}}/>&nbsp; <strong style={{fontWeight: 'bold'}}>Использование на объекте оборудования</strong> исключительно для&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -143,7 +174,7 @@ const Eco_chap1_theme1_5_2 = () => {
                 исследований, разработок и испытаний новой продукции и процессов
             </Popover>;
         </>,
-        <> - Осуществление на объекте хозяйственной и (или) иной&nbsp;
+        <> <CheckOutlined style={{color: 'green'}}/>&nbsp; Осуществление на объекте хозяйственной и (или) иной&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -154,9 +185,9 @@ const Eco_chap1_theme1_5_2 = () => {
                 trigger="hover">
                 деятельности исключительно по добыче подземных вод
             </Popover>
-            &nbsp;или для целей питьевого, хозяйственно-бытового водоснабжения и (или) технического водоснабжения;
+            &nbsp;или <strong style={{fontWeight: 'bold'}}>для целей питьевого, хозяйственно-бытового водоснабжения и (или) технического водоснабжения;</strong>
         </>,
-        <> - Осуществление на&nbsp;
+        <> <CheckOutlined style={{color: 'green'}}/>&nbsp; Осуществление на&nbsp;
             <Popover
                 color={"azure"}
                 overlayStyle={{maxWidth: '450px'}}
@@ -167,7 +198,7 @@ const Eco_chap1_theme1_5_2 = () => {
                 trigger="hover">
                 объекте
             </Popover>
-            &nbsp;хозяйственной и (или) иной деятельности по строительству объектов капитального строительства продолжительностью менее 6 месяцев;
+            &nbsp;хозяйственной и (или) иной деятельности <strong style={{fontWeight: 'bold'}}>по строительству объектов капитального строительства продолжительностью менее 6 месяцев;</strong>
         </>,
     ];
 
@@ -175,54 +206,59 @@ const Eco_chap1_theme1_5_2 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Критерии отнесения объектов, оказывающих незначительное негативное и негативное воздействие на окружающую среду</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Критерии отнесения объектов, оказывающих незначительное негативное и негативное воздействие на окружающую среду, к объектам III и IV категориям</strong></h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={3} span={18} className='epi-img-col'>
-                    <Image
-                        className='epi-img'
-                        src={'/out1.jpg'}
-                        placeholder={ <Skeleton.Image /> }
-                        preview={false}
-                        style={{marginTop: '10px', maxWidth: '1000px'}}
-                    />
-                </Col>
-            </Row>
-            <Row style={{marginTop: '50px'}}>
-                <Col span={11} offset={0} style={{marginLeft: '15px'}}>
-                    <h1 className='eco-col-header'>Критерии к объектам III категории:</h1>
+                <Col offset={2} span={20}>
+                    <Slider {...carouselState} className='eco-slider'>
+                        <div>
+                            <div className='eco-slider-card'>
+                                <Row>
+                                    <Col offset={2} span={20}>
+                                        <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', color: 'white', border: '2px solid forestgreen', marginTop: '-2px'}}>Критерии к объектам III категории</h1>
 
-                    <div className='eco-list-style'>
-                        <Tree
-                            className='eco-list-style-tree'
-                            style={{fontSize: '17px', lineHeight: '40px'}}
-                            showLine = {true}
-                            defaultExpandedKeys = {['0-0','0-2']}
-                            treeData = {treeData}
-                            switcherIcon={<DownOutlined />}
-                            icon={<CarryOutOutlined />}
-                        />
-                    </div>
-                </Col>
+                                        <div style={{padding: '0 20px'}}>
+                                            <Tree
+                                                className='eco-list-style-tree'
+                                                style={{fontSize: '1.2rem', lineHeight: '40px'}}
+                                                showLine = {true}
+                                                defaultExpandedKeys = {['0-0','0-2']}
+                                                treeData = {treeData}
+                                                switcherIcon={<DownOutlined style={{color: 'green', fontSize: '18px'}}/>}
+                                                icon={<CarryOutOutlined />}
+                                            />
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </div>
 
-                <Col span={11} offset={1}>
-                    <h1 className='eco-col-header'>Критерии к объектам IV категории:</h1>
+                        <div>
+                            <div className='eco-slider-card'>
+                                <Row>
+                                    <Col offset={2} span={20}>
+                                        <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', color: 'white', border: '2px solid forestgreen', marginTop: '-2px'}}>Критерии к объектам IV категории</h1>
 
-                    <List
-                        className='eco-list-style'
-                        size="medium"
-                        header={
-                            <div style={{fontSize: '19px', marginBottom: '10px'}}>
-                                <span> Наличие одновременно следующих критериев: </span>
-                            </div>}
-                        bordered
-                        dataSource={data}
-                        renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                    />
+                                        <h3 style={{margin: '25px 0 0'}}>Наличие одновременно следующих критериев:</h3>
+                                        <div style={{padding: '0 20px'}}>
+                                            <div style={{textAlign: 'left'}}>
+                                                <List
+                                                    size="medium"
+                                                    bordered
+                                                    dataSource={data}
+                                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                                />
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </div>
+                        </div>
+                    </Slider>
                 </Col>
             </Row>
         </>

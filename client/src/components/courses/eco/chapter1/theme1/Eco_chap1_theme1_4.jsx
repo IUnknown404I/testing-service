@@ -6,11 +6,11 @@ const { TabPane } = Tabs;
 const Eco_chap1_theme1_4 = () => {
     const columns = [
         {
-            title: <div style={{textAlign: 'center'}}>Имеют право</div>,
+            title: <div style={{textAlign: 'center', fontSize: '1.3rem', color: 'white'}}>Имеют право</div>,
             dataIndex: 'can',
         },
         {
-            title: <div style={{textAlign: 'center'}}>Обязаны</div>,
+            title: <div style={{textAlign: 'center', fontSize: '1.3rem', color: 'white'}}>Обязаны</div>,
             className: 'column-money',
             dataIndex: 'must',
         },
@@ -79,33 +79,31 @@ const Eco_chap1_theme1_4 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Права и обязанности граждан, индивидуальных предпринимателей и юридических лиц</strong></h1>
                 </Col>
             </Row>
 
-            <Row style={{marginTop: '30px'}}>
-                <Col offset={2} span={20}>
+            <Row style={{marginTop: '25px'}}>
+                <Col offset={1} span={22}>
                     <Tabs type="card" size='large' className='eco-tab-list' centered animated>
-                        <TabPane tab="Граждане" key="1">
+                        <TabPane tab={<div style={{fontSize: '1.35rem'}}>Граждане</div>} key="1">
                             <Table
-                                className='rights_table'
+                                className='coef_table'
                                 columns={columns}
                                 dataSource={data1}
                                 bordered
                                 pagination={false}
-                                title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px'}}>Для Граждан</div>}
                             />
                         </TabPane>
-                        <TabPane tab="ИП и Юр. лица" key="2">
+                        <TabPane tab={<div style={{fontSize: '1.35rem'}}>ИП и Юр. лица</div>} key="2">
                             <Table
-                                className='rights_table'
+                                className='coef_table'
                                 columns={columns}
                                 dataSource={data2}
                                 bordered
                                 pagination={false}
-                                title={() => <div style={{textAlign: 'center', fontWeight: 'bold', fontSize: '20px'}}>Для индивидуальных предпринимателей и юридических лиц</div>}
                             />
                         </TabPane>
                     </Tabs>

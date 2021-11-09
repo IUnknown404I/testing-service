@@ -1,6 +1,6 @@
 import React from 'react';
 import {BackTop, Col, Collapse, Image, Popover, Row, Skeleton} from "antd";
-import {CheckOutlined, MenuOutlined} from "@ant-design/icons";
+import {CheckOutlined, MenuOutlined, WarningTwoTone} from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
@@ -10,9 +10,9 @@ const Eco_chap1_theme1_5_1 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Критерии отнесения объектов, оказывающих умеренное негативное воздействие на окружающую среду, к объектам II категории</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Критерии отнесения объектов, оказывающих умеренное негативное воздействие на окружающую среду, к объектам II категории</strong></h1>
                 </Col>
             </Row>
 
@@ -27,7 +27,7 @@ const Eco_chap1_theme1_5_1 = () => {
                     />
 
                     <div style={{display: 'inline-block', marginLeft: '30px', width: '80%'}}>
-                        <h3>А также:</h3>
+                        <h3><strong>А также:</strong></h3>
                         <div>
                             <div>
                                 <div className='eco-flex-row'>
@@ -72,68 +72,63 @@ const Eco_chap1_theme1_5_1 = () => {
                 </Col>
 
                 <Col span={13} offset={0} >
-                    <h1 style={{fontSize: '21px', marginBottom: '20px', textAlign: 'center'}}>Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности:</h1>
+                    <h1 style={{fontSize: '1.35rem', marginBottom: '20px'}}><WarningTwoTone twoToneColor='darkorange' style={{fontSize: '26px'}}/>&nbsp;&nbsp;Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности <strong>в целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:</strong></h1>
 
-                    <div className='eco-list-style'>
-                        <span style={{fontSize: '17px'}}>
-                            В целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:
-                        </span>
-                    </div>
-
-                    <div className='eco-list-style'>
+                    <div>
                         <Collapse
-                            defaultActiveKey={3}
+                            className='mycollapse'
+                            defaultActiveKey={1}
                             expandIconPosition='right'
                             accordion
                         >
-                            <Panel header="По обеспечению" key="1" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
+                            <Panel header="По добыче" key="1" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
                                 <>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        электрической энергией, газом и паром;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        руд и песков драгоценных металлов, оловянных руд, титановых руд, хромовых руд на россыпных месторождениях и (или) их подготовке;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        паром и горячей водой;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        руд и песков драгоценных металлов, оловянных руд, титановых руд, хромовых руд на россыпных месторождениях и (или) их подготовке;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        электрической энергией, газом и паром;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        полезных ископаемых;
                                     </p>
                                 </>
                             </Panel>
-                            <Panel header="По добыче" key="2" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
+                            <Panel header="По обеспечению" key="2" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
                                 <>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        руд и песков драгоценных металлов, оловянных руд, титановых руд, хромовых руд на россыпных месторождениях и (или) их подготовке;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        электрической энергией, газом и паром;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        руд и песков драгоценных металлов, оловянных руд, титановых руд, хромовых руд на россыпных месторождениях и (или) их подготовке;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        паром и горячей водой;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
-                                        полезных ископаемых;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                                        электрической энергией, газом и паром;
                                     </p>
                                 </>
                             </Panel>
                             <Panel header="По металлургическому производству с использованием оборудования" key="3" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
                                 <>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для производства чугуна или стали;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для обработки черных металлов с использованием станов горячей прокатки;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для нанесения защитных распыленных металлических покрытий;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для&nbsp;
                                         <Popover
                                             color={"azure"}
@@ -147,7 +142,7 @@ const Eco_chap1_theme1_5_1 = () => {
                                         </Popover>;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         для литейного производства черных металлов;
                                     </p>
                                 </>
@@ -155,7 +150,7 @@ const Eco_chap1_theme1_5_1 = () => {
                             <Panel header="По производству следующей неметаллической минеральной продукции" key="4" className='eco-panel-style' extra={<MenuOutlined />} showArrow={false}>
                                 <>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         <Popover
                                             color={"azure"}
                                             overlayStyle={{maxWidth: '450px'}}
@@ -168,7 +163,7 @@ const Eco_chap1_theme1_5_1 = () => {
                                         </Popover>;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         по&nbsp;
                                         <Popover
                                             color={"azure"}
@@ -182,11 +177,11 @@ const Eco_chap1_theme1_5_1 = () => {
                                         </Popover>;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         стекло и изделия из стекла, включая стекловолокно;
                                     </p>
                                     <p>
-                                        <CheckOutlined />&nbsp;&nbsp;
+                                        <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
                                         огнеупорные керамические изделия и строительные керамические материалы;
                                     </p>
                                 </>

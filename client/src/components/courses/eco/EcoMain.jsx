@@ -24,6 +24,7 @@ import {useDispatch} from "react-redux";
 import {Actions} from "../../../redux/actions";
 import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
 import Test_Main from "./tests/Test_Main";
+import EcoBreadCrumbs from "./EcoBreadCrumbs";
 
 const { Content, Footer, Sider } = Layout;
 
@@ -184,8 +185,13 @@ const EcoMain = () => {
 
         changeCurrentTitle();
         changeCurrentSubTitle();
-        setSelectedKeys([currentChapter.getSelectedMenuItem(themes, currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton)]);
-    }, [currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton]);
+
+        if(switchToChapterTesting) {
+            setSelectedKeys([`test-${chapterForTesting}`]);
+        } else {
+            setSelectedKeys([currentChapter.getSelectedMenuItem(themes, currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton)]);
+        }
+    }, [currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton, switchToChapterTesting, chapterForTesting]);
 
     useEffect(() => {
         if(testResult.length !== 0) {
@@ -228,6 +234,16 @@ const EcoMain = () => {
                     title={<span style={{color: 'floralwhite'}}>{currentTitle}</span>}
                     subTitle={<span style={{color: 'floralwhite'}}>{currentSubTitle}</span>}
                 />
+
+                {!(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || redirectToTest || switchToChapterTesting) &&
+                    <EcoBreadCrumbs
+                        themes={themes}
+                        currentChapter={currentChapter}
+                        currentTheme={(themes.indexOf(getCurrentTheme()) + 1)}
+                        currentTitle={currentTitle}
+                        setChapter={setChapter}
+                    />
+                }
 
                 <Content className='course_content'>
                     <div className="site-layout-background" style={{ padding: 10, minHeight: 360 }}>

@@ -43,7 +43,7 @@ const Eco_Chap2_Theme4_1 = () => {
                                     <Skeleton.Image />
                                 }
                             />
-                            <span style={{fontSize: '1rem'}}>
+                            <span style={{fontSize: '1.25rem'}}>
                             <strong style={{fontWeight: 'bold'}}>«Паспорт отходов»</strong> − документ, удостоверяющий принадлежность отходов к отходам соответствующего вида и класса опасности, содержащий сведения об их составе.
                         </span>
                         </div>

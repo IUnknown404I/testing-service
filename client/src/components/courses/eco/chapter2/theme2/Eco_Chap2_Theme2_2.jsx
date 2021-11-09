@@ -55,8 +55,9 @@ const Eco_Chap2_Theme2_2 = () => {
                     </Collapse>
                 </Col>
 
-                <Col span={11} offset={0} style={{marginLeft: '2%'}}>
+                <Col span={11} offset={0} style={{marginLeft: '2%'}} className='eco-img-col'>
                     <Image
+                        style={{maxHeight: '550px'}}
                         src={'/images/building.gif'}
                         preview={false}
                         placeholder={
@@ -67,7 +68,7 @@ const Eco_Chap2_Theme2_2 = () => {
             </Row>
 
             <Row>
-                <Col offset={2} span={20} style={{marginTop: '-80px'}}>
+                <Col offset={2} span={20} style={{marginTop: '-10px'}}>
                     <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list' centered animated>
                         <TabPane tab="Проектирование" key="1">
                             <>

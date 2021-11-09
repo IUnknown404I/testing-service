@@ -65,7 +65,7 @@ const Eco_Chap2_Theme5_1 = () => {
                                 <Skeleton.Image />
                             }
                         />
-                        <span style={{fontSize: '1.15rem'}}>
+                        <span style={{fontSize: '1.25rem'}}>
                             При <strong style={{fontWeight: 'bold'}}>выбросах, сбросах и размещении отходов</strong> взимается плата за негативное воздействие на окружающую среду в соответствии с ФЗ от 10 января 2002 года № 7-ФЗ «Об охране окружающей среды».
                         </span>
                     </div>

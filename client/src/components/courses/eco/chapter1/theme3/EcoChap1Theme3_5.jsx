@@ -5,14 +5,14 @@ import NumListCard from "../../../../UI/numListCard/NumListCard";
 const EcoChap1Theme3_5 = () => {
     return (
         <>
-            <Row style={{margin: '20px 0'}}>
+            <Row style={{margin: '20px 0 30px'}}>
                 <Col span={20} offset={2}>
-                    <h1 className='slide-heading'>Государственная статистическая отчетность</h1>
+                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Государственная статистическая отчетность</strong></h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={1} span={22} style={{marginTop: '10px'}}>
+                <Col offset={4} span={16} style={{marginTop: '10px'}}>
                     <div className='eco-img-div-item' style={{background: 'white'}}>
                         <Image
                             className='eco-img-ico'
@@ -22,15 +22,15 @@ const EcoChap1Theme3_5 = () => {
                                 <Skeleton.Image />
                             }
                         />
-                        <span style={{fontSize: '18px'}}>
-                            В соответствие с Российским законодательством юридические лица обязаны представлять в органы государственной статистики сведения о деятельности по формам федерального государственного статистического наблюдения.
+                        <span>
+                            В соответствие с Российским законодательством юридические лица обязаны представлять в органы государственной статистики сведения о деятельности <strong style={{fontWeight: 'bold'}}>по формам федерального государственного статистического наблюдения.</strong>
                         </span>
                     </div>
                 </Col>
                 <Col offset={1} span={22} style={{marginTop: '30px'}}>
                     <div style={{fontSize: '21px', marginBottom: '10px'}}>
                         <span>
-                            Раздел «Природные ресурсы и охрана окружающей среды» включает в себя следующие формы государственного статистического наблюдения:
+                            <strong style={{fontWeight: 'bold'}}>Раздел «Природные ресурсы и охрана окружающей среды» включает в себя</strong> следующие формы государственного статистического наблюдения:
                         </span>
                     </div>
                 </Col>

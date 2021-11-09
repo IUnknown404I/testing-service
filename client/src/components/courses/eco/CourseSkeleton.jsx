@@ -584,7 +584,7 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
     ];
     const treeData2 = [
         {
-            title: <span className='eco-skeleton-tree-theme'>Тема 2</span>,
+            title: <span className='eco-skeleton-tree-theme'>Тема 1</span>,
             key: '0-1',
             children: [
                 {
@@ -597,7 +597,7 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                                 clearSwitches();
                             }}
                         >
-                            Административная ответственность за совершение экологических правонарушений
+                            Обеспечение экологической безопасности при обращении с опасными отходами
                         </span>
                     ),
                     key: '0-1-0',
@@ -613,10 +613,96 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                                 clearSwitches();
                             }}
                         >
-                            Экологические преступления
+                            Общественный контроль
                         </span>
                     ),
                     key: '0-1-1',
+                    switcherIcon: <>2.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 2)) {
+                                    setCurrentPage(themes[0][2])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Государственный экологический надзор
+                        </span>
+                    ),
+                    key: '0-1-2',
+                    switcherIcon: <>3.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 3)) {
+                                    setCurrentPage(themes[0][3])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Права должностных лиц органов государственного экологического надзора. Объекты государственного экологического надзора
+                        </span>
+                    ),
+                    key: '0-1-3',
+                    switcherIcon: <>4.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 4)) {
+                                    setCurrentPage(themes[0][4])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Действия эколога при проведении плановой/внеплановой выездной проверки предприятия. Порядок оформления результатов проверки
+                        </span>
+                    ),
+                    key: '0-1-4',
+                    switcherIcon: <>5.</>,
+                },
+            ]
+        },
+        {
+            title: <span className='eco-skeleton-tree-theme'>Тема 2</span>,
+            key: '0-2',
+            children: [
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 1, 0)) {
+                                    setCurrentPage(themes[1][0])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Административная ответственность за совершение экологических правонарушений
+                        </span>
+                    ),
+                    key: '0-2-0',
+                    switcherIcon: <>1.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 1, 1)) {
+                                    setCurrentPage(themes[1][1])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Экологические преступления
+                        </span>
+                    ),
+                    key: '0-2-1',
                     switcherIcon: <>2.</>,
                 },
             ]

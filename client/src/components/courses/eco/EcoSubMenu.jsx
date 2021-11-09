@@ -84,9 +84,16 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
 
             case 3: setCurrentSub1(
                 <SubMenu key="sub1" icon={<PieChartOutlined />} title="Навигация">
+                    <Menu.ItemGroup key="g1" title="Тема 1">
+                        <Menu.Item key="111" onClick={() => {setCurrentPage(themes[0][0]); clearSwitches();}}>Обеспечение экологической безопасности</Menu.Item>
+                        <Menu.Item key="112" onClick={() => {setCurrentPage(themes[0][1]); clearSwitches();}}>Общественный контроль</Menu.Item>
+                        <Menu.Item key="113" onClick={() => {setCurrentPage(themes[0][2]); clearSwitches();}}>Государственный экологический надзор</Menu.Item>
+                        <Menu.Item key="114" onClick={() => {setCurrentPage(themes[0][3]); clearSwitches();}}>Права должностных лиц. Объекты экологического надзора</Menu.Item>
+                        <Menu.Item key="115" onClick={() => {setCurrentPage(themes[0][4]); clearSwitches();}}>Действия эколога при проведении проверки</Menu.Item>
+                    </Menu.ItemGroup>
                     <Menu.ItemGroup key="g2" title="Тема 2">
-                        <Menu.Item key="111" onClick={() => {setCurrentPage(themes[0][0]); clearSwitches();}}>Совершение экологических правонарушений</Menu.Item>
-                        <Menu.Item key="112" onClick={() => {setCurrentPage(themes[0][1]); clearSwitches();}}>Экологические преступления</Menu.Item>
+                        <Menu.Item key="121" onClick={() => {setCurrentPage(themes[1][0]); clearSwitches();}}>Совершение экологических правонарушений</Menu.Item>
+                        <Menu.Item key="122" onClick={() => {setCurrentPage(themes[1][1]); clearSwitches();}}>Экологические преступления</Menu.Item>
                     </Menu.ItemGroup>
                 </SubMenu>
             ); return;
