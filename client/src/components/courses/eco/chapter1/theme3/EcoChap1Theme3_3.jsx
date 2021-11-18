@@ -17,14 +17,14 @@ const EcoChap1Theme3_3 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0 30px'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
                     <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Для предприятий, осуществляющих любой сброс вод в водные объекты, основная документация включает</strong></h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={1} span={22}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}} className='padding-15-30'>
                     <div className='eco-carousel-height-250'>
                         <Carousel appendDots={(dots) => <ul>{dots}</ul>} arrows={true}>
                             <div className='eco-carousel-card'>
@@ -82,8 +82,8 @@ const EcoChap1Theme3_3 = () => {
                 </Col>
             </Row>
 
-            <Row  style={{marginTop: '30px'}}>
-                <Col offset={1} span={11}>
+            <Row  style={{marginTop: '20px'}}>
+                <Col lg={{span: 20, offset: 2}} xl={{span: 14, offset: 5}} xxl={{span: 9, offset: 1}} className='eco-div-padding'>
                     <div className='eco-img-col'>
                         <Image
                             style={{border: '1px solid forestgreen', borderRadius: '15px'}}
@@ -102,89 +102,89 @@ const EcoChap1Theme3_3 = () => {
                     >
                         <BookTwoTone twoToneColor='mediumseagreen'/> Дополнительная документация
                     </Button>
-                    <Draggable_Modal
-                        title='Дополнительная документация по охране водных объектов'
-                        content={
-                            <>
-                                <fieldset className='fieldset-eco fieldset-eco-modal'>
-                                    <List
-                                        className='borderless'
-                                        size="medium"
-                                        bordered
-                                        dataSource={data}
-                                        renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                    />
-                                </fieldset>
-                            </>
-                        }
-                        show={showModal}
-                        hide={setShowModal}
-                    />
                 </Col>
 
-                <Col offset={1} span={10} style={{borderLeft: '3px solid rgb(76,175,80)', borderTopLeftRadius: '12px'}}>
-                    <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomLeftRadius: '0', color: 'white'}}>Сопроводительная документация</h1>
-                    <div className='eco-div-padding'>
-                        <div style={{marginLeft: '5px'}}>
-                            <h4 style={{marginBottom: '30px'}}>
-                                <WarningTwoTone twoToneColor='darkorange' style={{fontSize: '24px'}}/>&nbsp; <strong>Документирование деятельности по охране водных объектов в настоящее время регламентировано преимущественно Водным кодексом РФ от 03.06.2006 № 74-ФЗ.</strong>
-                            </h4>
-                            <div>
-                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
-                                <Popover
-                                    color={"azure"}
-                                    overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
-                                    className='pop_text'
-                                    style={{maxWidth: '200px'}}
-                                    content={<span>Приказ, распоряжение или иной документ по форме федерального государственного статистического наблюдения № 2-ТП (водхоз).</span>}
-                                    title=''
-                                    trigger="hover">
-                                    Сведения об использовании воды
-                                </Popover> (в части водоотведения и других показателей);
-                            </div> <br/>
-                            <div>
-                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
-                                <Popover
-                                    color={"azure"}
-                                    overlayStyle={{width: 'fit-content', maxWidth: '1000px'}}
-                                    className='pop_text'
-                                    style={{maxWidth: '200px'}}
-                                    content={<span>Приказ, распоряжение или иной документ.</span>}
-                                    title=''
-                                    trigger="hover">
-                                    Документ
-                                </Popover> о назначении лица, уполномоченного вести учёт водоотведения и качества&nbsp;
-                                <Popover
-                                    color={"azure"}
-                                    overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
-                                    className='pop_text'
-                                    style={{maxWidth: '200px'}}
-                                    content={<span>Дренажных.</span>}
-                                    title=''
-                                    trigger="hover">
-                                    сточных вод
-                                </Popover> в организации;
-                            </div> <br/>
-                            <div>
-                                <CheckOutlined style={{color: 'green'}}/>&nbsp; Копии аттестатов аккредитации лабораторий, выполняющих лабораторные исследования проб воды;
-                            </div> <br/>
-                            <div>
-                                <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
-                                <Popover
-                                    color={"azure"}
-                                    overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
-                                    className='pop_text'
-                                    style={{maxWidth: '200px'}}
-                                    content={<span>Периодичность, место отбора проб, объём и перечень определяемых ингредиентов.</span>}
-                                    title=''
-                                    trigger="hover">
-                                    Программа проведения измерений качества сточных и (или) дренажных вод
-                                </Popover>;
-                            </div>
+                <Col lg={{span: 20, offset: 2}} xl={{span: 18, offset: 3}} xxl={{span: 13, offset: 0}} style={{borderLeft: '3px solid rgb(76,175,80)', borderTopLeftRadius: '12px'}}>
+                    <h1 className='eco-col-header' style={{width: '99%', background: 'rgb(76,175,80)', borderBottomLeftRadius: '0', color: 'white'}}>Сопроводительная документация</h1>
+
+                    <div className='eco-flex-col' style={{gap: '15px', padding: '0 20px'}}>
+                        <h4>
+                            <WarningTwoTone twoToneColor='darkorange' style={{fontSize: '24px'}}/>&nbsp; <strong>Документирование деятельности по охране водных объектов в настоящее время регламентировано преимущественно Водным кодексом РФ от 03.06.2006 № 74-ФЗ.</strong>
+                        </h4>
+                        <div>
+                            <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                            <Popover
+                                color={"azure"}
+                                overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
+                                className='pop_text'
+                                style={{maxWidth: '200px'}}
+                                content={<span>Приказ, распоряжение или иной документ по форме федерального государственного статистического наблюдения № 2-ТП (водхоз).</span>}
+                                title=''
+                                trigger="hover">
+                                Сведения об использовании воды
+                            </Popover> (в части водоотведения и других показателей);
+                        </div>
+                        <div>
+                            <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                            <Popover
+                                color={"azure"}
+                                overlayStyle={{width: 'fit-content', maxWidth: '1000px'}}
+                                className='pop_text'
+                                style={{maxWidth: '200px'}}
+                                content={<span>Приказ, распоряжение или иной документ.</span>}
+                                title=''
+                                trigger="hover">
+                                Документ
+                            </Popover> о назначении лица, уполномоченного вести учёт водоотведения и качества&nbsp;
+                            <Popover
+                                color={"azure"}
+                                overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
+                                className='pop_text'
+                                style={{maxWidth: '200px'}}
+                                content={<span>Дренажных.</span>}
+                                title=''
+                                trigger="hover">
+                                сточных вод
+                            </Popover> в организации;
+                        </div>
+                        <div>
+                            <CheckOutlined style={{color: 'green'}}/>&nbsp; Копии аттестатов аккредитации лабораторий, выполняющих лабораторные исследования проб воды;
+                        </div>
+                        <div>
+                            <CheckOutlined style={{color: 'green'}}/>&nbsp;&nbsp;
+                            <Popover
+                                color={"azure"}
+                                overlayStyle={{width: 'fit-content',maxWidth: '1000px'}}
+                                className='pop_text'
+                                style={{maxWidth: '200px'}}
+                                content={<span>Периодичность, место отбора проб, объём и перечень определяемых ингредиентов.</span>}
+                                title=''
+                                trigger="hover">
+                                Программа проведения измерений качества сточных и (или) дренажных вод
+                            </Popover>;
                         </div>
                     </div>
                 </Col>
             </Row>
+
+            <Draggable_Modal
+                title='Дополнительная документация по охране водных объектов'
+                content={
+                    <>
+                        <fieldset className='fieldset-eco fieldset-eco-modal'>
+                            <List
+                                className='borderless'
+                                size="medium"
+                                bordered
+                                dataSource={data}
+                                renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                            />
+                        </fieldset>
+                    </>
+                }
+                show={showModal}
+                hide={setShowModal}
+            />
         </>
     );
 };

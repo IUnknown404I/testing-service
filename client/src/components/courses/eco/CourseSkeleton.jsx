@@ -5,12 +5,13 @@ import {
     BulbTwoTone,
     CarryOutOutlined,
     DownOutlined,
-    KeyOutlined,
     LeftCircleTwoTone,
     LinkOutlined,
     MenuOutlined,
     ProfileTwoTone,
-    PushpinTwoTone
+    KeyOutlined,
+    PaperClipOutlined,
+    PieChartOutlined,
 } from "@ant-design/icons";
 import {NavLink} from "react-router-dom";
 import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
@@ -167,6 +168,118 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                     key: '0-0-7',
                     switcherIcon: <>8.</>,
                 },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,8)) {
+                                    setCurrentPage(themes[0][8])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Требования к обращению с отходами I - V классов опасности. Федеральный закон от 24.06.1998 N 89-ФЗ
+                        </span>
+                    ),
+                    key: '0-0-8',
+                    switcherIcon: <>9.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,9)) {
+                                    setCurrentPage(themes[0][9])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Паспортизация отходов. Приказ Минприроды России от 08.12.2020 N 1026.
+                        </span>
+                    ),
+                    key: '0-0-9',
+                    switcherIcon: <>10.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,10)) {
+                                    setCurrentPage(themes[0][10])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Федеральный оператор по обращению с отходами I и II классов опасности. Федеральный закон от 24.06.1998 N 89-ФЗ
+                        </span>
+                    ),
+                    key: '0-0-10',
+                    switcherIcon: <>11.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,11)) {
+                                    setCurrentPage(themes[0][11])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Федеральная схема обращения с отходами I и II классов опасности. Федеральный закон от 24.06.1998 N 89-ФЗ
+                        </span>
+                    ),
+                    key: '0-0-11',
+                    switcherIcon: <>12.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,12)) {
+                                    setCurrentPage(themes[0][12])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Особенности обращения с отходами I и II классов опасности. Федеральный закон от 24.06.1998 N 89-ФЗ
+                        </span>
+                    ),
+                    key: '0-0-12',
+                    switcherIcon: <>13.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,13)) {
+                                    setCurrentPage(themes[0][13])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Предоставление информации индивидуальными предпринимателями и юридическими лицами, осуществляющими деятельность в области обращения с отходами. Порядок представления отчетности организациями 3 категории по НВОС
+                        </span>
+                    ),
+                    key: '0-0-13',
+                    switcherIcon: <>14.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),0,14)) {
+                                    setCurrentPage(themes[0][14])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Декларация по НВОС
+                        </span>
+                    ),
+                    key: '0-0-14',
+                    switcherIcon: <>15.</>,
+                },
             ],
         },
         {
@@ -187,7 +300,103 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                         </span>
                     ),
                     key: '0-1-0',
-                    switcherIcon: <></>,
+                    switcherIcon: <>1.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,1)) {
+                                    setCurrentPage(themes[1][1])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Производственный экологический контроль в области обращения с отходами производства и потребления
+                        </span>
+                    ),
+                    key: '0-1-1',
+                    switcherIcon: <>2.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,2)) {
+                                    setCurrentPage(themes[1][2])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Негативное воздействие на окружающую среду при размещении отходов
+                        </span>
+                    ),
+                    key: '0-1-2',
+                    switcherIcon: <>3.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,3)) {
+                                    setCurrentPage(themes[1][3])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Производственный экологический контроль
+                        </span>
+                    ),
+                    key: '0-1-3',
+                    switcherIcon: <>4.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,4)) {
+                                    setCurrentPage(themes[1][4])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Плата за негативное воздействие на окружающую среду
+                        </span>
+                    ),
+                    key: '0-1-4',
+                    switcherIcon: <>5.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,5)) {
+                                    setCurrentPage(themes[1][5])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Производственный контроль в области охраны окружающей среды (производственный экологический контроль)
+                        </span>
+                    ),
+                    key: '0-1-5',
+                    switcherIcon: <>6.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if(verifyChapterChange(new FirstChapter(),1,6)) {
+                                    setCurrentPage(themes[1][6])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Отчет об организации и о результатах осуществления производственного экологического контроля
+                        </span>
+                    ),
+                    key: '0-1-6',
+                    switcherIcon: <>7.</>,
                 },
             ],
         },
@@ -477,6 +686,134 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                     key: '0-3-3',
                     switcherIcon: <>3.</>,
                 },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 3)) {
+                                    setCurrentPage(themes[3][3])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Основные требования, предъявляемые к индивидуальным предпринимателям и юридическим лицам, осуществляющим деятельность в области обращения с отходами. Федеральный закон от 24.06.1998 N 89-ФЗ
+                        </span>
+                    ),
+                    key: '0-3-4',
+                    switcherIcon: <>4.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 4)) {
+                                    setCurrentPage(themes[3][4])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Порядок учета, транспортирования отходов
+                        </span>
+                    ),
+                    key: '0-3-5',
+                    switcherIcon: <>5.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 5)) {
+                                    setCurrentPage(themes[3][5])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Необходимость разработки ПНООЛР на предприятиях 1 и 2 категорий по НВОС
+                        </span>
+                    ),
+                    key: '0-3-6',
+                    switcherIcon: <>6.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 6)) {
+                                    setCurrentPage(themes[3][6])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Порядок разработки и утверждения нормативов образования отходов и лимитов на их размещение
+                        </span>
+                    ),
+                    key: '0-3-7',
+                    switcherIcon: <>7.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 7)) {
+                                    setCurrentPage(themes[3][7])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Разработка проектов нормативов образования отходов и лимитов на их размещение
+                        </span>
+                    ),
+                    key: '0-3-8',
+                    switcherIcon: <>8.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 8)) {
+                                    setCurrentPage(themes[3][8])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Методы определения (расчета) нормативов образования отходов
+                        </span>
+                    ),
+                    key: '0-3-9',
+                    switcherIcon: <>9.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 9)) {
+                                    setCurrentPage(themes[3][9])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Содержание и оформление нормативов образования отходов и лимитов на их размещение
+                        </span>
+                    ),
+                    key: '0-3-10',
+                    switcherIcon: <>10.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new SecondChapter(), 3, 10)) {
+                                    setCurrentPage(themes[3][10])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Процедура оформления лицензии на деятельность. Лицензирование деятельности по обращению с отходами I-IV классов опасности
+                        </span>
+                    ),
+                    key: '0-3-11',
+                    switcherIcon: <>11.</>,
+                },
             ]
         },
         {
@@ -667,6 +1004,54 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                     key: '0-1-4',
                     switcherIcon: <>5.</>,
                 },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 5)) {
+                                    setCurrentPage(themes[0][5])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Организация и проведение проверок
+                        </span>
+                    ),
+                    key: '0-1-5',
+                    switcherIcon: <>6.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 6)) {
+                                    setCurrentPage(themes[0][6])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Порядок организации проверки
+                        </span>
+                    ),
+                    key: '0-1-6',
+                    switcherIcon: <>7.</>,
+                },
+                {
+                    title: (
+                        <span
+                            onClick={() => {
+                                if (verifyChapterChange(new ThirdChapter(), 0, 7)) {
+                                    setCurrentPage(themes[0][7])
+                                }
+                                clearSwitches();
+                            }}
+                        >
+                            Порядок оформления результатов проверки
+                        </span>
+                    ),
+                    key: '0-1-7',
+                    switcherIcon: <>8.</>,
+                },
             ]
         },
         {
@@ -708,7 +1093,6 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
             ]
         },
     ];
-
     const treeDataTests = [
         {
             title: <div className='eco-skeleton-tree-chapter'>Тесты</div>,
@@ -764,85 +1148,12 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
         },
     ];
 
-    const treeData3 = [
-        {
-            title: <div className='eco-skeleton-tree-chapter'>Внешние ресурсы</div>,
-            key: '1',
-            icon: <DownOutlined/>,
-            children: [
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p1-2" }} target="_blank">
-                            Отходы I-V классов опасности
-                        </NavLink>
-                    ),
-                    key: '0-1-1',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p2" }} target="_blank">
-                            Паспортизация отходов
-                        </NavLink>
-                    ),
-                    key: '0-1-2',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p3" }} target="_blank">
-                            Оператор по обращению с отходами
-                        </NavLink>
-                    ),
-                    key: '0-1-3',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p4" }} target="_blank">
-                            Обращение с отходами I, II классов
-                        </NavLink>
-                    ),
-                    key: '0-1-4',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p5" }} target="_blank">
-                            Особенности обращения с отходами I, II классов
-                        </NavLink>
-                    ),
-                    key: '0-1-5',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p6" }} target="_blank">
-                            Требования к обращению с отходами
-                        </NavLink>
-                    ),
-                    key: '0-1-6',
-                    switcherIcon: <LinkOutlined />,
-                },
-                {
-                    title: (
-                        <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p7" }} target="_blank">
-                            Порядок учёта, транспортирования отходов
-                        </NavLink>
-                    ),
-                    key: '0-1-7',
-                    switcherIcon: <LinkOutlined />,
-                },
-            ]
-        },
-    ];
-
     return (
         <>
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={2} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 4, offset: 0}} lg={{span: 3, offset: 0}} xl={{span: 2, offset: 1}} className='eco-flex-row' style={{textAlign: 'center', justifyContent: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToSkeleton(false)}}
                         icon={<LeftCircleTwoTone />}
@@ -852,11 +1163,11 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                         К курсу
                     </Button>
                 </Col>
-                <Col span={16} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 20, offset: 2}} md={{span: 16, offset: 0}} lg={{span: 12, offset: 3}} xl={{span: 12, offset: 3}} style={{textAlign: 'center'}}>
                     <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}>Структура курса</h1>
                 </Col>
-                <Col span={3} offset={0} style={{textAlign: 'center'}}>
-                   <div>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 14, offset: 5}} lg={{span: 6, offset: 0}} xl={{span: 5, offset: 0}} style={{textAlign: 'center'}}>
+                    <div>
                        <BulbTwoTone />
                        Нажимайте на элементы для перехода
                    </div>
@@ -864,48 +1175,48 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
             </Row>
 
             <Row>
-                <Col offset={1} span={22}>
+                <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} className='eco-materials-blue'>
                     <Collapse
                         accordion={true}
                         expandIconPosition='right'
                     >
-                        <Panel header="Первый раздел" key="1" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Раздел 1. Законодательная база в области охраны окружающей среды и экологической безопасности" key="1" className='eco-skeleton-panel-style' extra={<PieChartOutlined />}  showArrow>
                             <>
                                 <Tree
                                     className='eco-list-style-tree eco-skeleton-tree-style'
                                     showLine = {true}
-                                    defaultExpandedKeys = {['0-0']}
+                                    // defaultExpandedKeys = {['0-0']}
                                     treeData = {treeData}
                                     switcherIcon={<DownOutlined />}
                                     icon={<CarryOutOutlined />}
                                 />
                             </>
                         </Panel>
-                        <Panel header="Второй раздел" key="2" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Раздел 2. Производственный экологический контроль на предприятиях" key="2" className='eco-skeleton-panel-style' extra={<PieChartOutlined />}  showArrow>
                             <>
                                 <Tree
                                     className='eco-list-style-tree eco-skeleton-tree-style'
                                     showLine = {true}
-                                    defaultExpandedKeys = {['0-0']}
+                                    // defaultExpandedKeys = {['0-0']}
                                     treeData = {treeData1}
                                     switcherIcon={<DownOutlined />}
                                     icon={<CarryOutOutlined />}
                                 />
                             </>
                         </Panel>
-                        <Panel header="Третий раздел" key="3" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Раздел 3. Государственный экологический надзор" key="3" className='eco-skeleton-panel-style' extra={<PieChartOutlined />}  showArrow>
                             <>
                                 <Tree
                                     className='eco-list-style-tree eco-skeleton-tree-style'
                                     showLine = {true}
-                                    defaultExpandedKeys = {['0-1']}
+                                    // defaultExpandedKeys = {['0-1']}
                                     treeData = {treeData2}
                                     switcherIcon={<DownOutlined />}
                                     icon={<CarryOutOutlined />}
                                 />
                             </>
                         </Panel>
-                        <Panel header="Тестирование по разделам" key="4" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Тестирование по разделам" key="4" className='eco-skeleton-panel-style' extra={<KeyOutlined />}  showArrow>
                             <>
                                 <Tree
                                     defaultExpandedKeys = {['1']}
@@ -917,16 +1228,21 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                                 />
                             </>
                         </Panel>
-                        <Panel header="Ссылки" key="5" className='eco-skeleton-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Ссылки" key="5" className='eco-skeleton-panel-style' extra={<LinkOutlined />}  showArrow>
                             <>
-                                <Tree
-                                    defaultExpandedKeys = {['1']}
-                                    className='eco-list-style-tree eco-skeleton-tree-style'
-                                    showLine = {true}
-                                    treeData = {treeData3}
-                                    switcherIcon={<DownOutlined />}
-                                    icon={<CarryOutOutlined />}
-                                />
+                                <div style={{color: 'darkblue', fontSize: '1.4rem'}}>Внешние ресурсы:</div>
+                                <div className='eco-div-padding eco-flex-col' style={{gap: '5px', fontSize: '1.3rem'}}>
+                                    <div>
+                                        <a href="https://rpn.gov.ru/fkko/?states=Все&hazardClass%5B%5D=1" target="_blank">
+                                            <LinkOutlined /> Федеральный классификационный каталог отходов
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <NavLink to={{ pathname: "http://fcao.ru/metodiki-kkha.html" }} target="_blank">
+                                            <LinkOutlined /> Реестр методик
+                                        </NavLink>
+                                    </div>
+                                </div>
                             </>
                         </Panel>
                     </Collapse>
@@ -936,7 +1252,7 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
             <Divider />
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={0} span={7}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 18, offset: 3}} md={{span: 10, offset: 1}} lg={{span: 7, offset: 0}} style={{marginBottom: '10px'}}>
                     <Button
                         className='skeleton-but'
                         style={{width: '100%'}}
@@ -945,7 +1261,7 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                         <ProfileTwoTone/> Глоссарий
                     </Button>
                 </Col>
-                <Col offset={1} span={8}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 18, offset: 3}} md={{span: 10, offset: 2}} lg={{span: 8, offset: 1}} style={{marginBottom: '10px'}}>
                     <Button
                         className='skeleton-but'
                         style={{width: '100%'}}
@@ -954,13 +1270,13 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                         <BookTwoTone/> Список Литературы
                     </Button>
                 </Col>
-                <Col offset={1} span={7}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 18, offset: 3}} md={{span: 10, offset: 7}} lg={{span: 7, offset: 1}}>
                     <Button
                         className='skeleton-but'
                         style={{width: '100%'}}
                         onClick={() => {clearSwitches(); setSwitchToMaterials(true)}}
                     >
-                        <PushpinTwoTone/> Материалы
+                        <PaperClipOutlined style={{color: 'rgb(24,144,255)'}}/> Материалы
                     </Button>
                 </Col>
             </Row>

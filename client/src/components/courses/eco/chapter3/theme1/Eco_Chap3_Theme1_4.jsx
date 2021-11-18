@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {Row, Col, Image, Skeleton, Popover} from 'antd';
 import { BackTop } from 'antd';
 import Slider from "react-slick";
-import {CheckOutlined} from "@ant-design/icons";
 
 const Eco_Chap3_Theme1_4 = () => {
     const [carouselState, setCarouselState] = useState({
@@ -136,7 +135,7 @@ const Eco_Chap3_Theme1_4 = () => {
             </Row>
 
             <Row style={{marginTop: '80px'}}>
-                <Col offset={3} span={11} className='eco-flex-col' style={{gap: '25px', fontSize: '1.3rem'}}>
+                <Col lg={{span: 16, offset: 0}} xl={{span: 11, offset: 3}} className='eco-flex-col' style={{gap: '25px', fontSize: '1.3rem'}}>
                     <div className='eco-flex-row eco-img-col'>
                         <Image
                             style={{width: '120px', marginRight: '20px'}}
@@ -162,12 +161,12 @@ const Eco_Chap3_Theme1_4 = () => {
                     </div>
                 </Col>
 
-                <Col offset={0} span={7} className='eco-img-col'>
+                <Col sm={{span: 24, offset: 0}} md={{span: 24, offset: 0}} lg={{span: 8, offset: 0}} xl={{span: 9, offset: 0}} className='eco-img-col flex-centered'>
                     <Image
-                        src={'/svg/man.svg'}
+                        src={'/svg/realmen.svg'}
                         preview={false}
                         placeholder={ <Skeleton.Image /> }
-                        style={{width: '100%', height: '45vh', maxWidth: '1100px'}}
+                        style={{width: '100%', height: '50vh', maxWidth: '1100px'}}
                     />
                 </Col>
             </Row>

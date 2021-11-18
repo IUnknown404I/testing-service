@@ -4,8 +4,7 @@ import {CheckOutlined, WarningTwoTone} from "@ant-design/icons";
 
 const { Panel } = Collapse;
 
-
-const Eco_chap1_theme1_5 = () => {
+const Eco_Chap1_Theme1_5 = () => {
     return (
         <>
             <BackTop />
@@ -17,7 +16,7 @@ const Eco_chap1_theme1_5 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col span={11} offset={1}>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 11, offset: 1}}>
                     <h1 style={{fontSize: '1.35rem', margin: '0 0 20px 10px'}}><WarningTwoTone twoToneColor='darkorange' style={{fontSize: '26px'}}/>&nbsp;&nbsp;Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности <strong>в целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:</strong></h1>
 
                     <div className=''>
@@ -291,7 +290,7 @@ const Eco_chap1_theme1_5 = () => {
                     </div>
                 </Col>
 
-                <Col offset={1} span={11}>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 11, offset: 1}}>
                     <Image
                         src={'/cati.jpg'}
                         preview={false}
@@ -367,4 +366,4 @@ const Eco_chap1_theme1_5 = () => {
     );
 };
 
-export default Eco_chap1_theme1_5;
+export default Eco_Chap1_Theme1_5;

@@ -1,10 +1,11 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import 'antd/dist/antd.css';
-import {PageHeader, Layout, Divider, Col, Row, Button} from 'antd';
+import {PageHeader, Layout, Col, Row, Button} from 'antd';
 import {
     LeftCircleTwoTone,
     RightCircleTwoTone,
     KeyOutlined,
+    DoubleLeftOutlined,
 } from '@ant-design/icons';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,13 +16,6 @@ import Literature from "./Literature";
 import Glossary from "./Glossary";
 import Materials from "./Materials";
 
-import {AuthContext} from "../../../context";
-import Test from "../../../pages/Test";
-import {getAllTests} from "../../../http/testChooseAPI";
-import ResultsModal from "../../UI/resultsModal/ResultsModal";
-import {getQuestions} from "../../../http/questionsAPI";
-import {useDispatch} from "react-redux";
-import {Actions} from "../../../redux/actions";
 import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
 import Test_Main from "./tests/Test_Main";
 import EcoBreadCrumbs from "./EcoBreadCrumbs";
@@ -29,10 +23,9 @@ import EcoBreadCrumbs from "./EcoBreadCrumbs";
 const { Content, Footer, Sider } = Layout;
 
 const EcoMain = () => {
-    const dispatch = useDispatch();
-    const {setTestName, setTestId, setTimeLimit} = useContext(AuthContext);
     const [selectedKeys, setSelectedKeys] = useState([]);
     const [collapsed, setCollapsed] = useState(true);
+    const [breakpoint, setBreakpoint] = useState(60)
 
     const [currentChapter, setCurrentChapter] = useState(new FirstChapter());
     const [themes, setThemes] = useState(currentChapter.themes);
@@ -47,11 +40,6 @@ const EcoMain = () => {
     const [switchToLiterature, setSwitchToLiterature] = useState(false);
     const [switchToMaterials, setSwitchToMaterials] = useState(false);
     const [switchToSkeleton, setSwitchToSkeleton] = useState(true);
-
-    const [redirectToTest, setRedirectToTest] = useState(false);
-    const [returnFromTest, setReturnFromTest] = useState(false);
-    const [testResult, setTestResult] = useState([]);
-    const [modal, setModal] = useState(false);
 
     const getCurrentTheme = () => {
         for(const theme of themes) {
@@ -95,6 +83,10 @@ const EcoMain = () => {
         }
     }
 
+    const checkSwitches = () => {
+        return switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || switchToChapterTesting;
+    }
+
     const changeCurrentTitle = () => {
         if(switchToGlossary) {
             setCurrentTitle('Глоссарий');
@@ -129,25 +121,8 @@ const EcoMain = () => {
         }
     }
 
-    const fetchTests = async () => {
-        const tests = await getAllTests();
-
-        for (const test of tests) {
-            if(test.name === 'Eco1') {
-                setTestName('Eco1');
-                setTestId(test.id);
-
-                await calcTimeLimit(test.id);
-            }
-        }
-    }
-
-    const calcTimeLimit = async (id) => {
-        setTimeLimit(Math.floor(Array.from(await getQuestions(id)).length * 1.25 * 60));
-    }
-
     const changeChapter = (isNext) => {
-        let chap = null;
+        let chap;
         if(isNext) {
             chap = currentChapter.id === 1 ? new SecondChapter() : new ThirdChapter();
         } else {
@@ -170,15 +145,13 @@ const EcoMain = () => {
     }
 
     useEffect(() => {
-        fetchTests();
-
-        return () => {
-    //         setTestId('');
-    //         setTestName('');
-    //         setTimeLimit(0);
-            dispatch(Actions.clearAnswers());
+        if(!collapsed && !breakpoint && document.querySelector('.ant-layout-sider-zero-width-trigger')) {
+            document.querySelector('.ant-layout-sider-zero-width-trigger').style.left = '200px';
         }
-    }, [currentChapter]);
+        else if (document.querySelector('.ant-layout-sider-zero-width-trigger')) {
+            document.querySelector('.ant-layout-sider-zero-width-trigger').style.left = '0';
+        }
+    }, [collapsed]);
 
     useEffect(() => {
         window.scrollTo(0,0);
@@ -193,23 +166,18 @@ const EcoMain = () => {
         }
     }, [currentPage, switchToGlossary, switchToLiterature, switchToMaterials, switchToSkeleton, switchToChapterTesting, chapterForTesting]);
 
-    useEffect(() => {
-        if(testResult.length !== 0) {
-            setModal(true);
-        }
-
-        if(returnFromTest) {
-            setRedirectToTest(false);
-            setSwitchToSkeleton(true);
-            setTestResult([]);
-            dispatch(Actions.clearAnswers());
-        }
-    }, [testResult, modal]);
-
     return (
-        <Layout style={{ minHeight: '100vh', marginTop: '-92px' }}>
+        <Layout style={{ minHeight: '100vh'}} className='eco-main-layout'>
 
-            <Sider collapsible collapsed={collapsed} onCollapse={() => setCollapsed(!collapsed)} style={{width: '600px'}}>
+            <Sider className='eco-sider-style'
+                   collapsible
+                   collapsed={collapsed}
+                   collapsedWidth={breakpoint}
+                   // collapsedWidth={60}
+                   onCollapse={() => setCollapsed(!collapsed)}
+                   breakpoint='lg'
+                   onBreakpoint={(breakpoint) => {breakpoint ? setBreakpoint(0) : setBreakpoint(60);}}
+            >
                 <div className="logo" />
                 <EcoSubMenu
                     currentChapter={currentChapter}
@@ -228,14 +196,14 @@ const EcoMain = () => {
 
             <Layout className="site-layout">
                 <PageHeader
-                    style={{background: 'rgb(0,21,41)', color: 'white !important', borderLeft: '1px solid rgb(0,33,64)'}}
                     className="site-page-header"
+                    backIcon={<DoubleLeftOutlined/>}
+                    title={<span>{checkSwitches() ? currentTitle : currentChapter.name}</span>}
+                    subTitle={<span>{currentSubTitle}</span>}
                     onBack={() => {setSwitchToGlossary(false); setSwitchToLiterature(false); setSwitchToMaterials(false); setSwitchToSkeleton(true)}}
-                    title={<span style={{color: 'floralwhite'}}>{currentTitle}</span>}
-                    subTitle={<span style={{color: 'floralwhite'}}>{currentSubTitle}</span>}
-                />
+                >
 
-                {!(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || redirectToTest || switchToChapterTesting) &&
+                    {!checkSwitches() &&
                     <EcoBreadCrumbs
                         themes={themes}
                         currentChapter={currentChapter}
@@ -243,7 +211,19 @@ const EcoMain = () => {
                         currentTitle={currentTitle}
                         setChapter={setChapter}
                     />
-                }
+                    }
+                </PageHeader>
+
+                {/*{!checkSwitches() &&*/}
+                {/*    <EcoBreadCrumbs*/}
+                {/*        themes={themes}*/}
+                {/*        currentChapter={currentChapter}*/}
+                {/*        currentTheme={(themes.indexOf(getCurrentTheme()) + 1)}*/}
+                {/*        currentTitle={currentTitle}*/}
+                {/*        setChapter={setChapter}*/}
+                {/*    />*/}
+                {/*}*/}
+                <hr/>
 
                 <Content className='course_content'>
                     <div className="site-layout-background" style={{ padding: 10, minHeight: 360 }}>
@@ -266,24 +246,17 @@ const EcoMain = () => {
                                             setChapterForTesting={setChapterForTesting}
                                             setChapter={setChapter}
                                         />
-                                        : redirectToTest
-                                            ? <Test setTestResult={setTestResult}/>
-                                            : switchToChapterTesting
-                                                ? <Test_Main
-                                                    chapter={chapterForTesting}
-                                                    setSwitchToChapterTesting={setSwitchToChapterTesting}
-                                                />
-                                                : currentPage
-                        }
-
-                        {modal
-                            ? <ResultsModal setModal={setModal} setReturnFromTest={setReturnFromTest}/>
-                            : void(0)
+                                        : switchToChapterTesting
+                                            ? <Test_Main
+                                                chapter={chapterForTesting}
+                                                setSwitchToChapterTesting={setSwitchToChapterTesting}
+                                            />
+                                            : currentPage
                         }
                     </div>
                 </Content>
 
-                {(switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || redirectToTest || switchToChapterTesting)
+                {checkSwitches()
                     ? void(0)
                     :
                     <Row className='eco-pagination-row'>
@@ -298,7 +271,7 @@ const EcoMain = () => {
                                         }
                                     }}
                                     icon={<LeftCircleTwoTone/>}
-                                    className='eco-pagination-but'
+                                    className='eco-pagination-but eco-pagination-but-first'
                                     size="large"
                                     disabled={currentPage===themes[0][0] && currentChapter.id === 1}
                                 >
@@ -312,7 +285,7 @@ const EcoMain = () => {
                                         setSwitchToChapterTesting(true);
                                     }}
                                     icon={<KeyOutlined  style={{color: 'brown', fontSize: '18px'}}/>}
-                                    className='eco-pagination-but'
+                                    className='eco-pagination-but eco-pagination-but-test'
                                     size="large"
                                 >
                                     Проверь себя!
@@ -325,10 +298,9 @@ const EcoMain = () => {
                                             changePage(true)
                                         else {
                                             changeChapter(true)
-                                            // setRedirectToTest(true);
                                         }
                                     }}
-                                    className='eco-pagination-but'
+                                    className='eco-pagination-but eco-pagination-but-last'
                                     size="large"
                                     disabled={isLastPage() && currentChapter.id === 3}
                                 >
@@ -340,9 +312,7 @@ const EcoMain = () => {
                     </Row>
                 }
 
-
-                <Divider className='footer_divider'/>
-                <Footer style={{ textAlign: 'center' }}>НОЦ ООО «Газпром межрегионгаз инжиниринг», 2021.</Footer>
+                <Footer style={{ textAlign: 'center' }}>НОЦ ООО «Газпром межрегионгаз инжиниринг», 2021.<span></span><span></span></Footer>
             </Layout>
 
         </Layout>

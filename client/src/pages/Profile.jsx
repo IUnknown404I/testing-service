@@ -1,8 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {getResults} from "../http/resultsAPI";
 import Loader from "../components/UI/Loader/Loader";
 import UserResults from "../components/UserResults";
 import UserCard from "../components/UI/userCard/UserCard";
+import NavBar from "../components/UI/navbar/NavBar";
 
 const Profile = () => {
     const [results, setResults] = useState([]);
@@ -20,13 +21,17 @@ const Profile = () => {
 
 
     return (
-        <div style={{textAlign: 'center'}}>
-            <UserCard/>
-            {isLoading
-                ? <Loader/>
-                : <UserResults results={results}/>
-            }
-        </div>
+        <>
+            <NavBar/>
+
+            <div style={{textAlign: 'center'}}>
+                <UserCard/>
+                {isLoading
+                    ? <Loader/>
+                    : <UserResults results={results}/>
+                }
+            </div>
+        </>
     );
 };
 

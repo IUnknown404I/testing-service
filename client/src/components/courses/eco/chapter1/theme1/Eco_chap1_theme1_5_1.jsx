@@ -5,7 +5,7 @@ import {CheckOutlined, MenuOutlined, WarningTwoTone} from "@ant-design/icons";
 const { Panel } = Collapse;
 
 
-const Eco_chap1_theme1_5_1 = () => {
+const Eco_Chap1_Theme1_5_1 = () => {
     return (
         <>
             <BackTop />
@@ -17,14 +17,16 @@ const Eco_chap1_theme1_5_1 = () => {
             </Row>
 
             <Row style={{marginTop: '50px'}}>
-                <Col offset={0} span={10} className='eco-flex-col' style={{alignItems: 'center'}}>
-                    <Image
-                        className='epi-img'
-                        src={'/out2.jpg'}
-                        placeholder={ <Skeleton.Image /> }
-                        preview={false}
-                        style={{marginTop: '10px', border: 'none', borderRadius: '35%'}}
-                    />
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 10, offset: 0}} className='eco-flex-col' style={{alignItems: 'center'}}>
+                    <Row>
+                        <Col offset={2} span={20}>
+                            <Image
+                                src={'/out2.jpg'}
+                                placeholder={ <Skeleton.Image /> }
+                                preview={false}
+                            />
+                        </Col>
+                    </Row>
 
                     <div style={{display: 'inline-block', marginLeft: '30px', width: '80%'}}>
                         <h3><strong>А также:</strong></h3>
@@ -71,7 +73,7 @@ const Eco_chap1_theme1_5_1 = () => {
                     </div>
                 </Col>
 
-                <Col span={13} offset={0} >
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 13, offset: 0}}>
                     <h1 style={{fontSize: '1.35rem', marginBottom: '20px'}}><WarningTwoTone twoToneColor='darkorange' style={{fontSize: '26px'}}/>&nbsp;&nbsp;Осуществление на объекте, оказывающем негативное воздействие на окружающую среду, хозяйственной и (или) иной деятельности <strong>в целях государственного регулирования выбросов загрязняющих веществ в атмосферный воздух устанавливаются:</strong></h1>
 
                     <div>
@@ -194,4 +196,4 @@ const Eco_chap1_theme1_5_1 = () => {
     );
 };
 
-export default Eco_chap1_theme1_5_1;
+export default Eco_Chap1_Theme1_5_1;

@@ -57,7 +57,7 @@ const Eco_Chap2_Theme1_3 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={13}>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 13, offset: 1}} style={{marginBottom: '20px'}}>
                     <Tabs animated tabPosition={'left'} style={{display: 'flex', justifyContent: 'space-around'}}>
                         <TabPane tab={<span style={{fontSize: '20px', color: 'green'}}>Обращение с отходами</span>} key="1">
                             <>
@@ -190,7 +190,7 @@ const Eco_Chap2_Theme1_3 = () => {
                     />
                 </Col>
 
-                <Col offset={1} span={8} className='eco-img-col'>
+                <Col sm={{span: 18, offset: 3}} lg={{span: 16, offset: 4}} xl={{span: 8, offset: 1}} className='eco-img-col'>
                     <Image
                         width={500}
                         src={'/images/aa.gif'}

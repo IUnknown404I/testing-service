@@ -8,10 +8,10 @@ const Eco_Chap2_Theme5_4 = () => {
             <BackTop />
 
             <Row style={{marginTop: '25px'}}>
-                <Col offset={2} span={20}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}} xxl={{span: 20, offset: 2}}>
                     <div className='eco-description-container'>
                         <Descriptions
-                            title="Правила исчисления и взимания платы за негативное воздействие на окружающую среду"
+                            title={<span>Правила исчисления и взимания платы за негативное воздействие на окружающую среду</span>}
                         >
                             <Descriptions.Item label="Плата" span={4}>плата, исчисленная по итогам отчетного периода и с учетом корректировки ее размера вносится не позднее 1-го марта года, следующего за отчетным периодом.</Descriptions.Item>
                             <Descriptions.Item label="Отчетный период " span={4}>отчетным периодом в отношении платы признается календарный год.</Descriptions.Item>
@@ -29,7 +29,7 @@ const Eco_Chap2_Theme5_4 = () => {
             </Row>
 
             <Row style={{marginTop: '20px'}}>
-                <Col offset={10} span={12}>
+                <Col md={{span: 20, offset: 2}} lg={{span: 18, offset: 3}}>
                     <div className='eco-img-div-item extra' style={{marginTop: '30px', boxShadow: '1px 1px 2px 0 brown'}}>
                         <Image
                             style={{width: '80px', marginRight: '15px', marginLeft: '5px'}}

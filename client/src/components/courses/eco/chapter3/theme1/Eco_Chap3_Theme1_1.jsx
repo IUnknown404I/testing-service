@@ -17,7 +17,7 @@ const Eco_Chap3_Theme1_1 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={12}>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 14, offset: 1}}>
                     <Tabs size='large' className='eco-tab-list' animated>
                         <TabPane tab={<div style={{fontSize: '1.35rem'}}>Государственный контроль</div>} key="1">
                             <div className='eco-flex-col' style={{gap: '20px', fontSize: '1.3rem'}}>
@@ -125,12 +125,12 @@ const Eco_Chap3_Theme1_1 = () => {
                     </Tabs>
                 </Col>
 
-                <Col offset={2} span={9}>
+                <Col xs={{span: 8, offset: 8}} sm={{span: 14, offset: 5}} md={{span: 12, offset: 6}} lg={{span: 10, offset: 7}} xl={{span: 8, offset: 1}} className='eco-flex-row flex-centered'>
                     <Image
                         src={'/svg/nadzor.svg'}
                         preview={false}
                         placeholder={ <Skeleton.Image /> }
-                        style={{width: '100%', height: '70vh', maxWidth: '1100px'}}
+                        style={{width: '100%', height: '60vh', maxWidth: '1100px'}}
                     />
                 </Col>
             </Row>

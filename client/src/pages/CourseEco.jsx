@@ -19,7 +19,7 @@ const CourseEco = () => {
 
     useEffect(() => {
         if(start) {
-            history.push('/courses/eco/1');
+            history.push('/courses/eco');
         }
     }, [start]);
 

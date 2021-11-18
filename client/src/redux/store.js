@@ -41,6 +41,6 @@ const reducer = (state = reduxState, action) => {
 }
 
 const reduxStore = createStore(reducer);
-reduxStore.subscribe(() => console.info(reduxStore.getState()));
+// reduxStore.subscribe(() => console.info(reduxStore.getState()));
 
 export default reduxStore;

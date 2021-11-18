@@ -16,6 +16,7 @@
 
 .App {
     width: 100%;
+    min-height: 100vh;
     background: #F5FEFF;
     /*background: azure;*/
 }
@@ -66,12 +67,4 @@
     font-size: 18px;
     color: black;
     background: transparent;
-}
-
-.ant-page-header-back-button {
-    color: floralwhite !important;
-}
-
-.ant-page-header-back-button:hover {
-    color: antiquewhite !important;
 }

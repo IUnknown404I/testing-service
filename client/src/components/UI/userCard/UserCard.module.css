@@ -26,3 +26,30 @@
     font-size: 18px;
     margin-bottom: 10px;
 }
+
+.but_div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.but {
+    font-size: 1rem;
+    min-height: 40px;
+    min-width: 100px;
+    background: lightcyan;
+    border: 1px solid skyblue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px lightgrey;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.but:hover {
+    background: lightcyan;
+    box-shadow: none;
+    transform: scale(1.05);
+}

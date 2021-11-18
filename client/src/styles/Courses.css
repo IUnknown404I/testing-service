@@ -1,6 +1,10 @@
 .courses_main {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*display: grid;*/
+    /*grid-template-columns: repeat(12, 1fr);*/
 }
 
 .courses__definition {
@@ -10,7 +14,8 @@
 }
 
 .course__variant {
-    grid-column: 3 / span 8;
+    /*grid-column: 3 / span 8;*/
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     padding: 15px;
@@ -91,7 +96,6 @@
 
 .earth {
     grid-column: 1 / span 8;
-    /*grid-column: 1 / span 8;*/
 }
 
 .canvas_Earth {

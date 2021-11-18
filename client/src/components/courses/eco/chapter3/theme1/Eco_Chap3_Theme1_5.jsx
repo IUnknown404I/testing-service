@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Row, Col, Popover, Button, Image, Skeleton} from 'antd';
+import {Row, Col, Popover, Button} from 'antd';
 import { BackTop } from 'antd';
 import {ExclamationCircleTwoTone, WarningTwoTone} from "@ant-design/icons";
 import Draggable_Modal from "../../../../UI/draggable_modal/Draggable_Modal";
@@ -25,7 +25,7 @@ const Eco_Chap3_Theme1_5 = () => {
                     <h1 style={{marginBottom: '20px'}}><ExclamationCircleTwoTone twoToneColor='darkorange'/>&nbsp; <strong>Основными принципами защиты прав</strong> юридических лиц, индивидуальных предпринимателей при осуществлении государственного контроля (надзора), муниципального контроля являются:</h1>
                 </Col>
 
-                <Col offset={1} span={10} className='eco-flex-col'>
+                <Col md={{span: 20, offset: 2}} lg={{span: 10, offset: 1}} className='eco-flex-col'>
                     <div className='eco-flex-row'>
                         <div className='eco-numeration-num'>1</div>
                         <div className='eco-numeration-text' style={{fontSize: '1.25rem'}}>
@@ -52,7 +52,7 @@ const Eco_Chap3_Theme1_5 = () => {
                     </div>
                 </Col>
 
-                <Col offset={1} span={11} className='eco-flex-col'>
+                <Col md={{span: 20, offset: 2}} lg={{span: 11, offset: 1}} className='eco-flex-col'>
                     <div className='eco-flex-row'>
                         <div className='eco-numeration-num'>5</div>
                         <div className='eco-numeration-text' style={{fontSize: '1.25rem'}}>

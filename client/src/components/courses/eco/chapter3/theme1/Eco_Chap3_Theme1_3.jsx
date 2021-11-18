@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import {Row, Col, Steps, Popover, Skeleton, Image, Button, List} from 'antd';
+import {Row, Col, Steps, Popover, Skeleton, Image, Button} from 'antd';
 import { BackTop } from 'antd';
 import {ExclamationCircleTwoTone, InfoCircleTwoTone} from "@ant-design/icons";
-import Draggable_Modal from "../../../../UI/draggable_modal/Draggable_Modal";
 
 const { Step } = Steps;
 
@@ -105,7 +104,7 @@ const Eco_Chap3_Theme1_3 = () => {
             </Row>
 
             <Row>
-                <Col span={11} offset={1} className=''>
+                <Col md={{span: 22, offset: 1}} lg={{span: 11, offset: 1}}>
                     <h1 style={{marginBottom: '20px'}}><ExclamationCircleTwoTone twoToneColor='darkorange'/>&nbsp; <strong>Государственный экологический надзор включает в себя:</strong></h1>
 
                     <Steps progressDot direction="vertical" className='eco-steps-style eco-steps-style-big-font'>
@@ -152,15 +151,11 @@ const Eco_Chap3_Theme1_3 = () => {
                     </Steps>
                 </Col>
 
-                <Col offset={1} span={11} className='eco-flex-col eco-img-col'>
-                    <div className='eco-steps-interaction-container eco-inv-card eco-container-left-border' style={{marginBottom: '20px'}}>
-                        <Steps current={current} className='eco-steps-interaction'>
-                            {steps.map(item => (
-                                <Step key={item.title} title={item.title} />
-                            ))}
-                        </Steps>
+                <Col md={{span: 22, offset: 1}} lg={{span: 11, offset: 1}} className='eco-flex-col eco-img-col'>
+                    <div className='eco-steps-interaction-container eco-inv-card' style={{marginBottom: '20px'}}>
+                        <div className='eco-flex-row flex-left'><div className='eco-steps-current-num'>{current + 1}</div>из {steps.length}</div>
                         <div className="steps-content">{steps[current].content}</div>
-                        <div className="steps-action">
+                        <div className="steps-action-2 eco-steps-action-space">
                             {current > 0 && (
                                 <Button style={{ margin: '0 8px' }} onClick={() => prev()}>
                                     Вернуться

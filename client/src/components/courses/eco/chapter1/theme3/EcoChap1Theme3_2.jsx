@@ -29,14 +29,14 @@ const EcoChap1Theme3_2 = () => {
         <>
             <BackTop />
 
-            <Row style={{margin: '20px 0 30px'}}>
+            <Row style={{margin: '20px 0 20px'}}>
                 <Col span={20} offset={2}>
                     <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Документация по охране атмосферного воздуха включает в себя</strong></h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={1} span={22}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}} className='padding-15-30'>
                     <div className='eco-carousel-height-250'>
                         <Carousel appendDots={(dots) => <ul>{dots}</ul>} arrows={true}>
                             <div className='eco-carousel-card'>
@@ -139,8 +139,8 @@ const EcoChap1Theme3_2 = () => {
                 </Col>
             </Row>
 
-            <Row>
-                <Col offset={0} span={12}>
+            <Row style={{marginTop: '20px'}}>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 12, offset: 0}} style={{marginLeft: '15px', marginTop: '-50px'}}>
                     <fieldset className='fieldset-eco'>
                         <legend>Дополнительно</legend>
 
@@ -154,7 +154,8 @@ const EcoChap1Theme3_2 = () => {
                     </fieldset>
                 </Col>
 
-                <Col offset={0} span={12} style={{marginTop: '50px'}}>
+                {/*<Col lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}} style={{marginTop: '50px'}}>*/}
+                <Col lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}}>
                     <div>
                         <Collapse
                             className='mycollapse'

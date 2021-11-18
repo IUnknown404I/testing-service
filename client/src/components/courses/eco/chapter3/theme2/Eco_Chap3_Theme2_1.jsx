@@ -36,7 +36,7 @@ const Eco_Chap3_Theme2_1 = () => {
             </Row>
 
             <Row>
-                <Col offset={3} span={9} className='eco-flex-col'>
+                <Col md={{span: 20, offset: 2}} lg={{span: 14, offset: 1}} xl={{span: 9, offset: 3}} className='eco-flex-col'>
                     <div className='eco-flex-row flex-centered'>
                         <div className='eco-num-col'>1</div>
                         <div className='eco-num-text'>
@@ -51,7 +51,7 @@ const Eco_Chap3_Theme2_1 = () => {
                     </div>
                 </Col>
 
-                <Col offset={1} span={8}>
+                <Col md={{span: 20, offset: 2}} lg={{span: 9, offset: 0}} xl={{span: 8, offset: 1}}>
                     <div className='eco-inv-card' style={{boxShadow: '0 1px 3px 0 darkorange'}}>
                         <div className='eco-img-col'>
                             <Image
@@ -71,25 +71,8 @@ const Eco_Chap3_Theme2_1 = () => {
                         <Button block onClick={() => {setShowModal(true)}} className='mybut-primary-orange'>Информация по штрафам</Button>
                     </div>
                 </Col>
-                <Draggable_Modal
-                    title='Информация по штрафам'
-                    content={
-                        <>
-                            <div style={{fontSize: '1.15rem', marginTop: '-10px'}}>
-                                <div>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Штрафы за административные экологические правонарушения <strong>налагаются специально уполномоченными государственными органами</strong> в области охраны окружающей среды, регулирования использования природных ресурсов в соответствии с их компетенцией. Меры административной ответственности применяются без обращения в суд и по упрощенной процедуре.
-                                </div>
-                                <div style={{marginTop: '25px'}}>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Суммы взыскиваемых штрафов перечисляются <strong>на специальные счета государственных экологических фондов.</strong> Постановление о наложении штрафа в административном порядке может быть обжаловано в суд или арбитражный суд.
-                                </div>
-                            </div>
-                        </>
-                    }
-                    show={showModal}
-                    hide={setShowModal}
-                />
 
-                <Col offset={2} span={20} style={{marginTop: '20px'}}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 20, offset: 2}} style={{marginTop: '20px'}}>
                     <fieldset className='fieldset-eco fieldset-eco-modal'>
                         <legend style={{fontSize: '1.25rem'}}>Виды правонарушений</legend>
 
@@ -138,6 +121,24 @@ const Eco_Chap3_Theme2_1 = () => {
                 </fieldset>
                 </Col>
             </Row>
+
+            <Draggable_Modal
+                title='Информация по штрафам'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem', marginTop: '-10px'}}>
+                            <div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Штрафы за административные экологические правонарушения <strong>налагаются специально уполномоченными государственными органами</strong> в области охраны окружающей среды, регулирования использования природных ресурсов в соответствии с их компетенцией. Меры административной ответственности применяются без обращения в суд и по упрощенной процедуре.
+                            </div>
+                            <div style={{marginTop: '25px'}}>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Суммы взыскиваемых штрафов перечисляются <strong>на специальные счета государственных экологических фондов.</strong> Постановление о наложении штрафа в административном порядке может быть обжаловано в суд или арбитражный суд.
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModal}
+                hide={setShowModal}
+            />
         </>
     );
 };

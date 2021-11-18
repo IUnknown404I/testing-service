@@ -15,7 +15,7 @@ const Eco_Chap2_Theme1_4 = () => {
             </Row>
 
             <Row>
-                <Col offset={2} span={8} className='eco-flex-col eco-inv-card'>
+                <Col lg={{span: 18, offset: 3}} xl={{span: 10, offset: 1}} xxl={{span: 8, offset: 2}} className='eco-flex-col eco-inv-card' style={{marginBottom: '20px'}}>
                     <div className='eco-container-left-border'>
                         <div className='eco-img-col'>
                             <Image
@@ -28,7 +28,7 @@ const Eco_Chap2_Theme1_4 = () => {
                             />
                         </div>
                         <div>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong style={{fontWeight: 'bold'}}>Внеплановую инспекционную проверку</strong> проводят в случае получения результатов производственного эколого-аналитического (инструментального) контроля и&nbsp;
+                            <strong style={{fontWeight: 'bold'}}>Внеплановую инспекционную проверку</strong> проводят в случае получения результатов производственного эколого-аналитического (инструментального) контроля и&nbsp;
                             <Popover
                                 color={"azure"}
                                 overlayStyle={{maxWidth: '450px'}}
@@ -43,7 +43,7 @@ const Eco_Chap2_Theme1_4 = () => {
                     </div>
                 </Col>
 
-                <Col offset={1} span={10} className='eco-img-col'>
+                <Col lg={{span: 20, offset: 2}} xl={{span: 10, offset: 1}} xxl={{span: 10, offset: 1}} className='eco-img-col'>
                     <div>
                         <h1 style={{textAlign: "center", fontSize: '1.35rem', marginBottom: '20px'}}><strong>Внеплановые инспекционные проверки проводят в случае:</strong></h1>
                         <p>

@@ -17,7 +17,7 @@ const Eco_Chap2_Theme4_3 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={3} span={18} className='eco-inv-card eco-numeration-container-blue' style={{padding: '20px 20px'}}>
+                <Col md={{span: 22, offset: 1}} lg={{span: 18, offset: 3}} className='eco-inv-card eco-numeration-container-blue' style={{padding: '20px 20px'}}>
                     <div className='eco-div-withFloat eco-img-col'>
                         <Image
                             className='eco-float-ico'
@@ -32,17 +32,17 @@ const Eco_Chap2_Theme4_3 = () => {
                     </div>
 
                     <Divider/>
-                    <div className='eco-flex-row' style={{marginTop: '40px'}}>
-                        <Col offset={2} span={9} className='eco-img-col text-centered'>
+                    <Row className='eco-flex-row' style={{marginTop: '40px'}}>
+                        <Col md={{span: 22, offset: 1}} lg={{span: 9, offset: 2}} className='eco-img-col text-centered'>
                             <NumListCard num={1} text={<span>Определение <strong style={{fontWeight: 'bold'}}>схемы размещения мест</strong> накопления твердых коммунальных отходов и ведение реестра мест накопления твердых коммунальных отходов</span>}/>
                         </Col>
-                        <Col offset={2} span={9} className='eco-img-col text-centered'>
+                        <Col md={{span: 22, offset: 1}} lg={{span: 9, offset: 2}} className='eco-img-col text-centered'>
                             <NumListCard num={2} text={<span>Организация <strong style={{fontWeight: 'bold'}}>экологического воспитания и формирования экологической культуры</strong> в области обращения с твердыми коммунальными отходами</span>}/>
                         </Col>
-                    </div>
+                    </Row>
                     <Divider/>
-                    <div className='eco-img-col'>
-                        <Col span={20} className='eco-img-col'>
+                    <Row>
+                        <Col md={{span: 22, offset: 1}} lg={{span: 20, offset: 2}} className='eco-img-col'>
                             <NumListCard num={3} text={<span><strong style={{fontWeight: 'bold'}}>Создание и содержание</strong> площадок накопления&nbsp;
                                 <Popover
                                     color={"azure"}
@@ -56,7 +56,7 @@ const Eco_Chap2_Theme4_3 = () => {
                                 </Popover>
                             </span>}/>
                         </Col>
-                    </div>
+                    </Row>
                 </Col>
             </Row>
         </>

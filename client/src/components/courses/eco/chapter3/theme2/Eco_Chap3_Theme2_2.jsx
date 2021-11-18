@@ -51,14 +51,14 @@ const Eco_Chap3_Theme2_2 = () => {
                         <Col offset={1} span={22} className='eco-inv-card eco-container-left-border' style={{padding: '15px 20px'}}>
                             <Row>
                                 <Col span={20} offset={2}>
-                                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Нарушение правил охраны окружающей среды при производстве работ</strong></h1>
+                                    <h1 style={{textAlign: "center", fontSize: '1.65rem', marginBottom: '30px'}}><strong>Нарушение правил охраны окружающей среды при производстве работ</strong></h1>
                                 </Col>
 
-                                <Col offset={0} span={22} style={{fontSize: '1.3rem'}}>
+                                <Col offset={0} span={24} style={{fontSize: '1.3rem'}}>
                                     <ExclamationCircleTwoTone twoToneColor='darkorange'/>&nbsp; <strong style={{fontWeight: 'bold'}}>Нарушение правил охраны окружающей среды при проектировании, размещении, строительстве, вводе в эксплуатацию и эксплуатации промышленных, сельскохозяйственных, научных и иных объектов</strong> лицами, ответственными за соблюдение этих правил наказывается:
                                 </Col>
 
-                                <Col offset={1} span={13} className='eco-flex-col' style={{marginTop: '20px'}}>
+                                <Col md={{span: 22, offset: 1}} lg={{span: 13, offset: 1}} className='eco-flex-col' style={{marginTop: '20px'}}>
                                     <div className='eco-flex-row '>
                                         <div className='eco-num-col'>1</div>
                                         <div className='eco-num-text'>
@@ -73,7 +73,7 @@ const Eco_Chap3_Theme2_2 = () => {
                                     </div>
                                 </Col>
 
-                                <Col offset={1} span={9} className='eco-flex-col' style={{marginTop: '20px'}}>
+                                <Col md={{span: 22, offset: 1}} lg={{span: 9, offset: 1}} className='eco-flex-col' style={{marginTop: '20px'}}>
                                     <div className='eco-flex-row '>
                                         <div className='eco-num-col'>3</div>
                                         <div className='eco-num-text'>
@@ -107,11 +107,11 @@ const Eco_Chap3_Theme2_2 = () => {
                     <Col offset={1} span={22} className='eco-inv-card eco-container-left-border' style={{padding: '15px 20px'}}>
 
                         <Row>
-                            <Col span={20} offset={2}>
-                                <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Нарушение правил обращения экологически опасных веществ и отходов</strong></h1>
+                            <Col span={22} offset={1}>
+                                <h1 style={{textAlign: "center", fontSize: '1.65rem', marginBottom: '30px'}}><strong>Нарушение правил обращения экологически опасных веществ и отходов</strong></h1>
                             </Col>
 
-                            <Col span={15}>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 15, offset: 0}} style={{marginBottom: '20px'}}>
                                 <div>
                                     <strong style={{fontWeight: 'bold', fontSize: '1.3rem'}}>Производство запрещенных видов опасных отходов, транспортировка, хранение, захоронение, использование или иное обращение радиоактивных, бактериологических, химических веществ и отходов</strong> с нарушением установленных правил наказываются:
                                 </div>
@@ -123,7 +123,7 @@ const Eco_Chap3_Theme2_2 = () => {
                                 </div>
 
                             </Col>
-                            <Col offset={1} span={8} className='eco-img-col eco-flex-col'>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 8, offset: 1}} className='eco-img-col eco-flex-col'>
                                 <div className='eco-inv-card' style={{boxShadow: '0 1px 3px 0 darkorange'}}>
                                     <div className='eco-img-col'>
                                         <Image
@@ -142,27 +142,6 @@ const Eco_Chap3_Theme2_2 = () => {
                                 </div>
 
                                 <Button block onClick={() => {setShowModal1(true);}} className='mybut-primary-orange'>Дополнительные последствия</Button>
-
-                                <Draggable_Modal
-                                    title='Нарушение правил обращения. Дополнительные последствия'
-                                    content={
-                                        <>
-                                            <div style={{fontSize: '1.15rem'}}>
-                                                <div style={{textAlign: 'left'}}>
-                                                    <List
-                                                        header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие загрязнение, отравление или заражение окружающей среды, причинение вреда здоровью человека либо массовую гибель животных наказываются:</strong></div>}
-                                                        size="medium"
-                                                        bordered
-                                                        dataSource={data1}
-                                                        renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </>
-                                    }
-                                    show={showModal1}
-                                    hide={setShowModal1}
-                                />
                             </Col>
                         </Row>
 
@@ -179,10 +158,10 @@ const Eco_Chap3_Theme2_2 = () => {
 
                             <Row>
                                 <Col span={20} offset={2}>
-                                    <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Загрязнение атмосферы</strong></h1>
+                                    <h1 style={{textAlign: "center", fontSize: '1.65rem', marginBottom: '30px'}}><strong>Загрязнение атмосферы</strong></h1>
                                 </Col>
 
-                                <Col span={15}>
+                                <Col lg={{span: 22, offset: 1}} xl={{span: 15, offset: 0}} style={{marginBottom: '20px'}}>
                                     <div>
                                         <strong style={{fontWeight: 'bold', fontSize: '1.3rem'}}>Нарушение правил выброса в атмосферу загрязняющих веществ или нарушение эксплуатации</strong> установок, сооружений и иных объектов наказываются:
                                     </div>
@@ -195,7 +174,7 @@ const Eco_Chap3_Theme2_2 = () => {
                                     </div>
 
                                 </Col>
-                                <Col offset={1} span={8} className='eco-img-col eco-flex-col'>
+                                <Col lg={{span: 22, offset: 1}} xl={{span: 8, offset: 1}} className='eco-img-col eco-flex-col'>
                                     <div className='eco-inv-card' style={{boxShadow: '0 1px 3px 0 darkorange'}}>
                                         <div className='eco-img-col'>
                                             <Image
@@ -214,27 +193,6 @@ const Eco_Chap3_Theme2_2 = () => {
                                     </div>
 
                                     <Button block onClick={() => {setShowModal3(true);}} className='mybut-primary-orange'>Дополнительные последствия</Button>
-
-                                    <Draggable_Modal
-                                        title='Загрязнение атмосферы. Дополнительные последствия'
-                                        content={
-                                            <>
-                                                <div style={{fontSize: '1.15rem'}}>
-                                                    <div style={{textAlign: 'left'}}>
-                                                        <List
-                                                            header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие по неосторожности причинение вреда здоровью человека, наказываются:</strong></div>}
-                                                            size="medium"
-                                                            bordered
-                                                            dataSource={data3}
-                                                            renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                                        />
-                                                    </div>
-                                                </div>
-                                            </>
-                                        }
-                                        show={showModal3}
-                                        hide={setShowModal3}
-                                    />
                                 </Col>
                             </Row>
 
@@ -251,10 +209,10 @@ const Eco_Chap3_Theme2_2 = () => {
 
                         <Row>
                             <Col span={20} offset={2}>
-                                <h1 style={{textAlign: "center", fontSize: '1.65rem'}}><strong>Загрязнение вод</strong></h1>
+                                <h1 style={{textAlign: "center", fontSize: '1.65rem', marginBottom: '30px'}}><strong>Загрязнение вод</strong></h1>
                             </Col>
 
-                            <Col span={15}>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 15, offset: 0}} style={{marginBottom: '20px'}}>
                                 <div>
                                     <strong style={{fontWeight: 'bold', fontSize: '1.3rem'}}>Загрязнение, засорение, истощение поверхностных или подземных вод, источников питьевого водоснабжения</strong> либо иное изменение их природных свойств наказываются:
                                 </div>
@@ -264,7 +222,7 @@ const Eco_Chap3_Theme2_2 = () => {
                                 </div>
 
                             </Col>
-                            <Col offset={1} span={8} className='eco-img-col eco-flex-col'>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 8, offset: 1}} className='eco-img-col eco-flex-col'>
                                 <div className='eco-inv-card' style={{boxShadow: '0 1px 3px 0 darkorange'}}>
                                     <div className='eco-img-col'>
                                         <Image
@@ -283,27 +241,6 @@ const Eco_Chap3_Theme2_2 = () => {
                                 </div>
 
                                 <Button block onClick={() => {setShowModal2(true);}} className='mybut-primary-orange'>Дополнительные последствия</Button>
-
-                                <Draggable_Modal
-                                    title='Загрязнение вод. Дополнительные последствия'
-                                    content={
-                                        <>
-                                            <div style={{fontSize: '1.15rem'}}>
-                                                <div style={{textAlign: 'left'}}>
-                                                    <List
-                                                        header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие причинение вреда здоровью человека или массовую гибель животных наказываются:</strong></div>}
-                                                        size="medium"
-                                                        bordered
-                                                        dataSource={data2}
-                                                        renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </>
-                                    }
-                                    show={showModal2}
-                                    hide={setShowModal2}
-                                />
                             </Col>
                         </Row>
 
@@ -324,10 +261,10 @@ const Eco_Chap3_Theme2_2 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={1} span={22} className='eco-steps-interaction-container'>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}} className='eco-steps-interaction-container'>
                     <Steps current={current} className='eco-steps-interaction'>
-                        {steps.map(item => (
-                            <Step key={item.title} title={item.title} />
+                        {steps.map((item, index) => (
+                            <Step key={index} title={item.title} onClick={(event) => {setCurrent(index)}}/>
                         ))}
                     </Steps>
                     <div className="steps-content">{steps[current].content}</div>
@@ -345,6 +282,69 @@ const Eco_Chap3_Theme2_2 = () => {
                     </div>
                 </Col>
             </Row>
+
+            <Draggable_Modal
+                title='Нарушение правил обращения. Дополнительные последствия'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div style={{textAlign: 'left'}}>
+                                <List
+                                    header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие загрязнение, отравление или заражение окружающей среды, причинение вреда здоровью человека либо массовую гибель животных наказываются:</strong></div>}
+                                    size="medium"
+                                    bordered
+                                    dataSource={data1}
+                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                />
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModal1}
+                hide={setShowModal1}
+            />
+
+            <Draggable_Modal
+                title='Загрязнение атмосферы. Дополнительные последствия'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div style={{textAlign: 'left'}}>
+                                <List
+                                    header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие по неосторожности причинение вреда здоровью человека, наказываются:</strong></div>}
+                                    size="medium"
+                                    bordered
+                                    dataSource={data3}
+                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                />
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModal3}
+                hide={setShowModal3}
+            />
+
+            <Draggable_Modal
+                title='Загрязнение вод. Дополнительные последствия'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div style={{textAlign: 'left'}}>
+                                <List
+                                    header={<div style={{fontSize: '1.2rem'}}><strong>Те же деяния, повлекшие причинение вреда здоровью человека или массовую гибель животных наказываются:</strong></div>}
+                                    size="medium"
+                                    bordered
+                                    dataSource={data2}
+                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                />
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModal2}
+                hide={setShowModal2}
+            />
         </>
     );
 };

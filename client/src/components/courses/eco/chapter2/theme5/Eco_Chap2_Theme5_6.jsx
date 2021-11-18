@@ -32,11 +32,11 @@ const Eco_Chap2_Theme5_6 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={22}>
-                    <div className='eco-flex-row eco-inv-card' style={{padding: '20px 30px'}}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}}>
+                    <div className='eco-flex-row eco-inv-card' style={{padding: '20px 10px'}}>
 
                         <Row>
-                            <Col span={11}>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}} style={{marginBottom: '20px'}}>
                                 <Card className='simple-card-orange'>
                                     <h1 style={{textAlign: "center", fontSize: '1.35rem'}}><strong>Сокрытие или искажение экологической информации</strong></h1>
 
@@ -78,7 +78,7 @@ const Eco_Chap2_Theme5_6 = () => {
                                 </Card>
                             </Col>
 
-                            <Col span={12} offset={1} className='eco-flex-col flex-centered eco-container-left-border eco-container-right-border'>
+                            <Col lg={{span: 22, offset: 1}} xl={{span: 12, offset: 1}} className='eco-flex-col flex-centered eco-container-left-border eco-container-right-border'>
                                 <Row>
                                     <Col offset={1} span={22}>
                                         <h1 style={{textAlign: "center", fontSize: '1.35rem'}}><strong>Невнесение в установленные сроки платы за негативное воздействие на окружающую среду </strong></h1>
@@ -93,7 +93,7 @@ const Eco_Chap2_Theme5_6 = () => {
                                     </div>
                                 </div>
 
-                                <Button block className='mybut' onClick={() => setShowModal(true)}>Детализация условий наложения административного штрафа</Button>
+                                <Button block className='mybut' onClick={() => setShowModal(true)}>Детализация условий наложения штрафа</Button>
                             </Col>
                         </Row>
 

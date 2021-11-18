@@ -13,7 +13,7 @@ const Literature = ({setSwitchToLiterature}) => {
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={2} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 4, offset: 0}} lg={{span: 3, offset: 0}} xl={{span: 2, offset: 1}} className='eco-flex-row' style={{textAlign: 'center', justifyContent: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToLiterature(false)}}
                         icon={<LeftCircleTwoTone />}
@@ -23,13 +23,13 @@ const Literature = ({setSwitchToLiterature}) => {
                         Вернуться
                     </Button>
                 </Col>
-                <Col span={16} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}}  sm={{span: 20, offset: 2}} md={{span: 16, offset: 0}} lg={{span: 18, offset: 0}} xl={{span: 18, offset: 0}} style={{textAlign: 'center'}}>
                     <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}>Список литературы</h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={2} span={20} className='eco-glossary eco-literature'>
+                <Col md={{span: 22, offset: 1}} lg={{span: 20, offset: 2}}  xl={{span: 16, offset: 4}} className='eco-glossary eco-literature'>
                     <LiteratureParagraph twoToneColor={'darkred'} text='Кодекс Российской Федерации об административных правонарушениях от 30.12.2001 N 195-ФЗ (ред. от 01.07.2021)'/>
                     <LiteratureParagraph twoToneColor={'darkred'} text='Закон РФ от 21.02.1992 N 2395-1 (ред. от 11.06.2021) "О недрах"'/>
                     <br/>

@@ -63,10 +63,10 @@ const EcoChap1Theme3_6 = () => {
                     <Row>
                         <Col offset={1} span={22} className='eco-description-container' style={{padding: '15px 20px'}}>
                             <Descriptions title="Форма № 2-ТП (водхоз)">
-                                <Descriptions.Item label="Название " span={4}>«Сведения об использовании воды»</Descriptions.Item>
-                                <Descriptions.Item label="Отчетный период ">календарный год</Descriptions.Item>
-                                <Descriptions.Item label="Срок представления " span={2}>до 22 января после отчетного периода</Descriptions.Item>
-                                <Descriptions.Item label="Критерии " span={4}>
+                                <Descriptions.Item label="Название" span={4}>«Сведения об использовании воды»</Descriptions.Item>
+                                <Descriptions.Item label="Отчетный период" span={4}>календарный год</Descriptions.Item>
+                                <Descriptions.Item label="Срок представления" span={4}>до 22 января после отчетного периода</Descriptions.Item>
+                                <Descriptions.Item label="Критерии" span={4}>
                                     <div style={{textAlign: 'left'}}>
                                         - осуществляющие сброс сточных вод;
                                         <br/>- осуществляющие забор из водных объектов 50 м3 воды в сутки и более;
@@ -91,10 +91,10 @@ const EcoChap1Theme3_6 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={2} span={20} className='eco-steps-interaction-container'>
+                <Col md={{span: 24, offset: 0}} lg={{span: 20, offset: 2}} className='eco-steps-interaction-container'>
                     <Steps current={current} className='eco-steps-interaction'>
-                        {steps.map(item => (
-                            <Step key={item.title} title={item.title} />
+                        {steps.map((item, index) => (
+                            <Step key={index} title={item.title} onClick={(event) => {setCurrent(index)}}/>
                         ))}
                     </Steps>
                     <div className="steps-content">{steps[current].content}</div>

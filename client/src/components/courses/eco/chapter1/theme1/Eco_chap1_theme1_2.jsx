@@ -4,7 +4,7 @@ import {Image, Col, Row, Popover, Skeleton, Steps, Card, Tabs} from "antd";
 const { Step } = Steps;
 const { TabPane } = Tabs;
 
-const Eco_chap1_theme1_2 = () => {
+const Eco_Chap1_Theme1_2 = () => {
 
     return (
         <>
@@ -16,7 +16,7 @@ const Eco_chap1_theme1_2 = () => {
             </Row>
 
             <Row>
-                <Col span={10} offset={1} className='eco-img-col'>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 10, offset: 1}} className='eco-img-col' style={{marginBottom: '20px'}}>
                     <Image
                         className='eco-img'
                         src={'/breath.jpg'}
@@ -26,7 +26,7 @@ const Eco_chap1_theme1_2 = () => {
                         }
                     />
                 </Col>
-                <Col span={12} offset={0} className='eco-img-col'>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 12, offset: 0}} className='eco-img-col'>
                     <Steps progressDot direction="vertical" className='eco-steps-style'>
                         <Step status={'process'} title={
                             <span>
@@ -63,13 +63,13 @@ const Eco_chap1_theme1_2 = () => {
             </Row>
 
             <Row style={{marginTop: '20px'}}>
-                <Col offset={4} span={17}>
-                    <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list' centered animated>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 17, offset: 4}}>
+                    <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list eco-tab-list-right-radius' centered animated>
                         <TabPane tab="объекты I категории" key="1">
                             <>
                                 <Row style={{marginTop: '20px'}}>
                                     <Col offset={1} span={22}>
-                                        <Card className='simple-card'>
+                                        <Card className='simple-card simple-card-radius'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
                                                     <Image
@@ -104,7 +104,7 @@ const Eco_chap1_theme1_2 = () => {
                             <>
                                 <Row style={{marginTop: '20px'}}>
                                     <Col offset={1} span={22}>
-                                        <Card className='simple-card'>
+                                        <Card className='simple-card simple-card-radius'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
                                                     <Image
@@ -149,7 +149,7 @@ const Eco_chap1_theme1_2 = () => {
                             <>
                                 <Row style={{marginTop: '20px'}}>
                                     <Col offset={1} span={22}>
-                                        <Card className='simple-card'>
+                                        <Card className='simple-card simple-card-radius'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
                                                     <Image
@@ -177,4 +177,4 @@ const Eco_chap1_theme1_2 = () => {
     );
 };
 
-export default Eco_chap1_theme1_2;
+export default Eco_Chap1_Theme1_2;

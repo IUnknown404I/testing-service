@@ -13,7 +13,7 @@ const Glossary = ({setSwitchToGlossary}) => {
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={2} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 4, offset: 0}} lg={{span: 3, offset: 0}} xl={{span: 2, offset: 1}} className='eco-flex-row' style={{textAlign: 'center', justifyContent: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToGlossary(false)}}
                         icon={<LeftCircleTwoTone />}
@@ -23,13 +23,13 @@ const Glossary = ({setSwitchToGlossary}) => {
                         Вернуться
                     </Button>
                 </Col>
-                <Col span={16} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 20, offset: 2}} md={{span: 16, offset: 0}} lg={{span: 18, offset: 0}} xl={{span: 18, offset: 0}} style={{textAlign: 'center'}}>
                     <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}>Глоссарий</h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={2} span={20} className='eco-glossary'>
+                <Col md={{span: 22, offset: 1}} lg={{span: 20, offset: 2}} xl={{span: 18, offset: 3}} className='eco-glossary'>
 
                     <GlossaryParagraph text='Вред окружающей среде - негативное изменение окружающей среды в результате ее загрязнения, повлекшее за собой деградацию естественных экологических систем и истощение природных ресурсов'/>
 

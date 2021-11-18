@@ -16,9 +16,9 @@ const Eco_Chap2_Theme4_2 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={2} span={6} className='eco-img-col'>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 20, offset: 2}} md={{span: 14, offset: 5}} lg={{span: 8, offset: 0}} xl={{span: 6, offset: 2}} className='eco-flex-row flex-centered'>
                     <Image
-                        style={{background: 'transparent'}}
+                        style={{background: 'transparent', maxHeight: '40vh'}}
                         src={'/images/aa.png'}
                         preview={false}
                         placeholder={
@@ -27,7 +27,7 @@ const Eco_Chap2_Theme4_2 = () => {
                     />
                 </Col>
 
-                <Col offset={1} span={13} className='eco-img-col'>
+                <Col md={{span: 22, offset: 1}} lg={{span: 16, offset: 0}} xl={{span: 12, offset: 1}} className='eco-img-col'>
                     <Steps progressDot direction="vertical" className='eco-steps-style eco-steps-style-light'>
                         <Step status={'process'} title={<span><strong style={{fontWeight: 'bold'}}>Профессиональное обучение и дополнительное профессиональное образование</strong> лиц, которые допущены к сбору, транспортированию, обработке, утилизации, обезвреживанию, размещению отходов I - IV классов опасности, осуществляются в соответствии с законодательством об образовании.</span>} />
                         <Step status={'process'} title={

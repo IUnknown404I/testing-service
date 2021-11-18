@@ -19,7 +19,7 @@ const Eco_Chap2_Theme3_1 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={11} className='eco-timeline-container'>
+                <Col md={{span: 24, offset: 0}} lg={{span: 12, offset: 0}} xl={{span: 11, offset: 1}} className='eco-timeline-container'>
                     <h1 style={{fontSize: '1.45rem', marginBottom: '30px'}} className='eco-numeration text-centered'>Основные требования по предоставлению водных объектов в пользование для сброса сточных вод:</h1>
 
                     <Timeline>
@@ -62,7 +62,7 @@ const Eco_Chap2_Theme3_1 = () => {
                     </Timeline>
                 </Col>
 
-                <Col offset={1} span={10} className='eco-timeline-container'>
+                <Col md={{span: 24, offset: 0}} lg={{span: 12, offset: 0}} xl={{span: 10, offset: 1}} className='eco-timeline-container'>
                     <h1 style={{fontSize: '1.45rem', marginBottom: '30px'}} className='eco-numeration text-centered'>Нормирование сбросов загрязняющих веществ в водные объекты для водопользователей:</h1>
 
                     <Timeline>

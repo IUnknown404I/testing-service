@@ -12,6 +12,7 @@
     "dotenv": "^10.0.0",
     "gsap": "^3.8.0",
     "jwt-decode": "^3.1.2",
+    "rc-queue-anim": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-draggable": "^4.4.4",

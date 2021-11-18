@@ -14,7 +14,7 @@ const Eco_Chap2_Theme4_1 = () => {
             </Row>
 
             <Row>
-                <Col offset={2} span={12} className='eco-container-left-border eco-img-col'>
+                <Col md={{span: 22, offset: 1}} lg={{span: 14, offset: 0}} xl={{span: 14, offset: 0}} xxl={{span: 12, offset: 2}} className='eco-container-left-border eco-img-col'>
                     <div>
                         <h1 style={{fontSize: '1.45rem'}}>1. На <strong style={{fontWeight: 'bold'}}>отходы I − IV класса</strong> опасности должен быть составлен паспорт</h1>
                         <h1 style={{fontSize: '1.45rem'}}>2.&nbsp;
@@ -50,7 +50,7 @@ const Eco_Chap2_Theme4_1 = () => {
                     </div>
                 </Col>
 
-                <Col offset={1} span={7} className='eco-img-col'>
+                <Col xs={{span: 16, offset: 4}} sm={{span: 12, offset: 6}} md={{span: 12, offset: 6}} lg={{span: 10, offset: 0}} xl={{span: 10, offset: 0}} xxl={{span: 7, offset: 1}} className='eco-img-col flex-centered'>
                     <Image
                         src={'/images/t.png'}
                         preview={false}

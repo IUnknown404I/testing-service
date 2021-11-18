@@ -58,7 +58,7 @@ const EcoChap1Theme3_4 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={22}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}}>
                     <Tabs type="card" size='large' className='eco-tab-list' centered animated>
                         <TabPane tab="Основные документы по обращению с отходами" key="1">
                             <>
@@ -69,8 +69,8 @@ const EcoChap1Theme3_4 = () => {
                                 </Row>
 
                                 <Row>
-                                    <Col offset={1} span={13}>
-                                        <h2 style={{marginBottom: '20px'}}><strong>Проекты нормативов образования отходов и лимитов на их размещение,</strong> оформленные по установленным образцам и включающие следующие разделы:</h2>
+                                    <Col lg={{span: 22, offset: 1}} xl={{span: 13, offset: 1}}>
+                                        <h1 style={{marginBottom: '20px'}}><strong>Проекты нормативов образования отходов и лимитов на их размещение,</strong> оформленные по установленным образцам и включающие следующие разделы:</h1>
                                         <div className='eco-flex-row'>
                                             <div style={{display: 'flex', flexDirection: 'column', width: '40%', alignContent: 'center'}}>
                                                 <NumListCard num={1} text='титульный лист'/>
@@ -88,8 +88,8 @@ const EcoChap1Theme3_4 = () => {
                                         </div>
                                     </Col>
 
-                                    <Col offset={1} span={8}>
-                                        <div className='eco-img-div-item extra'>
+                                    <Col lg={{span: 20, offset: 2}} xl={{span: 8, offset: 1}} className='eco-flex-col flex-centered'>
+                                        <div className='eco-img-div-item extra' style={{marginTop: '10px'}}>
                                             <Image
                                                 className='eco-img-ico'
                                                 preview = {false}
@@ -102,7 +102,7 @@ const EcoChap1Theme3_4 = () => {
                                                 <strong style={{fontWeight: 'bold'}}>Документы по паспортизации отходов</strong>
                                             </span>
                                         </div>
-                                        <div className='eco-img-div-item extra'>
+                                        <div className='eco-img-div-item extra' style={{marginTop: '10px'}}>
                                             <Image
                                                 className='eco-img-ico'
                                                 preview = {false}
@@ -128,7 +128,7 @@ const EcoChap1Theme3_4 = () => {
                                 </Row>
 
                                 <Row>
-                                    <Col offset={1} span={10} style={{borderLeft: '2px solid rgb(76,175,80)', borderRadius: '12px'}}>
+                                    <Col md={{span: 22, offset: 1}} lg={{span: 10, offset: 1}} style={{borderLeft: '2px solid rgb(76,175,80)', borderRadius: '12px', marginBottom: '20px'}}>
                                         <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomLeftRadius: '0', color: 'white'}}>Приказы</h1>
                                         <div className='eco-div-padding'>
                                             <div style={{marginLeft: '5px', fontSize: '19px'}}>
@@ -151,7 +151,7 @@ const EcoChap1Theme3_4 = () => {
                                             </div>
                                         </div>
                                     </Col>
-                                    <Col offset={1} span={10} style={{borderRight: '2px solid rgb(76,175,80)', borderRadius: '12px'}}>
+                                    <Col md={{span: 22, offset: 1}} lg={{span: 10, offset: 1}}style={{borderRight: '2px solid rgb(76,175,80)', borderRadius: '12px'}}>
                                         <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', borderBottomRightRadius: '0', color: 'white'}}>Документы и инструкции</h1>
                                         <div className='eco-div-padding' >
                                             <div style={{marginLeft: '5px', fontSize: '19px'}}>
@@ -183,7 +183,7 @@ const EcoChap1Theme3_4 = () => {
                                     <Col span={24} style={{fontSize: '16px', textAlign: 'center', marginTop: '15px'}}>
                                         <h2 style={{marginBottom: '20px'}}>Набор документов зависит от предприятия и в общем случае включает в себя:</h2>
                                     </Col>
-                                    <Col offset={1} span={22}>
+                                    <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}}>
                                         <div className='eco-flex-row' style={{justifyContent: 'space-around', fontSize: '18px'}}>
                                             <NumListCard num={1} text='схема операционного движения отходов'/>
                                             <NumListCard num={2} text='схема операционного движения отходов'/>
@@ -191,11 +191,11 @@ const EcoChap1Theme3_4 = () => {
                                     </Col>
                                 </Row>
 
-                                <Divider style={{margin: '0 0 0 0', background: 'forestgreen'}}/>
+                                <Divider style={{margin: '0 0 30px 0', background: 'forestgreen'}}/>
 
                                 <Row>
-                                    <Col offset={0} span={11}>
-                                        <fieldset className='fieldset-eco'>
+                                    <Col lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}}>
+                                        <fieldset className='fieldset-eco' style={{marginTop: '-10px'}}>
                                             <legend>В части охраны атмосферного воздуха</legend>
 
                                             <List
@@ -208,7 +208,7 @@ const EcoChap1Theme3_4 = () => {
                                         </fieldset>
                                     </Col>
 
-                                    <Col offset={0} span={13} style={{marginTop: '50px'}}>
+                                    <Col lg={{span: 22, offset: 1}} xl={{span: 13, offset: 0}}>
                                         <div>
                                             <Collapse
                                                 className='mycollapse'

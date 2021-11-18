@@ -6,6 +6,7 @@ import reduxStore from "../redux/store";
 import ResultsModal from "../components/UI/resultsModal/ResultsModal";
 import {useDispatch} from "react-redux";
 import {Actions} from "../redux/actions";
+import NavBar from "../components/UI/navbar/NavBar";
 
 const TestChoose = () => {
     const dispatch = useDispatch();
@@ -41,18 +42,22 @@ const TestChoose = () => {
     }, [])
 
     return (
-        <div>
-            {modal
-                ? <ResultsModal setModal={setModal}/>
-                : void(0)
-            }
+        <>
+            <NavBar/>
 
-            <h2 style={{textAlign: 'center', marginTop: '110px'}}>Выберите тест для прохождения</h2>
-            {isLoading
-                ? <Loader/>
-                : <TestsList tests={tests}/>
-            }
-        </div>
+            <div>
+                {modal
+                    ? <ResultsModal setModal={setModal}/>
+                    : void(0)
+                }
+
+                <h2 style={{textAlign: 'center', marginTop: '110px'}}>Выберите тест для прохождения</h2>
+                {isLoading
+                    ? <Loader/>
+                    : <TestsList tests={tests}/>
+                }
+            </div>
+        </>
     );
 };
 

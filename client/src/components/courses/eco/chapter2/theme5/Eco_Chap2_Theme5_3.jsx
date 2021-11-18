@@ -81,7 +81,7 @@ const Eco_Chap2_Theme5_3 = () => {
             </Row>
 
             <Row style={{marginTop: '20px'}}>
-                <Col offset={1} span={22}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 22, offset: 1}}>
                     <Tabs type="card" size='large' className='eco-tab-list' centered animated>
                         <TabPane tab={<div style={{fontSize: '1.35rem'}}>Граждане</div>} key="1">
                             <Col offset={1} span={22}>

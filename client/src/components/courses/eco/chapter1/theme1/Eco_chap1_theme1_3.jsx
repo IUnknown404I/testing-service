@@ -1,7 +1,7 @@
 import React from 'react';
 import {BackTop, Card, Col, Image, List, Popover, Row, Skeleton} from "antd";
 
-const Eco_chap1_theme1_3 = () => {
+const Eco_Chap1_Theme1_3 = () => {
     const data = [
         <>
             <strong style={{fontWeight: 'bold'}}>
@@ -65,7 +65,7 @@ const Eco_chap1_theme1_3 = () => {
             </Row>
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={2} span={11} style={{marginTop: '14px'}}>
+                <Col md={{span: 22, offset: 1}}  lg={{span: 11, offset: 2}} style={{marginTop: '14px'}}>
                     <h1 style={{fontSize: '22px', marginBottom: '20px'}}>Санитарно-эпидемиологическое благополучие населения обеспечивается посредством:</h1>
 
                     <List
@@ -81,7 +81,7 @@ const Eco_chap1_theme1_3 = () => {
                     />
                 </Col>
 
-                <Col offset={1} span={8} className='epi-img-col'>
+                <Col md={{span: 16, offset: 4}}  lg={{span: 8, offset: 1}} className='epi-img-col'>
                     <Image
                         className='epi-img'
                         // width={500}
@@ -158,4 +158,4 @@ const Eco_chap1_theme1_3 = () => {
     );
 };
 
-export default Eco_chap1_theme1_3;
+export default Eco_Chap1_Theme1_3;

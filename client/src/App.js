@@ -56,7 +56,7 @@ const App = () => {
           <BrowserRouter>
               <div className="App">
 
-                  <NavBar/>
+                  {/*<NavBar/>*/}
                   {isLoading
                       ? <Loader/>
                       : <AppRouter/>

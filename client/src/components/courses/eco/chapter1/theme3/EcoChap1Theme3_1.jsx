@@ -17,7 +17,7 @@ const EcoChap1Theme3_1 = () => {
             </Row>
 
             <Row style={{margin: '10px 0 0'}}>
-                <Col span={9} offset={1}>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 9, offset: 1}}>
                     <Tabs animated centered tabPosition={'top'} defaultActiveKey='2' style={{display: 'flex', justifyContent: 'space-around'}}>
                         <TabPane tab={<span style={{fontSize: '20px', color: 'green'}}>Документация в общем виде</span>} key="1">
                             <>
@@ -57,7 +57,7 @@ const EcoChap1Theme3_1 = () => {
                     </Tabs>
                 </Col>
 
-                <Col offset={1} span={12} className='eco-flex-col'>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 12, offset: 1}} className='eco-flex-col'>
                     <div className='eco-img-div-item extra'>
                         <Image
                             className='eco-img-ico'

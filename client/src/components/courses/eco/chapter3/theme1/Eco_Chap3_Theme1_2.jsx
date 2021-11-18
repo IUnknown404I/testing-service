@@ -92,7 +92,7 @@ const Eco_Chap3_Theme1_2 = () => {
             </Row>
 
             <Row style={{marginTop: '60px'}}>
-                <Col offset={2} span={20} className='eco-flex-col' style={{gap: '15px'}}>
+                <Col md={{span: 24, offset: 0}} lg={{span: 20, offset: 2}} className='eco-flex-col' style={{gap: '15px'}}>
                     <h1><strong>Общественные инспекторы по охране окружающей среды имеют право:</strong></h1>
 
                     <div>
@@ -157,7 +157,7 @@ const Eco_Chap3_Theme1_2 = () => {
             </Row>
 
             <Row>
-                <Col offset={5} span={14}>
+                <Col md={{span: 22, offset: 1}} lg={{span: 14, offset: 5}}>
                     <div className='eco-flex-row eco-img-col eco-img-div-item extra'>
                         <Image
                             style={{width: '80px', marginRight: '15px'}}

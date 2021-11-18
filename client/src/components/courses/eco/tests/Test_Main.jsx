@@ -97,7 +97,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={2} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 4, offset: 0}} lg={{span: 3, offset: 0}} xl={{span: 2, offset: 1}} className='eco-flex-row' style={{textAlign: 'center', justifyContent: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToChapterTesting(false)}}
                         icon={<LeftCircleTwoTone />}
@@ -107,10 +107,10 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
                         К курсу
                     </Button>
                 </Col>
-                <Col span={12} offset={3} style={{textAlign: 'center'}}>
-                    <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}> Тестирование - Раздел {chapter}</h1>
+                <Col sm={{span: 20, offset: 2}} md={{span: 16, offset: 0}} lg={{span: 18, offset: 0}} xl={{span: 12, offset: 3}} style={{textAlign: 'center'}}>
+                    <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}> Перечень тестовых вопросов по Разделу №{chapter}</h1>
                 </Col>
-                <Col span={5} offset={0} style={{textAlign: 'center'}}>
+                <Col sm={{span: 16, offset: 4}} md={{span: 14, offset: 5}} lg={{span: 14, offset: 5}} xl={{span: 5, offset: 0}} style={{textAlign: 'center'}}>
                     <div>
                         <BulbTwoTone />&nbsp;
                         Используйте данное тестирование для самопроверки. Результаты не сохраняются.
@@ -120,7 +120,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
 
             <Row>
                 {finalize &&
-                    <Col offset={5} span={14}>
+                    <Col md={{span: 22, offset: 1}} lg={{span: 18, offset: 3}} xl={{span: 14, offset: 5}}>
                         <div className='eco-test-result'>
                             <div>
                                 <strong style={{fontWeight: 'bold'}}>Ваши результаты:</strong> выполнено {result.percent}% ({result.trueAmount} из {Object.keys(questions).length}).&nbsp;
@@ -141,7 +141,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
                     </Col>
                 }
 
-                <Col offset={4} span={16} className='eco-test-container'>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 18, offset: 3}} xxl={{span: 16, offset: 4}} className='eco-test-container'>
                     {Object.entries(questions).map((entry, id) => {
                         const [question, descr] = [...entry];
                         const [type, ans, valid] = [...descr];

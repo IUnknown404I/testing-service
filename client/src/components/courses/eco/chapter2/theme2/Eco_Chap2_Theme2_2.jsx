@@ -17,7 +17,7 @@ const Eco_Chap2_Theme2_2 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={11}>
+                <Col md={{span: 20, offset: 2}} lg={{span: 18, offset: 3}} xl={{span: 11, offset: 0}} xxl={{span: 11, offset: 1}}>
                     <Collapse
                         accordion
                         defaultActiveKey={1}
@@ -55,7 +55,7 @@ const Eco_Chap2_Theme2_2 = () => {
                     </Collapse>
                 </Col>
 
-                <Col span={11} offset={0} style={{marginLeft: '2%'}} className='eco-img-col'>
+                <Col md={{span: 20, offset: 2}} lg={{span: 18, offset: 3}} xl={{span: 12, offset: 0}} xxl={{span: 11, offset: 0}} className='eco-img-col flex-centered eco-div-padding'>
                     <Image
                         style={{maxHeight: '550px'}}
                         src={'/images/building.gif'}
@@ -68,12 +68,12 @@ const Eco_Chap2_Theme2_2 = () => {
             </Row>
 
             <Row>
-                <Col offset={2} span={20} style={{marginTop: '-10px'}}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 20, offset: 2}} style={{marginTop: '-20px'}}>
                     <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list' centered animated>
                         <TabPane tab="Проектирование" key="1">
                             <>
                                 <Row style={{marginTop: '20px'}}>
-                                    <Col offset={1} span={11}>
+                                    <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 12, offset: 0}} xxl={{span: 11, offset: 1}}>
                                         <Card className='simple-card'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
@@ -101,7 +101,7 @@ const Eco_Chap2_Theme2_2 = () => {
                                             </div>
                                         </Card>
                                     </Col>
-                                    <Col offset={2} span={9}>
+                                    <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 11, offset: 1}} xxl={{span: 9, offset: 2}}>
                                         <Card className='simple-card'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
@@ -135,7 +135,7 @@ const Eco_Chap2_Theme2_2 = () => {
                         <TabPane tab="Ограничения" key="2">
                             <>
                                 <Row style={{marginTop: '20px'}}>
-                                    <Col offset={1} span={9}>
+                                    <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}} xxl={{span: 9, offset: 2}}>
                                         <Card className='simple-card-orange'>
                                             <div>
                                                 <div className='eco-div-withFloat'>
@@ -153,7 +153,7 @@ const Eco_Chap2_Theme2_2 = () => {
                                             </div>
                                         </Card>
                                     </Col>
-                                    <Col offset={2} span={11}>
+                                    <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 12, offset: 1}} xxl={{span: 11, offset: 1}}>
                                         <Card className='simple-card-orange'>
                                             <div>
                                                 <div className='eco-div-withFloat'>

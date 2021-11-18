@@ -20,7 +20,7 @@ const Materials = ({setSwitchToMaterials}) => {
                             </div>
 
                             <div className='eco-materials-link-container'>
-                                <Link className='eco-materials-link' to={path} target="_blank" download>Скачать</Link>
+                                <Link className='eco-materials-link' to={path} target="_blank" download>Загрузить</Link>
                             </div>
                         </>
                     </Panel>
@@ -34,7 +34,7 @@ const Materials = ({setSwitchToMaterials}) => {
             <BackTop />
 
             <Row style={{margin: '20px 0 40px'}}>
-                <Col span={2} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 4, offset: 0}} lg={{span: 3, offset: 0}} xl={{span: 2, offset: 1}} className='eco-flex-row' style={{textAlign: 'center', justifyContent: 'center'}}>
                     <Button
                         onClick={() => {setSwitchToMaterials(false)}}
                         icon={<LeftCircleTwoTone />}
@@ -44,15 +44,15 @@ const Materials = ({setSwitchToMaterials}) => {
                         Вернуться
                     </Button>
                 </Col>
-                <Col span={16} offset={1} style={{textAlign: 'center'}}>
+                <Col xs={{span: 24, offset: 0}} sm={{span: 20, offset: 2}} md={{span: 16, offset: 0}} lg={{span: 18, offset: 0}} xl={{span: 18, offset: 0}} style={{textAlign: 'center'}}>
                     <h1 style={{fontSize: '27px', fontWeight: 'bold', color: 'darkblue'}}>Учебные материалы</h1>
                 </Col>
             </Row>
 
             <Row>
-                <Col offset={2} span={20} className='eco-materials'>
+                <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 20, offset: 2}} xxl={{span: 18, offset: 3}} className='eco-materials-blue'>
                     <Collapse
-                        defaultActiveKey={1}
+                        // defaultActiveKey={1}
                         expandIconPosition='right'
                     >
                         <Panel header="Кодекс РФ об административных правонарушениях" key="1" className='eco-panel-style' extra={<MenuOutlined />}  showArrow>
@@ -62,7 +62,7 @@ const Materials = ({setSwitchToMaterials}) => {
                                 </div>
 
                                 <div className='eco-materials-link-container'>
-                                    <Link className='eco-materials-link' to='/files/Кодекс.pdf' target="_blank" download>Скачать</Link>
+                                    <Link className='eco-materials-link' to='/files/Кодекс.pdf' target="_blank" download>Загрузить</Link>
                                 </div>
                             </>
                         </Panel>
@@ -71,7 +71,7 @@ const Materials = ({setSwitchToMaterials}) => {
                     <Collapse
                         expandIconPosition='right'
                     >
-                        <Panel header="Федеральные законы" key="1" className='eco-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Федеральные законы" key="1" className='eco-panel-style eco-materials' extra={<MenuOutlined />}  showArrow>
                             <>
                                 {getLink('Закон РФ от 21.02.1992 N 2395-1')}
                                 {getLink('Федеральный закон от 04.05.1999 N 96-ФЗ')}
@@ -87,7 +87,7 @@ const Materials = ({setSwitchToMaterials}) => {
                     <Collapse
                         expandIconPosition='right'
                     >
-                        <Panel header="Постановления" key="1" className='eco-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Постановления" key="1" className='eco-panel-style eco-materials' extra={<MenuOutlined />}  showArrow>
                             <>
                                 {getLink('Постановление Главного государственного санитарного врача РФ от 25.09.2007 N 74')}
                                 {getLink('Постановление Правительства РФ от 03.03.2017 N 255')}
@@ -102,7 +102,7 @@ const Materials = ({setSwitchToMaterials}) => {
                     <Collapse
                         expandIconPosition='right'
                     >
-                        <Panel header="Приказы" key="1" className='eco-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="Приказы" key="1" className='eco-panel-style eco-materials' extra={<MenuOutlined />}  showArrow>
                             <>
                                 {getLink('Приказ Минприроды России от 11.08.2020 N 581')}
                                 {getLink('Приказ Минприроды России от 14.06.2018 N 261')}
@@ -115,13 +115,24 @@ const Materials = ({setSwitchToMaterials}) => {
                     <Collapse
                         expandIconPosition='right'
                     >
-                        <Panel header="ГОСТ(ы)" key="1" className='eco-panel-style' extra={<MenuOutlined />}  showArrow>
+                        <Panel header="ГОСТ(ы)" key="1" className='eco-panel-style eco-materials' extra={<MenuOutlined />}  showArrow>
                             <>
                                 {getLink('ГОСТ Р 56059-2014')}
                                 {getLink('ГОСТ Р 56060-2014')}
                                 {getLink('ГОСТ Р 56061-2014')}
                                 {getLink('ГОСТ Р 56062-2014')}
                                 {getLink('ГОСТ Р 56063-2014')}
+                            </>
+                        </Panel>
+                    </Collapse>
+
+                    <Collapse
+                        expandIconPosition='right'
+                    >
+                        <Panel header="Типовые формы паспортов отходов I - IV классов опасности" key="1" className='eco-panel-style eco-materials' extra={<MenuOutlined />}  showArrow>
+                            <>
+                                {getLink('Типовая форма паспорта отходов I - IV классов опасности, включенных в федеральный классификационный каталог отходов')}
+                                {getLink('Типовая форма паспорта отходов I - IV классов опасности, не включенных в федеральный классификационный каталог отходов')}
                             </>
                         </Panel>
                     </Collapse>

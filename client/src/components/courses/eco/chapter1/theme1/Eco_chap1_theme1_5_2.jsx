@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import Slider from "react-slick";
 
-const Eco_chap1_theme1_5_2 = () => {
+const Eco_Chap1_Theme1_5_2 = () => {
     const [carouselState, setCarouselState] = useState({
         infinite: true,
         speed: 500,
@@ -213,12 +213,12 @@ const Eco_chap1_theme1_5_2 = () => {
             </Row>
 
             <Row>
-                <Col offset={2} span={20}>
+                <Col lg={{span: 24, offset: 0}}  xl={{span: 20, offset: 2}} className='padding-15-30'>
                     <Slider {...carouselState} className='eco-slider'>
                         <div>
                             <div className='eco-slider-card'>
                                 <Row>
-                                    <Col offset={2} span={20}>
+                                    <Col lg={{span: 24, offset: 0}}  xl={{span: 20, offset: 2}}>
                                         <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', color: 'white', border: '2px solid forestgreen', marginTop: '-2px'}}>Критерии к объектам III категории</h1>
 
                                         <div style={{padding: '0 20px'}}>
@@ -240,7 +240,7 @@ const Eco_chap1_theme1_5_2 = () => {
                         <div>
                             <div className='eco-slider-card'>
                                 <Row>
-                                    <Col offset={2} span={20}>
+                                    <Col lg={{span: 24, offset: 0}}  xl={{span: 20, offset: 2}}>
                                         <h1 className='eco-col-header' style={{background: 'rgb(76,175,80)', color: 'white', border: '2px solid forestgreen', marginTop: '-2px'}}>Критерии к объектам IV категории</h1>
 
                                         <h3 style={{margin: '25px 0 0'}}>Наличие одновременно следующих критериев:</h3>
@@ -265,4 +265,4 @@ const Eco_chap1_theme1_5_2 = () => {
     );
 };
 
-export default Eco_chap1_theme1_5_2;
+export default Eco_Chap1_Theme1_5_2;

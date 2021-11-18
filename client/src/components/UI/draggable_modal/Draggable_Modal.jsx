@@ -1,4 +1,4 @@
-import { Modal } from 'antd';
+import {Button, Modal} from 'antd';
 import Draggable from 'react-draggable';
 import React, {useEffect, useRef, useState} from "react";
 
@@ -68,14 +68,20 @@ const Draggable_Modal = ({title, content, show, hide}) => {
                         }}
                         onFocus={() => {}}
                         onBlur={() => {}}
-                        // end
                     >
                         {title}
                     </div>
                 }
-                footer={null}
+                footer={[
+                    <Button key="back" onClick={(event) => {
+                        close(event);
+                    }}>
+                        Закрыть
+                    </Button>
+                ]}
+                // footer={null}
                 visible={state.visible}
-                // onOk={close}
+                onOk={close}
                 onCancel={close}
                 modalRender={modal => (
                     <Draggable

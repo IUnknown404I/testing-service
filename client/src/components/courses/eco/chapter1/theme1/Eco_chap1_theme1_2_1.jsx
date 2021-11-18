@@ -3,7 +3,7 @@ import {Button, Col, Image, List, Popover, Row, Skeleton, Tree} from "antd";
 import {ContainerTwoTone, CarryOutOutlined, DownOutlined} from "@ant-design/icons";
 import Draggable_Modal from "../../../../UI/draggable_modal/Draggable_Modal";
 
-const Eco_chap1_theme1_2_1 = () => {
+const Eco_Chap1_Theme1_2_1 = () => {
     const data1 = [
         'приоритет охраны жизни и здоровья человека, настоящего и будущего поколений;',
         'обеспечение благоприятных экологических условий для жизни, труда и отдыха человека;',
@@ -73,7 +73,6 @@ const Eco_chap1_theme1_2_1 = () => {
 
     const [showModal, setShowModal] = useState(false);
 
-
     return (
         <>
             <Row style={{margin: '20px 0 20px'}}>
@@ -83,7 +82,7 @@ const Eco_chap1_theme1_2_1 = () => {
             </Row>
 
             <Row>
-                <Col span={8} offset={0} className='eco-img-col'>
+                <Col lg={{span: 18, offset: 3}}  xl={{span: 8, offset: 0}} className='eco-img-col'>
                     <Image
                         className='eco-img'
                         src={'/gosup.jpg'}
@@ -94,10 +93,10 @@ const Eco_chap1_theme1_2_1 = () => {
                     />
                 </Col>
 
-                <Col span={15} offset={0}>
+                <Col lg={{span: 22, offset: 1}}  xl={{span: 15, offset: 0}}>
                     <div>
                         <List
-                            className='eco-list-style'
+                            className='eco-list-style-inv'
                             size="small"
                             bordered = {false}
                             header={
@@ -114,7 +113,7 @@ const Eco_chap1_theme1_2_1 = () => {
             </Row>
 
             <Row style={{marginTop: '50px'}}>
-                <Col span={22} offset={2}>
+                <Col lg={{span: 24, offset: 1}}  xl={{span: 22, offset: 2}}>
                     <div className='eco-but-info'>
                         <Button
                             className='eco-but-inside eco-but-inside-hover'
@@ -152,4 +151,4 @@ const Eco_chap1_theme1_2_1 = () => {
     );
 };
 
-export default Eco_chap1_theme1_2_1;
+export default Eco_Chap1_Theme1_2_1;

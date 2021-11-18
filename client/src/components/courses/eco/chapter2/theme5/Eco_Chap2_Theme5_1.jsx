@@ -8,11 +8,11 @@ const Eco_Chap2_Theme5_1 = () => {
             <BackTop />
 
             <Row style={{marginTop: '30px'}}>
-                <Col offset={2} span={20}>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 20, offset: 2}}>
 
                     <Card className='simple-card'>
                         <Row style={{margin: '20px 0 20px', marginTop: '-5px'}}>
-                            <Col span={20} offset={2}>
+                            <Col md={{span: 24, offset: 0}} lg={{span: 20, offset: 2}}>
                                 <h1 style={{textAlign: "center", fontSize: '1.65rem'}}>
                                     <strong style={{fontSize: '1.65rem'}}>Общие вопросы исчисления и уплаты платы за негативное воздействие на окружающую среду</strong>.
                                     <br/>
@@ -22,13 +22,13 @@ const Eco_Chap2_Theme5_1 = () => {
                         </Row>
 
                         <Row style={{marginTop: '25px'}}>
-                            <Col offset={1} span={9} className='eco-flex-col'>
+                            <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 9, offset: 1}} className='eco-flex-col'>
                                 <div className='eco-numeration text-centered flex-centered'>1</div>
                                 <div className='eco-num-text text-centered' style={{fontSize: '1.3rem'}}>
                                     Постановление Правительства РФ <strong style={{fontWeight: 'bold'}}>от 13.09.2016 № 913</strong> «О ставках платы за негативное воздействие на окружающую среду и дополнительных коэффициентах»
                                 </div>
                             </Col>
-                            <Col offset={1} span={12} className='eco-flex-col'>
+                            <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 12, offset: 1}} className='eco-flex-col'>
                                 <div className='eco-numeration text-centered flex-centered'>2</div>
                                 <div className='eco-num-text text-centered' style={{fontSize: '1.3rem'}}>
                                     Постановление Правительства Российской Федерации <strong style={{fontWeight: 'bold'}}>от 29.06.2018 № 758</strong> «О ставках платы за негативное воздействие на окружающую среду при размещении твердых коммунальных отходов IV класса опасности (малоопасные) и внесении изменений в некоторые акты Правительства Российской Федерации»
@@ -37,13 +37,13 @@ const Eco_Chap2_Theme5_1 = () => {
                         </Row>
 
                         <Row>
-                            <Col offset={1} span={9} className='eco-flex-col'>
+                            <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 9, offset: 1}} className='eco-flex-col'>
                                 <div className='eco-numeration text-centered flex-centered'>3</div>
                                 <div className='eco-num-text text-centered' style={{fontSize: '1.3rem'}}>
                                     Постановление Правительства РФ <strong style={{fontWeight: 'bold'}}>от 03.03.2017 № 255</strong> «Об исчислении и взимании платы за негативное воздействие на окружающую среду»
                                 </div>
                             </Col>
-                            <Col offset={1} span={12} className='eco-flex-col'>
+                            <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 12, offset: 1}} className='eco-flex-col'>
                                 <div className='eco-numeration text-centered flex-centered'>4</div>
                                 <div className='eco-num-text text-centered' style={{fontSize: '1.3rem'}}>
                                     Постановление Правительства РФ <strong style={{fontWeight: 'bold'}}>от 13.09.2016 № 913</strong> «О ставках платы за негативное воздействие на окружающую среду и дополнительных коэффициентах»
@@ -55,7 +55,7 @@ const Eco_Chap2_Theme5_1 = () => {
                 </Col>
             </Row>
             <Row>
-                <Col offset={5} span={14}>
+                <Col sm={{span: 24, offset: 0}} md={{span: 18, offset: 3}} lg={{span: 14, offset: 5}}>
                     <div className='eco-img-div-item extra' style={{marginTop: '30px', boxShadow: '1px 1px 2px 0 brown'}}>
                         <Image
                             style={{width: '100px', marginRight: '13px', marginLeft: '5px'}}

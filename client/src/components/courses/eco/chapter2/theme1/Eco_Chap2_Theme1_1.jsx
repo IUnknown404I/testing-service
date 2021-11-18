@@ -27,7 +27,7 @@ const Eco_Chap2_Theme1_1 = () => {
             </Row>
 
             <Row>
-                <Col offset={1} span={10}>
+                <Col lg={{span: 18, offset: 3}} xl={{span: 18, offset: 3}} xxl={{span: 10, offset: 1}} style={{marginBottom: '30px'}}>
                     <Card className='simple-card'>
                         <div>
                             <strong>Производственный контроль в области охраны окружающей среды осуществляется в целях</strong>:
@@ -55,66 +55,9 @@ const Eco_Chap2_Theme1_1 = () => {
 
                     <Button block className='mybut-primary' onClick={() => setShowModalObj(true)}>На объектах I категории</Button>
                     <Button block className='mybut' onClick={() => setShowModalPerson(true)}>Юридические лица и индивидуальные предприниматели</Button>
+                </Col >
 
-                    <Draggable_Modal
-                        title='Стационарные источники выбросов загрязняющих веществ'
-                        content={
-                            <>
-                                <div style={{fontSize: '1.15rem'}}>
-                                    <div className='eco-div-withFloat'>
-                                        <Image
-                                            className='eco-float-ico'
-                                            style={{maxWidth: '110px', marginLeft: '-7px', marginRight: '17px'}}
-                                            preview = {false}
-                                            src={'/images/vibros.jpg'}
-                                            placeholder={
-                                                <Skeleton.Image />
-                                            }
-                                        />
-                                        На объектах I категории стационарные источники выбросов загрязняющих веществ, сбросов загрязняющих веществ должны быть оснащены автоматическими средствами измерения и учета показателей выбросов, а также техническими средствами фиксации и передачи информации о показателях выбросов в государственный реестр объектов, оказывающих негативное воздействие на окружающую среду,&nbsp;
-                                        <Popover
-                                            color={"azure"}
-                                            overlayStyle={{maxWidth: '900px'}}
-                                            className='pop_text'
-                                            style={{maxWidth: '350px'}}
-                                            content={<span>Программой создания системы автоматического контроля определяются стационарные источники и показатели выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ, подлежащие автоматическому контролю, места и сроки установки автоматических средств измерения и учета показателей выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ, а также технических средств фиксации и передачи информации о показателях выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ в государственный реестр объектов, оказывающих негативное воздействие на окружающую среду, состав и форма передаваемой информации</span>}
-                                            title=''
-                                            trigger="hover">
-                                            <strong>на основании программы создания системы автоматического контроля</strong>
-                                        </Popover>.
-                                    </div>
-                                    <div style={{marginTop: '15px'}}>
-                                        Срок создания системы автоматического контроля не может превышать четыре года со дня получения или пересмотра комплексного экологического разрешения.
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        show={showModalObj}
-                        hide={setShowModalObj}
-                    />
-                    <Draggable_Modal
-                        title='Юридические лица и индивидуальные предприниматели'
-                        content={
-                            <>
-                                <div>
-                                    <fieldset className='fieldset-eco fieldset-eco-modal'>
-                                        <List
-                                            className='borderless'
-                                            size="medium"
-                                            bordered
-                                            dataSource={data}
-                                            renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                        />
-                                    </fieldset>
-                                </div>
-                            </>
-                        }
-                        show={showModalPerson}
-                        hide={setShowModalPerson}
-                    />
-                </Col>
-
-                <Col offset={1} span={11}>
+                <Col lg={{span: 20, offset: 2}} xl={{span: 18, offset: 3}} xxl={{span: 11, offset: 1}}>
                     <Collapse
                         accordion
                         defaultActiveKey={1}
@@ -172,6 +115,63 @@ const Eco_Chap2_Theme1_1 = () => {
                     </Collapse>
                 </Col>
             </Row>
+
+            <Draggable_Modal
+                title='Стационарные источники выбросов загрязняющих веществ'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div className='eco-div-withFloat'>
+                                <Image
+                                    className='eco-float-ico'
+                                    style={{maxWidth: '110px', marginLeft: '-7px', marginRight: '17px'}}
+                                    preview = {false}
+                                    src={'/images/vibros.jpg'}
+                                    placeholder={
+                                        <Skeleton.Image />
+                                    }
+                                />
+                                На объектах I категории стационарные источники выбросов загрязняющих веществ, сбросов загрязняющих веществ должны быть оснащены автоматическими средствами измерения и учета показателей выбросов, а также техническими средствами фиксации и передачи информации о показателях выбросов в государственный реестр объектов, оказывающих негативное воздействие на окружающую среду,&nbsp;
+                                <Popover
+                                    color={"azure"}
+                                    overlayStyle={{maxWidth: '900px'}}
+                                    className='pop_text'
+                                    style={{maxWidth: '350px'}}
+                                    content={<span>Программой создания системы автоматического контроля определяются стационарные источники и показатели выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ, подлежащие автоматическому контролю, места и сроки установки автоматических средств измерения и учета показателей выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ, а также технических средств фиксации и передачи информации о показателях выбросов загрязняющих веществ и (или) сбросов загрязняющих веществ в государственный реестр объектов, оказывающих негативное воздействие на окружающую среду, состав и форма передаваемой информации</span>}
+                                    title=''
+                                    trigger="hover">
+                                    <strong>на основании программы создания системы автоматического контроля</strong>
+                                </Popover>.
+                            </div>
+                            <div style={{marginTop: '15px'}}>
+                                Срок создания системы автоматического контроля не может превышать четыре года со дня получения или пересмотра комплексного экологического разрешения.
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModalObj}
+                hide={setShowModalObj}
+            />
+            <Draggable_Modal
+                title='Юридические лица и индивидуальные предприниматели'
+                content={
+                    <>
+                        <div>
+                            <fieldset className='fieldset-eco fieldset-eco-modal'>
+                                <List
+                                    className='borderless'
+                                    size="medium"
+                                    bordered
+                                    dataSource={data}
+                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                />
+                            </fieldset>
+                        </div>
+                    </>
+                }
+                show={showModalPerson}
+                hide={setShowModalPerson}
+            />
         </>
     );
 };

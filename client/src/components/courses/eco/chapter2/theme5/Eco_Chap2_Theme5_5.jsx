@@ -19,20 +19,20 @@ const Eco_Chap2_Theme5_5 = () => {
             <Row>
                 <Col offset={1} span={22}>
                     <Row className='flex-centered'>
-                        <Col offset={0} span={6}>
+                        <Col md={{span: 6, offset: 0}} lg={{span: 7, offset: 0}} xl={{span: 6, offset: 0}}>
                             <h1 style={{textAlign: "center", fontSize: '1.4rem'}}>Плата исчисляется по следующей формуле:</h1>
                         </Col>
 
-                        <Col offset={1} span={12}>
+                        <Col md={{span: 18, offset: 0}} lg={{span: 15, offset: 0}} xl={{span: 12, offset: 1}}>
                             <div className='eco-numeration text-centered' style={{justifyContent: 'space-around', fontSize: '1.4rem'}}>
                                 <span>М</span>
-                                <span>х</span>
+                                <span>x</span>
                                 <span>Н</span>
-                                <span>х</span>
+                                <span>x</span>
                                 <span>Кот</span>
-                                <span>х</span>
+                                <span>x</span>
                                 <span>Кн</span>
-                                <span>х</span>
+                                <span>x</span>
                                 <span>Кд</span>
                                 <span>=</span>
                                 <span>П</span>
@@ -88,7 +88,7 @@ const Eco_Chap2_Theme5_5 = () => {
             <Divider/>
 
             <Row>
-                <Col offset={2} span={20}>
+                <Col md={{span: 24, offset: 0}} lg={{span: 20, offset: 2}}>
                     <div className='eco-inv-card' style={{padding: '20px 30px'}}>
                         <Col span={20}>
                             <div className='eco-div-withFloat eco-img-col'>

@@ -9,7 +9,7 @@ import {
     DeploymentUnitOutlined,
     KeyOutlined,
 } from "@ant-design/icons";
-import {Image, Menu, Skeleton} from "antd";
+import {Image, Menu} from "antd";
 import {NavLink, useHistory} from "react-router-dom";
 
 const { SubMenu } = Menu;
@@ -36,9 +36,22 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                         <Menu.Item key="13" onClick={() => {setCurrentPage(themes[0][3]); clearSwitches();}}>Благополучие населения</Menu.Item>
                         <Menu.Item key="14" onClick={() => {setCurrentPage(themes[0][4]); clearSwitches();}}>Права и обязанности</Menu.Item>
                         <Menu.Item key="15" onClick={() => {setCurrentPage(themes[0][5]); clearSwitches();}}>Категорийность объектов</Menu.Item>
+                        <Menu.Item key="16" onClick={() => {setCurrentPage(themes[0][8]); clearSwitches();}}>Требования к обращению с отходами</Menu.Item>
+                        <Menu.Item key="17" onClick={() => {setCurrentPage(themes[0][9]); clearSwitches();}}>Паспортизация отходов</Menu.Item>
+                        <Menu.Item key="18" onClick={() => {setCurrentPage(themes[0][10]); clearSwitches();}}>Федеральный оператор по обращению с отходами</Menu.Item>
+                        <Menu.Item key="19" onClick={() => {setCurrentPage(themes[0][11]); clearSwitches();}}>Федеральная схема обращения с отходами</Menu.Item>
+                        <Menu.Item key="20" onClick={() => {setCurrentPage(themes[0][12]); clearSwitches();}}>Особенности обращения с отходами</Menu.Item>
+                        <Menu.Item key="21" onClick={() => {setCurrentPage(themes[0][13]); clearSwitches();}}>Предоставление информации</Menu.Item>
+                        <Menu.Item key="22" onClick={() => {setCurrentPage(themes[0][14]); clearSwitches();}}>Декларация по НВОС</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g2" title="Тема 2">
                         <Menu.Item key="111" onClick={() => {setCurrentPage(themes[1][0]); clearSwitches();}}>Система государственного управления</Menu.Item>
+                        <Menu.Item key="112" onClick={() => {setCurrentPage(themes[1][1]); clearSwitches();}}>Производственный экологический контроль</Menu.Item>
+                        <Menu.Item key="113" onClick={() => {setCurrentPage(themes[1][2]); clearSwitches();}}>Негативное воздействие на окружающую среду</Menu.Item>
+                        <Menu.Item key="114" onClick={() => {setCurrentPage(themes[1][3]); clearSwitches();}}>Производственный экологический контроль</Menu.Item>
+                        <Menu.Item key="115" onClick={() => {setCurrentPage(themes[1][4]); clearSwitches();}}>Плата за негативное воздействие</Menu.Item>
+                        <Menu.Item key="116" onClick={() => {setCurrentPage(themes[1][5]); clearSwitches();}}>Производственный контроль (охрана окружающей среды)</Menu.Item>
+                        <Menu.Item key="117" onClick={() => {setCurrentPage(themes[1][6]); clearSwitches();}}>Отчет об экологическом контроле</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g3" title="Тема 3">
                         <Menu.Item key="121" onClick={() => {setCurrentPage(themes[2][0]); clearSwitches();}}>Система документации</Menu.Item>
@@ -70,6 +83,14 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                         <Menu.Item key="241" onClick={() => {setCurrentPage(themes[3][0]); clearSwitches();}}>Паспортизация отходов</Menu.Item>
                         <Menu.Item key="242" onClick={() => {setCurrentPage(themes[3][1]); clearSwitches();}}>Требования к сотрудникам</Menu.Item>
                         <Menu.Item key="243" onClick={() => {setCurrentPage(themes[3][2]); clearSwitches();}}>Полномочия органов местного самоуправления</Menu.Item>
+                        <Menu.Item key="244" onClick={() => {setCurrentPage(themes[3][3]); clearSwitches();}}>Основные требования обращения с отходами</Menu.Item>
+                        <Menu.Item key="245" onClick={() => {setCurrentPage(themes[3][4]); clearSwitches();}}>Порядок учета, транспортирования отходов</Menu.Item>
+                        <Menu.Item key="246" onClick={() => {setCurrentPage(themes[3][5]); clearSwitches();}}>Необходимость разработки ПНООЛР</Menu.Item>
+                        <Menu.Item key="247" onClick={() => {setCurrentPage(themes[3][6]); clearSwitches();}}>Порядок разработки и утверждения нормативов</Menu.Item>
+                        <Menu.Item key="248" onClick={() => {setCurrentPage(themes[3][7]); clearSwitches();}}>Разработка проектов нормативов</Menu.Item>
+                        <Menu.Item key="249" onClick={() => {setCurrentPage(themes[3][8]); clearSwitches();}}>Методы определения нормативов</Menu.Item>
+                        <Menu.Item key="2410" onClick={() => {setCurrentPage(themes[3][9]); clearSwitches();}}>Содержание и оформление нормативов</Menu.Item>
+                        <Menu.Item key="2411" onClick={() => {setCurrentPage(themes[3][10]); clearSwitches();}}>Лицензирование деятельности</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g5" title="Тема 5">
                         <Menu.Item key="251" onClick={() => {setCurrentPage(themes[4][0]); clearSwitches();}}>Плата за негативное воздействие</Menu.Item>
@@ -90,6 +111,9 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                         <Menu.Item key="113" onClick={() => {setCurrentPage(themes[0][2]); clearSwitches();}}>Государственный экологический надзор</Menu.Item>
                         <Menu.Item key="114" onClick={() => {setCurrentPage(themes[0][3]); clearSwitches();}}>Права должностных лиц. Объекты экологического надзора</Menu.Item>
                         <Menu.Item key="115" onClick={() => {setCurrentPage(themes[0][4]); clearSwitches();}}>Действия эколога при проведении проверки</Menu.Item>
+                        <Menu.Item key="116" onClick={() => {setCurrentPage(themes[0][5]); clearSwitches();}}>Организация и проведение проверок</Menu.Item>
+                        <Menu.Item key="117" onClick={() => {setCurrentPage(themes[0][6]); clearSwitches();}}>Порядок организации проверки</Menu.Item>
+                        <Menu.Item key="118" onClick={() => {setCurrentPage(themes[0][7]); clearSwitches();}}>Порядок оформления результатов проверки</Menu.Item>
                     </Menu.ItemGroup>
                     <Menu.ItemGroup key="g2" title="Тема 2">
                         <Menu.Item key="121" onClick={() => {setCurrentPage(themes[1][0]); clearSwitches();}}>Совершение экологических правонарушений</Menu.Item>
@@ -103,9 +127,10 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
     }, [currentChapter]);
 
     return (
-        <Menu theme="dark"
-              mode="inline"
-              selectedKeys={selectedKeys}
+        <Menu
+            // theme="dark"
+            mode="inline"
+            selectedKeys={selectedKeys}
         >
             <div style={{margin: '10px 0 20px 0'}} className='eco-img-col'>
                 {collapsed
@@ -113,64 +138,28 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                     <Image
                         preview = {false}
                         src={'https://courses.umcmrg.ru/img/logo/logo-mini.png'}
-                        placeholder={
-                            <Skeleton.Image />
-                        }
+                        // placeholder={
+                        //     <Skeleton.Image />
+                        // }
                     />
                     :
                     <Image
                         preview = {false}
-                        src={'/images/mrg_inv.png'}
-                        placeholder={
-                            <Skeleton.Image />
-                        }
+                        src={'/images/mrg_white.jpg'}
+                        // src={'/images/mrg_inv.png'}
+                        // src={'/images/logo.png'}
+                        // placeholder={
+                        //     <Skeleton.Image />
+                        // }
                     />
                 }
             </div>
             {currentSub1}
 
             <SubMenu key="sub2" icon={<ImportOutlined />} title="Вернуться">
-                <Menu.Item onClick={() => {history.push('/profile')}} key="21">Профиль</Menu.Item>
-                <Menu.Item onClick={() => {history.push('/test_choose')}} key="22">Выбор тестов</Menu.Item>
-                <Menu.Item onClick={() => {history.push('/courses')}} key="23">Выбор курсов</Menu.Item>
-            </SubMenu>
-
-            <SubMenu key="sub3" icon={<LinkOutlined />} title="Ссылки">
-                <Menu.Item key="31">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p1-2" }} target="_blank">
-                        Отходы I-V классов опасности
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="32">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p2" }} target="_blank">
-                        Паспортизация отходов
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="33">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p3" }} target="_blank">
-                        Оператор по обращению с отходами
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="34">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p4" }} target="_blank">
-                        Обращение с отходами I, II классов
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="35">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p5" }} target="_blank">
-                        Особенности обращения с отходами I, II классов
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="36">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p6" }} target="_blank">
-                        Требования к обращению с отходами
-                    </NavLink>
-                </Menu.Item>
-                <Menu.Item key="37">
-                    <NavLink to={{ pathname: "https://courses.umcmrg.ru/ecology1/t1p7" }} target="_blank">
-                        Порядок учёта, транспортирования отходов
-                    </NavLink>
-                </Menu.Item>
+                <Menu.Item onClick={() => {history.push('/profile')}} key="out_1">Профиль</Menu.Item>
+                <Menu.Item onClick={() => {history.push('/test_choose')}} key="out_2">Выбор тестов</Menu.Item>
+                <Menu.Item onClick={() => {history.push('/courses')}} key="out_3">Выбор курсов</Menu.Item>
             </SubMenu>
 
             <Menu.Item
@@ -204,39 +193,6 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                 Глоссарий
             </Menu.Item>
 
-            <SubMenu key="subTests" icon={<KeyOutlined />} title="Тестирование">
-                <Menu.Item
-                    onClick={() => {
-                    clearSwitches();
-                    setChapterForTesting(1);
-                    setSwitchToChapterTesting(true);
-                }}
-                    key="test-1"
-                >
-                    Тест - Раздел 1
-                </Menu.Item>
-                <Menu.Item
-                    onClick={() => {
-                    clearSwitches();
-                    setChapterForTesting(2);
-                    setSwitchToChapterTesting(true);
-                }}
-                    key="test-2"
-                >
-                    Тест - Раздел 2
-                </Menu.Item>
-                <Menu.Item
-                    onClick={() => {
-                    clearSwitches();
-                    setChapterForTesting(3);
-                    setSwitchToChapterTesting(true);
-                }}
-                    key="test-3"
-                >
-                    Тест - Раздел 3
-                </Menu.Item>
-            </SubMenu>
-
             <Menu.Item
                 key="6"
                 icon={<PaperClipOutlined />}
@@ -247,6 +203,52 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
             >
                 Материалы
             </Menu.Item>
+
+            <SubMenu key="sub3" icon={<LinkOutlined />} title="Ссылки">
+                <Menu.Item key="path_1">
+                    <NavLink to={{ pathname: "https://rpn.gov.ru/fkko/?states=Все&hazardClass%5B%5D=1" }} target="_blank">
+                        Федеральный классификационный каталог отходов
+                    </NavLink>
+                </Menu.Item>
+                <Menu.Item key="path_2">
+                    <NavLink to={{ pathname: "http://fcao.ru/metodiki-kkha.html" }} target="_blank">
+                        Реестр методик
+                    </NavLink>
+                </Menu.Item>
+            </SubMenu>
+
+            <SubMenu key="subTests" icon={<KeyOutlined />} title="Тестирование">
+                <Menu.Item
+                    onClick={() => {
+                        clearSwitches();
+                        setChapterForTesting(1);
+                        setSwitchToChapterTesting(true);
+                    }}
+                    key="test-1"
+                >
+                    Тест - Раздел 1
+                </Menu.Item>
+                <Menu.Item
+                    onClick={() => {
+                        clearSwitches();
+                        setChapterForTesting(2);
+                        setSwitchToChapterTesting(true);
+                    }}
+                    key="test-2"
+                >
+                    Тест - Раздел 2
+                </Menu.Item>
+                <Menu.Item
+                    onClick={() => {
+                        clearSwitches();
+                        setChapterForTesting(3);
+                        setSwitchToChapterTesting(true);
+                    }}
+                    key="test-3"
+                >
+                    Тест - Раздел 3
+                </Menu.Item>
+            </SubMenu>
         </Menu>
     );
 };
