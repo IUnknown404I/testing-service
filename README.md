@@ -1,4 +1,4 @@
-# USAGE: 
+# USAGE:
 
 # back: dotenv, express, sequelize, cors, pg, pg-hstorem, jwt
 
