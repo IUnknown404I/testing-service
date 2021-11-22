@@ -1,3 +1,28 @@
+@media screen and (max-width: 800px) {
+    .sideCard {
+        display: none;
+    }
+    .earth {
+        display: none;
+    }
+    .preview_canvas_Earth {
+        display: none;
+    }
+
+    .container {
+        padding: 10px 4px !important;
+    }
+    .card {
+        width: 100% !important;
+    }
+    .title div:first-of-type {
+        max-width: 98% !important;
+    }
+    .content {
+        padding: 15px 5px !important;
+    }
+}
+
 .container {
     position: absolute;
     top: 0;
@@ -9,7 +34,7 @@
     background: rgba(0,0,0,0.7);
     flex-wrap: wrap;
     padding: 10px 17px;
-    z-index: 1;
+    z-index: 10;
 }
 
 .card {
@@ -17,26 +42,22 @@
     width: 95%;
     background: white;
     z-index: 0;
-    /*min-height: 90vh;*/
-    /*border: 2px solid rgb(4,23,54);*/
     border: 4px solid rgba(24,144,255,0.7);
     border-radius: 10px;
-    /*box-shadow: 0 1px 2px 1px darkslategrey;*/
     box-shadow: 0 1px 3px 2px lightsteelblue;
 }
 
 .title {
     width: 100%;
     min-height: 250px;
-    /*min-height: 200px;*/
     z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 5px 20px;
-    /*border-bottom: 2px solid rgb(4,23,54);*/
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
     border-bottom: 4px solid rgba(24,144,255,0.7);
-
     background-image: url(../../back/bg-ecology.jpg);
     /*background-image: url(../../back/back_2.jpg);*/
     background-repeat: no-repeat;
@@ -105,10 +126,6 @@
     right: -28px;
     width: 280px;
     height: 228px;
-    /*background: rgb(0,21,81);*/
-    /*background: rgb(22,72,188);*/
-    /*border: 1px solid darkslategrey;*/
-    /*background: linear-gradient(to right, darkseagreen, green, darkseagreen);*/
     background-image: url(../../back/back_1.jpg);
     opacity: 0.9;
     background-repeat: no-repeat;
@@ -139,14 +156,17 @@
     right: 0;
     width: 28px;
     height: 30px;
-    /*background: red;*/
     background: linear-gradient(to bottom, rgb(0,171,206), rgb(25,118,210));
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     font-size: 1.2rem;
+    padding: 30px 30px;
+    gap: 20px;
 }
 
 .content strong {
@@ -196,13 +216,21 @@
 .preview_info_card {
     display: flex;
     flex-direction: column;
+    align-items: center;
     min-width: 100%;
     margin-top: 30px;
     font-size: 1.2rem;
     padding: 30px 15px;
-    gap: 15px;
     border-radius: 7px;
     box-shadow: 1px 1px 5px 2px lightsteelblue;
+}
+
+.preview_info_card div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: fit-content;
+    gap: 15px;
 }
 
 .preview_mark {

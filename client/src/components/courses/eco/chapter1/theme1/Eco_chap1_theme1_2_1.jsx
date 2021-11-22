@@ -82,7 +82,7 @@ const Eco_Chap1_Theme1_2_1 = () => {
             </Row>
 
             <Row>
-                <Col lg={{span: 18, offset: 3}}  xl={{span: 8, offset: 0}} className='eco-img-col'>
+                <Col lg={{span: 18, offset: 3}}  xl={{span: 8, offset: 0}} className='eco-flex-col flex-centered vertical-centered'>
                     <Image
                         className='eco-img'
                         src={'/gosup.jpg'}
@@ -113,7 +113,7 @@ const Eco_Chap1_Theme1_2_1 = () => {
             </Row>
 
             <Row style={{marginTop: '50px'}}>
-                <Col lg={{span: 24, offset: 1}}  xl={{span: 22, offset: 2}}>
+                <Col sm={{span: 24, offset: 0}}  md={{span: 24, offset: 0}}  lg={{span: 24, offset: 0}}  xl={{span: 22, offset: 1}} className='eco-flex-col flex-centered'>
                     <div className='eco-but-info'>
                         <Button
                             className='eco-but-inside eco-but-inside-hover'
@@ -121,32 +121,33 @@ const Eco_Chap1_Theme1_2_1 = () => {
                         >
                             <ContainerTwoTone twoToneColor='mediumseagreen'/> Категории объектов, оказывающих негативное воздействие на окружающую среду
                         </Button>
-                        <Draggable_Modal
-                            title='Нормативы выбросов загрязняющих веществ в атмосферный воздух и вредных физических воздействий на атмосферный воздух'
-                            content={
-                                <>
-                                    <div className='' style={{marginTop: '-20px'}}>
+                    </div>
+                </Col>
+            </Row>
+
+            <Draggable_Modal
+                title='Нормативы выбросов загрязняющих веществ в атмосферный воздух и вредных физических воздействий на атмосферный воздух'
+                content={
+                    <>
+                        <div className='' style={{marginTop: '-20px'}}>
                                          <span style={{fontSize: '20px'}}>
                                             <strong>В целях государственного регулирования выбросов загрязняющих веществ</strong> в атмосферный воздух устанавливаются:
                                         </span>
 
-                                        <Tree
-                                            className='eco-list-style-tree'
-                                            showLine = {true}
-                                            defaultExpandedKeys = {['0-0']}
-                                            treeData = {treeData}
-                                            switcherIcon={<DownOutlined style={{color: 'green', fontSize: '18px'}}/>}
-                                            icon={<CarryOutOutlined />}
-                                        />
-                                    </div>
-                                </>
-                            }
-                            show={showModal}
-                            hide={setShowModal}
-                        />
-                    </div>
-                </Col>
-            </Row>
+                            <Tree
+                                className='eco-list-style-tree'
+                                showLine = {true}
+                                defaultExpandedKeys = {['0-0']}
+                                treeData = {treeData}
+                                switcherIcon={<DownOutlined style={{color: 'green', fontSize: '18px'}}/>}
+                                icon={<CarryOutOutlined />}
+                            />
+                        </div>
+                    </>
+                }
+                show={showModal}
+                hide={setShowModal}
+            />
         </>
     );
 };

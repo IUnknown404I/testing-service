@@ -154,7 +154,7 @@ const TestMain = ({chapter, setSwitchToChapterTesting}) => {
                         }
                     })}
                 </Col>
-                <Col span={24} className='eco-img-col'>
+                <Col span={24} className='eco-img-col flex-centered'>
                     <div className='eco-test-buttons-container'>
                         {finalize
                             ?

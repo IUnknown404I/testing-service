@@ -57,9 +57,9 @@ const Eco_Chap2_Theme1_3 = () => {
             </Row>
 
             <Row>
-                <Col lg={{span: 22, offset: 1}} xl={{span: 13, offset: 1}} style={{marginBottom: '20px'}}>
+                <Col lg={{span: 22, offset: 1}} xl={{span: 13, offset: 1}} style={{marginBottom: '20px'}} className='eco-tabs-tab-adaptive-font'>
                     <Tabs animated tabPosition={'left'} style={{display: 'flex', justifyContent: 'space-around'}}>
-                        <TabPane tab={<span style={{fontSize: '20px', color: 'green'}}>Обращение с отходами</span>} key="1">
+                        <TabPane tab={<span style={{color: 'green'}}>Обращение с отходами</span>} key="1">
                             <>
                                 <Card className='simple-card'>
                                     <div>
@@ -76,7 +76,7 @@ const Eco_Chap2_Theme1_3 = () => {
                                 </Card>
                             </>
                         </TabPane>
-                        <TabPane tab={<span style={{fontSize: '20px', color: 'green'}}>Атмосферный воздух</span>} key="2">
+                        <TabPane tab={<span style={{color: 'green'}}>Атмосферный воздух</span>} key="2">
                             <>
                                 <Card className='simple-card'>
                                     <div>
@@ -107,92 +107,11 @@ const Eco_Chap2_Theme1_3 = () => {
 
                     <Button block className='mybut-primary' onClick={() => setShowModalEarth(true)}>Контроль в области охраны земель и почв</Button>
                     <Button block className='mybut' onClick={() => setShowModalWater(true)}>Контроль за охраной водных ресурсов</Button>
-
-                    <Draggable_Modal
-                        title='Производственный экологический контроль в области охраны земель и почв'
-                        content={
-                            <>
-                                <div style={{fontSize: '1.15rem'}}>
-                                    <div className='eco-div-withFloat'>
-                                        <Image
-                                            className='eco-float-ico'
-                                            width={150}
-                                            style={{marginLeft: '-7px', marginRight: '17px'}}
-                                            preview = {false}
-                                            src={'/images/vibr.png'}
-                                            placeholder={
-                                                <Skeleton.Image />
-                                            }
-                                        />
-                                        <strong>При осуществлении ПЭК в области охраны земель и почв</strong> регулярному контролю подлежат нормируемые параметры и характеристики состояния:
-                                    </div>
-                                    <div style={{marginTop: '35px'}}>
-                                        <Collapse
-                                            accordion
-                                            defaultActiveKey={'1'}
-                                            className='eco-collapse'
-                                            expandIconPosition='left'
-                                        >
-                                            <Panel header="Состояние земель" key="1" className='eco-panel-style'>
-                                                <List
-                                                    size="medium"
-                                                    bordered
-                                                    dataSource={data}
-                                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                                />
-                                            </Panel>
-                                            <Panel header="Состояние земельных участков" key="2" className='eco-panel-style'>
-                                                <List
-                                                    size="medium"
-                                                    bordered
-                                                    dataSource={data1}
-                                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                                /></Panel>
-                                        </Collapse>
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        show={showModalEarth}
-                        hide={setShowModalEarth}
-                    />
-                    <Draggable_Modal
-                        title='Производственный экологический контроль за охраной водных ресурсов'
-                        content={
-                            <>
-                                <div style={{fontSize: '1.15rem'}}>
-                                    <div className='eco-div-withFloat'>
-                                        <Image
-                                            className='eco-float-ico'
-                                            width={150}
-                                            style={{marginLeft: '-7px', marginRight: '17px'}}
-                                            preview = {false}
-                                            src={'/images/vibr.png'}
-                                            placeholder={
-                                                <Skeleton.Image />
-                                            }
-                                        />
-                                        <strong>При осуществлении ПЭК за охраной водных объектов</strong> регулярному контролю подлежат нормируемые параметры и характеристики:
-                                    </div>
-                                    <div style={{marginTop: '40px', textAlign: 'center'}}>
-                                        <List
-                                            size="medium"
-                                            bordered
-                                            dataSource={data2}
-                                            renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
-                                        />
-                                    </div>
-                                </div>
-                            </>
-                        }
-                        show={showModalWater}
-                        hide={setShowModalWater}
-                    />
                 </Col>
 
-                <Col sm={{span: 18, offset: 3}} lg={{span: 16, offset: 4}} xl={{span: 8, offset: 1}} className='eco-img-col'>
+                <Col sm={{span: 18, offset: 3}} lg={{span: 16, offset: 4}} xl={{span: 8, offset: 1}} className='eco-flex-col flex-centered vertical-centered'>
                     <Image
-                        width={500}
+                        // width={500}
                         src={'/images/aa.gif'}
                         preview={false}
                         placeholder={
@@ -201,6 +120,87 @@ const Eco_Chap2_Theme1_3 = () => {
                     />
                 </Col>
             </Row>
+
+            <Draggable_Modal
+                title='Производственный экологический контроль в области охраны земель и почв'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div className='eco-div-withFloat'>
+                                <Image
+                                    className='eco-float-ico'
+                                    width={150}
+                                    style={{marginLeft: '-7px', marginRight: '17px'}}
+                                    preview = {false}
+                                    src={'/images/vibr.png'}
+                                    placeholder={
+                                        <Skeleton.Image />
+                                    }
+                                />
+                                <strong>При осуществлении ПЭК в области охраны земель и почв</strong> регулярному контролю подлежат нормируемые параметры и характеристики состояния:
+                            </div>
+                            <div style={{marginTop: '35px'}}>
+                                <Collapse
+                                    accordion
+                                    defaultActiveKey={'1'}
+                                    className='eco-collapse'
+                                    expandIconPosition='left'
+                                >
+                                    <Panel header="Состояние земель" key="1" className='eco-panel-style'>
+                                        <List
+                                            size="medium"
+                                            bordered
+                                            dataSource={data}
+                                            renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                        />
+                                    </Panel>
+                                    <Panel header="Состояние земельных участков" key="2" className='eco-panel-style'>
+                                        <List
+                                            size="medium"
+                                            bordered
+                                            dataSource={data1}
+                                            renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                        /></Panel>
+                                </Collapse>
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModalEarth}
+                hide={setShowModalEarth}
+            />
+            <Draggable_Modal
+                title='Производственный экологический контроль за охраной водных ресурсов'
+                content={
+                    <>
+                        <div style={{fontSize: '1.15rem'}}>
+                            <div className='eco-div-withFloat'>
+                                <Image
+                                    className='eco-float-ico'
+                                    width={150}
+                                    style={{marginLeft: '-7px', marginRight: '17px'}}
+                                    preview = {false}
+                                    src={'/images/vibr.png'}
+                                    placeholder={
+                                        <Skeleton.Image />
+                                    }
+                                />
+                                <strong>При осуществлении ПЭК за охраной водных объектов</strong> регулярному контролю подлежат нормируемые параметры и характеристики:
+                            </div>
+                            <div style={{marginTop: '40px', textAlign: 'center'}}>
+                                <List
+                                    size="medium"
+                                    bordered
+                                    dataSource={data2}
+                                    renderItem={item => <List.Item className='special-list-item'>{item}</List.Item>}
+                                />
+                            </div>
+                        </div>
+                    </>
+                }
+                show={showModalWater}
+                hide={setShowModalWater}
+            />
         </>
     );
 };

@@ -6,6 +6,7 @@ import {
     RightCircleTwoTone,
     KeyOutlined,
     DoubleLeftOutlined,
+    TrophyOutlined,
 } from '@ant-design/icons';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -294,18 +295,21 @@ const EcoMain = () => {
 
                                 <Button
                                     onClick={() => {
-                                        if(!isLastPage())
-                                            changePage(true)
+                                        if(isLastPage() && currentChapter.id === 3) {
+                                            window.location.assign('https://umcmrg.ru/course/view.php?id=83&section=3');
+                                        }
+                                        else if(!isLastPage())
+                                            changePage(true);
                                         else {
-                                            changeChapter(true)
+                                            changeChapter(true);
                                         }
                                     }}
-                                    className='eco-pagination-but eco-pagination-but-last'
+                                    className={isLastPage() && currentChapter.id === 3 ? 'eco-pagination-but eco-pagination-but-final' : 'eco-pagination-but eco-pagination-but-last'}
                                     size="large"
-                                    disabled={isLastPage() && currentChapter.id === 3}
                                 >
-                                    {isLastPage() ? 'Следующий раздел' : 'Далее'}
-                                    <RightCircleTwoTone />
+                                    { isLastPage() && currentChapter.id === 3 ? <span><TrophyOutlined style={{fontSize: '1.2rem', color: 'darkorange'}}/> Итоговое тестирование</span>
+                                        : isLastPage() ? <span>Следующий раздел&nbsp; <RightCircleTwoTone /></span>
+                                            : <span>Далее&nbsp; <RightCircleTwoTone /></span> }
                                 </Button>
                             </div>
                         </Col>

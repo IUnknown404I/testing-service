@@ -137,7 +137,8 @@ const EcoSubMenu = ({currentChapter, selectedKeys, setCurrentPage, setSwitchToGl
                     ?
                     <Image
                         preview = {false}
-                        src={'https://courses.umcmrg.ru/img/logo/logo-mini.png'}
+                        src={'/images/logo-mini.png'}
+                        // src={'https://courses.umcmrg.ru/img/logo/logo-mini.png'}
                         // placeholder={
                         //     <Skeleton.Image />
                         // }

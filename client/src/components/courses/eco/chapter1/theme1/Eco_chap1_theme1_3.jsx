@@ -92,7 +92,7 @@ const Eco_Chap1_Theme1_3 = () => {
                         }
                     />
 
-                    <div className='eco-img-div-item extra' style={{background: 'white', marginTop: '30px'}}>
+                    <div className='eco-img-div-item extra epi-extra' style={{background: 'white', marginTop: '30px'}}>
                         <Image
                             className='eco-img-ico'
                             preview = {false}

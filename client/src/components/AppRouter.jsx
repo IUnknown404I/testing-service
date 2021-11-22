@@ -8,6 +8,7 @@ const AppRouter = () => {
 
     return (
             <Switch>
+
                 {publicRoutes.map((route) =>
                     <Route
                         key = {Date.now() + 6}
@@ -41,7 +42,7 @@ const AppRouter = () => {
                     : <Redirect to='/login'/>
                 }
 
-                </Switch>
+            </Switch>
     );
 };
 

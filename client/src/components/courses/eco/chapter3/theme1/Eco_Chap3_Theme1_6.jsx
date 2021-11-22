@@ -28,9 +28,10 @@ const Eco_Chap3_Theme1_6 = () => {
             </Row>
 
             <Row>
-                <Col xs={{span: 23, offset: 0}} sm={{span: 23, offset: 0}} md={{span: 23, offset: 0}} lg={{span: 23, offset: 0}} xl={{span: 23, offset: 0}} xxl={{span: 19, offset: 0}}>
-                    <Tabs size='large' className='eco-tab-list' tabPosition={'left'} animated>
-                        <TabPane tab={<div style={{fontSize: '1.2rem', opacity: '.75'}}>Организация и проведение плановой проверки</div>} key="1">
+                {/*xs={{span: 23, offset: 0}} sm={{span: 23, offset: 0}} md={{span: 23, offset: 0}} lg={{span: 23, offset: 0}}*/}
+                <Col xl={{span: 24, offset: 0}} xxl={{span: 19, offset: 0}}>
+                    <Tabs size='large' className='eco-tab-list eco-tabs-tab-adaptive-font-small' tabPosition={'left'} animated>
+                        <TabPane tab={<div style={{opacity: '.75'}}>Организация и проведение плановой проверки</div>} key="1">
                             <>
                                 <div className='eco-numeration text-centered flex-centered' style={{fontSize: '1.3rem'}}><CheckCircleOutlined style={{color: 'white', fontSize: '23px'}}/>&nbsp; Организация и проведение плановой проверки</div>
                                 <div className='padding-15-30 eco-flex-col' style={{gap: '15px'}}>
@@ -62,7 +63,7 @@ const Eco_Chap3_Theme1_6 = () => {
                                 </div>
                             </>
                         </TabPane>
-                        <TabPane tab={<div style={{fontSize: '1.2rem', opacity: '.75'}}>Организация и проведение внеплановой проверки</div>} key="2">
+                        <TabPane tab={<div style={{opacity: '.75'}}>Организация и проведение внеплановой проверки</div>} key="2">
                             <>
                                 <div className='eco-numeration text-centered flex-centered' style={{fontSize: '1.3rem'}}><CheckCircleOutlined style={{color: 'white', fontSize: '23px'}}/>&nbsp; Организация и проведение внеплановой проверки (выдержки)</div>
                                 <div className='padding-15-30 eco-flex-col' style={{gap: '15px'}}>
@@ -102,7 +103,7 @@ const Eco_Chap3_Theme1_6 = () => {
                                 </div>
                             </>
                         </TabPane>
-                        <TabPane tab={<div style={{fontSize: '1.2rem', opacity: '.75'}}>Документарная проверка</div>} key="3">
+                        <TabPane tab={<div style={{opacity: '.75'}}>Документарная проверка</div>} key="3">
                             <>
                                 <div className='eco-numeration text-centered flex-centered' style={{fontSize: '1.3rem'}}><CheckCircleOutlined style={{color: 'white', fontSize: '23px'}}/>&nbsp; Документарная проверка</div>
                                 <div className='padding-15-30 eco-flex-col' style={{gap: '15px'}}>
@@ -135,7 +136,7 @@ const Eco_Chap3_Theme1_6 = () => {
                                 </div>
                             </>
                         </TabPane>
-                        <TabPane tab={<div style={{fontSize: '1.2rem', opacity: '.75'}}>Выездная проверка</div>} key="4">
+                        <TabPane tab={<div style={{opacity: '.75'}}>Выездная проверка</div>} key="4">
                             <>
                                 <div className='eco-numeration text-centered flex-centered' style={{fontSize: '1.3rem'}}><CheckCircleOutlined style={{color: 'white', fontSize: '23px'}}/>&nbsp; Документарная проверка</div>
                                 <div className='padding-15-30 eco-flex-col' style={{gap: '15px'}}>
@@ -186,7 +187,7 @@ const Eco_Chap3_Theme1_6 = () => {
                                 </div>
                             </>
                         </TabPane>
-                        <TabPane tab={<div style={{fontSize: '1.2rem', opacity: '.75'}}>Срок проведения проверки</div>} key="5">
+                        <TabPane tab={<div style={{opacity: '.75'}}>Срок проведения проверки</div>} key="5">
                             <>
                                 <div className='eco-numeration text-centered flex-centered' style={{fontSize: '1.3rem'}}><CheckCircleOutlined style={{color: 'white', fontSize: '23px'}}/>&nbsp; Срок проведения проверки</div>
                                 <div className='padding-15-30 eco-flex-col' style={{gap: '15px'}}>
@@ -225,7 +226,8 @@ const Eco_Chap3_Theme1_6 = () => {
                     </Tabs>
                 </Col>
 
-                <Col xs={{span: 1, push: 24}} sm={{span: 1, push: 24}} md={{span: 1, push: 24}} lg={{span: 1, push: 24}} xl={{span: 1, push: 24}} xxl={{span: 5, offset: 0, push: 0}} className='eco-img-col'>
+                {/*<Col xs={{span: 1, push: 24}} sm={{span: 1, push: 24}} md={{span: 1, push: 24}} lg={{span: 1, push: 24}} xl={{span: 1, push: 24}} xxl={{span: 5, offset: 0, push: 0}} className='eco-img-col'>*/}
+                <Col xl={{span: 24}} xxl={{span: 5, offset: 0}} className='eco-img-col xxl-hidden'>
                     <Image
                         id='img-check-width'
                         src={'/svg/man2.svg'}

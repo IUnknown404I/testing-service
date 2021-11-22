@@ -161,7 +161,7 @@ const Eco_Chap3_Theme1_4 = () => {
                     </div>
                 </Col>
 
-                <Col sm={{span: 24, offset: 0}} md={{span: 24, offset: 0}} lg={{span: 8, offset: 0}} xl={{span: 9, offset: 0}} className='eco-img-col flex-centered'>
+                <Col sm={{span: 24, offset: 0}} md={{span: 24, offset: 0}} lg={{span: 8, offset: 0}} xl={{span: 9, offset: 0}} className='eco-img-col flex-centered md-hidden'>
                     <Image
                         src={'/svg/realmen.svg'}
                         preview={false}

@@ -50,7 +50,7 @@ const Eco_Chap2_Theme4_1 = () => {
                     </div>
                 </Col>
 
-                <Col xs={{span: 16, offset: 4}} sm={{span: 12, offset: 6}} md={{span: 12, offset: 6}} lg={{span: 10, offset: 0}} xl={{span: 10, offset: 0}} xxl={{span: 7, offset: 1}} className='eco-img-col flex-centered'>
+                <Col xs={{span: 16, offset: 4}} sm={{span: 12, offset: 6}} md={{span: 12, offset: 6}} lg={{span: 10, offset: 0}} xl={{span: 10, offset: 0}} xxl={{span: 7, offset: 1}} className='eco-flex-col flex-centered vertical-centered'>
                     <Image
                         src={'/images/t.png'}
                         preview={false}

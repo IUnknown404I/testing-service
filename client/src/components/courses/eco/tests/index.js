@@ -370,12 +370,12 @@ const single = (question, answers, valid, id, finalize, userAnswers, setUserAnsw
             <form className='testing-form' key={id}>
                 <h2>{id}. {question}</h2>
                 {answers?.length
-                    ? answers.map((ans) =>
-                        <label key={ans}>
+                    ? answers.map((ans, index) =>
+                        <label key={ans + index}>
                             <input
                                 type={"radio"}
                                 value={ans}
-                                name={question}
+                                name={ans}
                                 disabled={finalize}
                                 onClick={() => {
                                     let newUserAnswers = Object.assign(userAnswers);
@@ -389,7 +389,8 @@ const single = (question, answers, valid, id, finalize, userAnswers, setUserAnsw
                                     ? {color: 'forestgreen'}
                                     : ans === userAnswers[id] && ans !== valid ? {color: 'red'} : {}
                                     : {}
-                            }>{ans}</span>
+                            }
+                            >{ans}</span>
                         </label>)
                     : void(0)
                 }
@@ -410,7 +411,7 @@ const multiply = (question, answers, valid, id, finalize, userAnswers, setUserAn
                 <h2>{id}. {question}</h2>
                 {answers?.length
                     ? answers.map((ans) =>
-                        <label key={ans}>
+                        <label>
                             <input
                                 type={"checkbox"}
                                 value={ans}

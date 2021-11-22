@@ -80,7 +80,8 @@ const Draggable_Modal = ({title, content, show, hide}) => {
                     </Button>
                 ]}
                 // footer={null}
-                visible={state.visible}
+                // visible={state.visible}
+                visible={show}
                 onOk={close}
                 onCancel={close}
                 modalRender={modal => (

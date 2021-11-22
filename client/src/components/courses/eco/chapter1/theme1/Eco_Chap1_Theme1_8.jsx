@@ -15,7 +15,7 @@ const Eco_Chap1_Theme1_2 = () => {
             </Row>
 
             <Row>
-                <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 8, offset: 2}} className='eco-img-col'>
+                <Col sm={{span: 22, offset: 1}} md={{span: 18, offset: 3}} lg={{span: 8, offset: 2}} className='eco-flex-col flex-centered vertical-centered'>
                     <Image
                         src={'/svg/trashmans1.svg'}
                         preview={false}

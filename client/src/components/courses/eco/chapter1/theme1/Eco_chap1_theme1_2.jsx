@@ -16,7 +16,7 @@ const Eco_Chap1_Theme1_2 = () => {
             </Row>
 
             <Row>
-                <Col lg={{span: 22, offset: 1}}  xl={{span: 10, offset: 1}} className='eco-img-col' style={{marginBottom: '20px'}}>
+                <Col sm={{span: 24, offset: 0}} md={{span: 22, offset: 1}} lg={{span: 22, offset: 1}}  xl={{span: 10, offset: 1}} className='eco-flex-col flex-centered' style={{marginBottom: '20px'}}>
                     <Image
                         className='eco-img'
                         src={'/breath.jpg'}

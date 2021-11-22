@@ -723,52 +723,49 @@ const EcoPreview = () => {
                             <h3>«Обеспечение экологической безопасности руководителями и специалистами общехозяйственных систем управления»</h3>
                         </div>
                         <div className={classes.earth}>
-                            <canvas className='canvas_Earth'/>
+                            <canvas className={`canvas_Earth ${classes.preview_canvas_Earth}`}/>
                         </div>
                     </div>
 
                     <Row className='padding-30'>
                         <Col sm={{span: 24}} lg={{span: 15}} className={classes.content}>
-                            <div className='padding-30 eco-flex-col' style={{gap: '20px'}}>
-                                <div className='eco-flex-col'>
-                                    <strong><ContactsTwoTone style={{fontSize: '24px'}}/>&nbsp; Категории слушателей:</strong>
-                                    специалисты и руководители отделов/служб охраны окружающей среды и экологии.
+                            <div className='eco-flex-col'>
+                                <strong><ContactsTwoTone style={{fontSize: '24px'}}/>&nbsp; Категории слушателей:</strong>
+                                специалисты и руководители отделов/служб охраны окружающей среды и экологии.
+                            </div>
+                            <div className='eco-flex-col'>
+                                <strong><StarTwoTone style={{fontSize: '24px'}}/>&nbsp; Цель курса:</strong>
+                                Совершенствование и (или) получение новой компетенции, необходимой для профессиональной деятельности в рамках имеющейся квалификации в области охраны окружающей среды и обеспечения экологической безопасности.
+                            </div>
+                            <div className='eco-flex-col'>
+                                <strong><FlagTwoTone style={{fontSize: '24px'}}/>&nbsp; Задачи учебного курса:</strong>
+                                <div className='eco-flex-col' style={{paddingLeft: '30px'}}>
+                                    <span><strong>•</strong>&nbsp; Формирование понимания государственной политики РФ в области охраны окружающей среды и экологической безопасности;</span>
+                                    <span><strong>•</strong>&nbsp; Усвоение нормативно-правовых требований в области охраны окружающей среды и экологии;</span>
+                                    <span><strong>•</strong>&nbsp; Развитие навыков самостоятельного анализа ситуации и решения поставленных задач.</span>
                                 </div>
-                                <div className='eco-flex-col'>
-                                    <strong><StarTwoTone style={{fontSize: '24px'}}/>&nbsp; Цель курса:</strong>
-                                    Совершенствование и (или) получение новой компетенции, необходимой для профессиональной деятельности в рамках имеющейся квалификации в области охраны окружающей среды и обеспечения экологической безопасности.
-                                </div>
-                                <div className='eco-flex-col'>
-                                    <strong><FlagTwoTone style={{fontSize: '24px'}}/>&nbsp; Задачи учебного курса:</strong>
-                                    <div className='eco-flex-col' style={{paddingLeft: '30px'}}>
-                                        <span><strong>•</strong>&nbsp; Формирование понимания государственной политики РФ в области охраны окружающей среды и экологической безопасности;</span>
-                                        <span><strong>•</strong>&nbsp; Усвоение нормативно-правовых требований в области охраны окружающей среды и экологии;</span>
-                                        <span><strong>•</strong>&nbsp; Развитие навыков самостоятельного анализа ситуации и решения поставленных задач.</span>
-                                    </div>
-                                </div>
-                                <div className='eco-flex-col'>
-                                    <strong><HourglassTwoTone style={{fontSize: '24px'}}/>&nbsp; Трудоемкость обучения и режим занятий слушателей:</strong>
-                                    72 часа, 6-8 академических часов в день.
-                                </div>
-                                <div>
-                                    <strong><UnlockTwoTone style={{fontSize: '24px'}}/>&nbsp; Форма и организация итоговой аттестации:</strong>&nbsp; зачет.
-                                </div>
+                            </div>
+                            <div className='eco-flex-col'>
+                                <strong><HourglassTwoTone style={{fontSize: '24px'}}/>&nbsp; Трудоемкость обучения и режим занятий слушателей:</strong>
+                                72 часа, 6-8 академических часов в день.
+                            </div>
+                            <div>
+                                <strong><UnlockTwoTone style={{fontSize: '24px'}}/>&nbsp; Форма и организация итоговой аттестации:</strong>&nbsp; зачет.
                             </div>
                         </Col>
 
                         <Col sm={{span: 24}} lg={{span: 9}} className='padding-30 eco-flex-col' style={{justifyContent: 'space-between'}}>
-                            {/*<Col offset={0} span={9} className='padding-30' style={{marginTop: '20px'}}>*/}
                             <div className='eco-flex-col flex-centered'>
-                                {/*<Button block onClick={() => {setShowModal(true);}} className='mybut-primary'>Перейти к изучению</Button>*/}
-                                {/*<Button block onClick={() => {setShowModal(true);}} className='mybut'>Содержание курса</Button>*/}
                                 <Button block onClick={() => {history.push('/courses/eco');}} className={classes.preview_but_primary}>Перейти к изучению</Button>
                                 <Button block onClick={() => {setShowModal(true);}} className={classes.preview_but}>Содержание курса</Button>
                                 <Button block onClick={() => {history.push('/courses');}} className={classes.preview_but} style={{maxWidth: '80%'}}>Вернуться</Button>
 
                                 <div className={classes.preview_info_card}>
-                                    <span><HomeTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; Дистанционное обучение</span>
-                                    <span><HourglassTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; 72 академических часа</span>
-                                    <span><InteractionTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; Интерактивный курс</span>
+                                    <div>
+                                        <span><HomeTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; Дистанционное обучение</span>
+                                        <span><HourglassTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; 72 академических часа</span>
+                                        <span><InteractionTwoTone twoToneColor={'darkorange'} style={{fontSize: '22px'}}/>&nbsp; Интерактивный курс</span>
+                                    </div>
                                 </div>
                             </div>
 

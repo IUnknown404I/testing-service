@@ -68,65 +68,57 @@ const Eco_Chap2_Theme2_2 = () => {
             </Row>
 
             <Row>
-                <Col lg={{span: 24, offset: 0}} xl={{span: 20, offset: 2}} style={{marginTop: '-20px'}}>
-                    <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list' centered animated>
+                <Col lg={{span: 24, offset: 0}} xl={{span: 20, offset: 2}}>
+                    <Tabs tabPosition={'right'} type="card" size='large' className='eco-tab-list eco-tabs-tab-adaptive-font' centered animated>
                         <TabPane tab="Проектирование" key="1">
                             <>
                                 <Row style={{marginTop: '20px'}}>
                                     <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 12, offset: 0}} xxl={{span: 11, offset: 1}}>
-                                        <Card className='simple-card'>
-                                            <div>
-                                                <div className='eco-div-withFloat'>
-                                                    <Image
-                                                        className='eco-float-ico'
-                                                        style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
-                                                        preview = {false}
-                                                        src={'/images/rab1.jpg'}
-                                                        placeholder={
-                                                            <Skeleton.Image />
-                                                        }
-                                                    />
-                                                    При проектировании и размещении объектов хозяйственной и иной деятельности, оказывающих вредное воздействие на качество атмосферного воздуха, в пределах городских и иных поселений, а также при застройке и реконструкции городских и иных поселений должны учитываться&nbsp;
-                                                    <Popover
-                                                        color={"azure"}
-                                                        overlayStyle={{maxWidth: '500px'}}
-                                                        className='pop_text'
-                                                        style={{maxWidth: '350px'}}
-                                                        content={<span>В том числе полученный по результатам проведения сводных расчетов загрязнения атмосферного воздуха, и прогноз изменения его качества при осуществлении указанной деятельности.</span>}
-                                                        title=''
-                                                        trigger="hover">
-                                                        <strong style={{fontSize: '1.25rem'}}>фоновый уровень загрязнения атмосферного воздуха</strong>
-                                                    </Popover>.
-                                                </div>
-                                            </div>
+                                        <Card className='simple-card eco-div-withFloat'>
+                                            <Image
+                                                className='eco-float-ico'
+                                                style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
+                                                preview = {false}
+                                                src={'/images/rab1.jpg'}
+                                                placeholder={
+                                                    <Skeleton.Image />
+                                                }
+                                            />
+                                            При проектировании и размещении объектов хозяйственной и иной деятельности, оказывающих вредное воздействие на качество атмосферного воздуха, в пределах городских и иных поселений, а также при застройке и реконструкции городских и иных поселений должны учитываться&nbsp;
+                                            <Popover
+                                                color={"azure"}
+                                                overlayStyle={{maxWidth: '500px'}}
+                                                className='pop_text'
+                                                style={{maxWidth: '350px'}}
+                                                content={<span>В том числе полученный по результатам проведения сводных расчетов загрязнения атмосферного воздуха, и прогноз изменения его качества при осуществлении указанной деятельности.</span>}
+                                                title=''
+                                                trigger="hover">
+                                                <strong style={{fontSize: '1.25rem'}}>фоновый уровень загрязнения атмосферного воздуха</strong>
+                                            </Popover>.
                                         </Card>
                                     </Col>
                                     <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 11, offset: 1}} xxl={{span: 9, offset: 2}}>
-                                        <Card className='simple-card'>
-                                            <div>
-                                                <div className='eco-div-withFloat'>
-                                                    <Image
-                                                        className='eco-float-ico'
-                                                        style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
-                                                        preview = {false}
-                                                        src={'/images/rab2.png'}
-                                                        placeholder={
-                                                            <Skeleton.Image />
-                                                        }
-                                                    />
-                                                    При проектировании, размещении, строительстве, реконструкции и эксплуатации объектов хозяйственной и иной деятельности, при застройке городских и иных поселений должно обеспечиваться&nbsp;
-                                                    <Popover
-                                                        color={"azure"}
-                                                        overlayStyle={{maxWidth: '500px'}}
-                                                        className='pop_text'
-                                                        style={{maxWidth: '350px'}}
-                                                        content={<span>В соответствии с экологическими, санитарно-гигиеническими, а также со строительными нормами и правилами в части нормативов площадей озелененных территорий.</span>}
-                                                        title=''
-                                                        trigger="hover">
-                                                        <strong style={{fontSize: '1.25rem'}}>непревышение нормативов качества атмосферного воздуха</strong>
-                                                    </Popover>.
-                                                </div>
-                                            </div>
+                                        <Card className='simple-card eco-div-withFloat'>
+                                            <Image
+                                                className='eco-float-ico'
+                                                style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
+                                                preview = {false}
+                                                src={'/images/rab2.png'}
+                                                placeholder={
+                                                    <Skeleton.Image />
+                                                }
+                                            />
+                                            При проектировании, размещении, строительстве, реконструкции и эксплуатации объектов хозяйственной и иной деятельности, при застройке городских и иных поселений должно обеспечиваться&nbsp;
+                                            <Popover
+                                                color={"azure"}
+                                                overlayStyle={{maxWidth: '500px'}}
+                                                className='pop_text'
+                                                style={{maxWidth: '350px'}}
+                                                content={<span>В соответствии с экологическими, санитарно-гигиеническими, а также со строительными нормами и правилами в части нормативов площадей озелененных территорий.</span>}
+                                                title=''
+                                                trigger="hover">
+                                                <strong style={{fontSize: '1.25rem'}}>непревышение нормативов качества атмосферного воздуха</strong>
+                                            </Popover>.
                                         </Card>
                                     </Col>
                                 </Row>
@@ -136,39 +128,31 @@ const Eco_Chap2_Theme2_2 = () => {
                             <>
                                 <Row style={{marginTop: '20px'}}>
                                     <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 11, offset: 0}} xxl={{span: 9, offset: 2}}>
-                                        <Card className='simple-card-orange'>
-                                            <div>
-                                                <div className='eco-div-withFloat'>
-                                                    <Image
-                                                        className='eco-float-ico'
-                                                        style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
-                                                        preview = {false}
-                                                        src={'/images/dang1.png'}
-                                                        placeholder={
-                                                            <Skeleton.Image />
-                                                        }
-                                                    />
-                                                    Запрещаются размещение и эксплуатация объектов хозяйственной и иной деятельности, которые не имеют предусмотренных правилами охраны атмосферного воздуха <strong style={{fontSize: '1.25rem'}}>установок очистки газов и средств контроля за выбросами</strong> загрязняющих веществ в атмосферный воздух.
-                                                </div>
-                                            </div>
+                                        <Card className='simple-card-orange eco-div-withFloat'>
+                                            <Image
+                                                className='eco-float-ico'
+                                                style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
+                                                preview = {false}
+                                                src={'/images/dang1.png'}
+                                                placeholder={
+                                                    <Skeleton.Image />
+                                                }
+                                            />
+                                            Запрещаются размещение и эксплуатация объектов хозяйственной и иной деятельности, которые не имеют предусмотренных правилами охраны атмосферного воздуха <strong style={{fontSize: '1.25rem'}}>установок очистки газов и средств контроля за выбросами</strong> загрязняющих веществ в атмосферный воздух.
                                         </Card>
                                     </Col>
                                     <Col md={{span: 24, offset: 0}} lg={{span: 22, offset: 1}} xl={{span: 12, offset: 1}} xxl={{span: 11, offset: 1}}>
-                                        <Card className='simple-card-orange'>
-                                            <div>
-                                                <div className='eco-div-withFloat'>
-                                                    <Image
-                                                        className='eco-float-ico'
-                                                        style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
-                                                        preview = {false}
-                                                        src={'/images/dang2.png'}
-                                                        placeholder={
-                                                            <Skeleton.Image />
-                                                        }
-                                                    />
-                                                    Запрещаются проектирование, размещение и строительство объектов хозяйственной и иной деятельности, функционирование которых может привести к <strong style={{fontSize: '1.25rem'}}>неблагоприятным изменениям климата и озонового слоя атмосферы</strong>, ухудшению здоровья людей, уничтожению генетического фонда растений и генетического фонда животных, наступлению необратимых последствий для людей и окружающей среды.
-                                                </div>
-                                            </div>
+                                        <Card className='simple-card-orange eco-div-withFloat'>
+                                            <Image
+                                                className='eco-float-ico'
+                                                style={{maxWidth: '100px', marginLeft: '-7px', marginRight: '17px'}}
+                                                preview = {false}
+                                                src={'/images/dang2.png'}
+                                                placeholder={
+                                                    <Skeleton.Image />
+                                                }
+                                            />
+                                            Запрещаются проектирование, размещение и строительство объектов хозяйственной и иной деятельности, функционирование которых может привести к <strong style={{fontSize: '1.25rem'}}>неблагоприятным изменениям климата и озонового слоя атмосферы</strong>, ухудшению здоровья людей, уничтожению генетического фонда растений и генетического фонда животных, наступлению необратимых последствий для людей и окружающей среды.
                                         </Card>
                                     </Col>
                                 </Row>

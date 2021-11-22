@@ -111,10 +111,11 @@ const Eco_Chap2_Theme4_11 = () => {
                                     </div>
                                 </Col>
 
-                                <Col md={{span: 22, offset: 1}} lg={{span: 12, offset: 0}} xl={{span: 10, offset: 0}} className='eco-flex-col flex-centered padding-15-30'>
+                                <Col sm={{span: 24, offset: 0}} md={{span: 22, offset: 1}} lg={{span: 12, offset: 0}} xl={{span: 10, offset: 0}} className='eco-flex-col flex-centered padding-15-30'>
                                     <Button block className='mybut-primary' style={{margin: '0 0 15px'}} onClick={() => setShowModal(true)}>Порядок лицензирования деятельности</Button>
 
                                     <Image
+                                        className='md-hidden'
                                         src={'/svg/license.svg'}
                                         preview={false}
                                         placeholder={ <Skeleton.Image /> }

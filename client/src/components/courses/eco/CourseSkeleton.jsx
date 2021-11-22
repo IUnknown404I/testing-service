@@ -1168,7 +1168,7 @@ const CourseSkeleton = ({currentChapter, setChapter, themes, setCurrentPage, set
                 </Col>
                 <Col xs={{span: 24, offset: 0}} sm={{span: 16, offset: 4}} md={{span: 14, offset: 5}} lg={{span: 6, offset: 0}} xl={{span: 5, offset: 0}} style={{textAlign: 'center'}}>
                     <div>
-                       <BulbTwoTone />
+                       <BulbTwoTone />&nbsp;
                        Нажимайте на элементы для перехода
                    </div>
                 </Col>
