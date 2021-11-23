@@ -21,9 +21,13 @@ import {FirstChapter, SecondChapter, ThirdChapter} from "./nav/nav";
 import Test_Main from "./tests/Test_Main";
 import EcoBreadCrumbs from "./EcoBreadCrumbs";
 
+import { useHistory, useLocation } from 'react-router-dom';
 const { Content, Footer, Sider } = Layout;
 
 const EcoMain = () => {
+    const history = useHistory();
+    const location = useLocation();
+
     const [selectedKeys, setSelectedKeys] = useState([]);
     const [collapsed, setCollapsed] = useState(true);
     const [breakpoint, setBreakpoint] = useState(60)
@@ -87,6 +91,13 @@ const EcoMain = () => {
     const checkSwitches = () => {
         return switchToGlossary || switchToLiterature || switchToMaterials || switchToSkeleton || switchToChapterTesting;
     }
+    const clearSwitches = () => {
+        setSwitchToGlossary(false);
+        setSwitchToLiterature(false);
+        setSwitchToMaterials(false);
+        setSwitchToSkeleton(false);
+        setSwitchToChapterTesting(false);
+    }
 
     const changeCurrentTitle = () => {
         if(switchToGlossary) {
@@ -145,6 +156,61 @@ const EcoMain = () => {
         setCurrentTitle(title);
     }
 
+    const navigation = () => {
+        if(!checkSwitches()) {
+            history.push(`?ch=${currentChapter.id}&th=${themes.indexOf(getCurrentTheme()) + 1}&p=${currentTitle.split(' ')[0].split('.')[1]}`);
+        } else {
+            if(switchToSkeleton) history.push('?srv=str');
+            else if(switchToLiterature) history.push('?srv=lit');
+            else if(switchToGlossary) history.push('?srv=glos');
+            else if(switchToMaterials) history.push('?srv=mat');
+            else switch (currentTitle.split(' ')[2]) {
+                    case '1': history.push('?srv=t-1'); break;
+                    case '2': history.push('?srv=t-2'); break;
+                    case '3': history.push('?srv=t-3'); break;
+                }
+        }
+    }
+
+    useEffect(() => {
+        if(location.search) {
+            switch (location.search.split('=')[0]) {
+                case '?ch': {
+                    const newChap = location.search.split('ch=')[1][0];
+                    const newTheme = location.search.split('th=')[1][0];
+                    const newPage = location.search.split('p=')[1][0];
+
+                    const chapter = (newChap === '1')
+                        ? new FirstChapter()
+                        : (newChap === '2')
+                            ? new SecondChapter()
+                            : new ThirdChapter();
+
+                    setChapter(chapter, chapter.themes[newTheme-1][newPage-1], chapter.titles[newTheme-1][newPage-1]);
+                    clearSwitches();
+                    break;
+                }
+                case '?srv': {
+                    clearSwitches();
+
+                    if(location.search.includes('str')) setSwitchToSkeleton(true);
+                    else if(location.search.includes('lit')) setSwitchToLiterature(true);
+                    else if(location.search.includes('glos')) setSwitchToGlossary(true);
+                    else if(location.search.includes('mat')) setSwitchToMaterials(true);
+                    else {
+                        setSwitchToChapterTesting(true);
+                        switch (location.search.split('t-')[1]) {
+                            case '1': setChapterForTesting(1); break;
+                            case '2': setChapterForTesting(2); break;
+                            case '3': setChapterForTesting(3); break;
+                        }
+                    }
+                    break;
+                }
+            }
+        }
+    }, []);
+
     useEffect(() => {
         if(!collapsed && !breakpoint && document.querySelector('.ant-layout-sider-zero-width-trigger')) {
             document.querySelector('.ant-layout-sider-zero-width-trigger').style.left = '200px';
@@ -153,6 +219,12 @@ const EcoMain = () => {
             document.querySelector('.ant-layout-sider-zero-width-trigger').style.left = '0';
         }
     }, [collapsed]);
+
+    useEffect(() => {
+        if(!document.querySelector('.canvas_Earth')) {
+            navigation();
+        }
+    }, [currentTitle]);
 
     useEffect(() => {
         window.scrollTo(0,0);
